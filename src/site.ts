@@ -13,6 +13,8 @@ export interface FooterColumn {
 export interface SiteConfig {
   name: string
   url: string
+  /** Default meta description and social-card text. */
+  description: string
   tagline: { lead: string; rest: string }
   nav: NavLink[]
   actions: ButtonProps[]
@@ -23,6 +25,7 @@ export interface SiteConfig {
 export const site: SiteConfig = {
   name: 'Liveaboard Index',
   url: 'https://liveaboardindex.com',
+  description: 'The index of liveaboard dive boats: one permanent ID per hull, with specs, operators, regions and a free static JSON API.',
   tagline: {
     lead: 'The index of liveaboard boats.',
     rest: 'One permanent ID per hull, with a static JSON API.',

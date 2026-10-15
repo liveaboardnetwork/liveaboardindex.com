@@ -15,9 +15,11 @@
     "tools:har": "node --disable-warning=ExperimentalWarning tools/liveaboard/har.ts",
     "tools:typecheck": "tsc -p tools",
     "tools:liveaboard:import": "node --disable-warning=ExperimentalWarning tools/liveaboard/import.ts",
-    "format": "node --disable-warning=ExperimentalWarning scripts/format.ts"
+    "format": "node --disable-warning=ExperimentalWarning scripts/format.ts",
+    "icons": "node --disable-warning=ExperimentalWarning scripts/icons.ts"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "@types/node": "^25.9.1",
     "typescript": "^6.0.3",
     "vite": "^8.0.12",

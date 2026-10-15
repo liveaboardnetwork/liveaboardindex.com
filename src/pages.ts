@@ -54,6 +54,22 @@ function sourcesList(sources: string[]): Html {
   return `<ul>${sources.map((s) => `<li><a class="link link--accent" href="${esc(s)}" rel="nofollow noopener">${esc(s)}</a></li>`).join('')}</ul>`
 }
 
+function vesselDescription(data: Dataset, v: VesselRecord): string {
+  const region = v.region === null ? undefined : data.regionById.get(v.region)
+  const operator = v.operator === null ? undefined : data.operatorById.get(v.operator)
+  const kind = region ? `${region.name} liveaboard` : 'Liveaboard'
+  const specs = [
+    v.loa_m !== null && `${v.loa_m} m`,
+    v.guests !== null && `${v.guests} guests`,
+    v.cabins !== null && `${v.cabins} cabins`,
+    v.built.year !== null && `built ${v.built.year}`,
+    v.imo !== null && `IMO ${v.imo}`,
+  ].filter(Boolean)
+  return [`${v.name}: ${kind}${operator ? ` run by ${operator.name}` : ''}.`, specs.length ? `${specs.join(', ')}.` : '', `Permanent ID ${v.id}.`]
+    .filter(Boolean)
+    .join(' ')
+}
+
 function count(n: number, word: string): string {
   return `${n} ${word}${n === 1 ? '' : 's'}`
 }
@@ -88,8 +104,11 @@ export interface BoatListOptions {
 }
 
 export function boatListPage(data: Dataset, { title, eyebrow, canonical, current, json, boats }: BoatListOptions): Html {
+  const where = canonical.startsWith('/regions/') ? `in ${title}` : `in ${site.name}`
+  const names = boats.slice(0, 8).map((v) => v.name).join(', ')
   return Layout({
     title,
+    description: `${count(boats.length, 'liveaboard boat')} ${where}${names ? `: ${names}${boats.length > 8 ? '…' : ''}` : ''}. Specs, operators and permanent IDs.`,
     canonical,
     current,
     content: [
@@ -110,6 +129,7 @@ export function vesselPage(data: Dataset, v: VesselRecord): Html {
   const summary = [hullLabel(v.hull), region?.name, v.flag && countryNames.of(v.flag)].filter(Boolean).join(' · ')
   return Layout({
     title: v.name,
+    description: vesselDescription(data, v),
     canonical: v.url,
     current: '/boats/',
     content: [
@@ -152,6 +172,7 @@ export function regionIndexPage(regions: Array<{ region: Region; boats: VesselRe
     .map(({ region, boats }) => ({ label: region.name, href: `/regions/${region.id}`, meta: count(boats.length, 'boat') }))
   return Layout({
     title: 'Regions',
+    description: `Liveaboard regions in ${site.name}: ${items.map((i) => i.label).join(', ')}.`,
     canonical: '/regions/',
     current: '/regions/',
     content: [
@@ -169,6 +190,7 @@ export function operatorIndexPage(operators: OperatorRecord[], vessels: VesselRe
   }))
   return Layout({
     title: 'Operators',
+    description: `The ${count(operators.length, 'liveaboard operator')} in ${site.name} and the boats they run.`,
     canonical: '/operators/',
     current: '/operators/',
     content: [
@@ -181,6 +203,7 @@ export function operatorIndexPage(operators: OperatorRecord[], vessels: VesselRe
 export function operatorPage(data: Dataset, o: OperatorRecord, fleet: VesselRecord[]): Html {
   return Layout({
     title: o.name,
+    description: `${o.name}: liveaboard operator with ${count(fleet.length, 'boat')}${fleet.length ? ` (${fleet.map((v) => v.name).join(', ')})` : ''}. Permanent ID ${o.id}.`,
     canonical: o.url,
     current: '/operators/',
     content: [
