@@ -4,10 +4,18 @@ import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import YAML from 'yaml'
+import {
+  boatListPage,
+  notFoundPage,
+  operatorIndexPage,
+  operatorPage,
+  redirectPage,
+  regionIndexPage,
+  regionName,
+  vesselPage,
+} from '../src/pages.js'
 import { OPERATOR_ID, VESSEL_ID } from './ids.mjs'
 
-const SITE = 'https://liveaboardindex.com'
-const REPO = 'https://github.com/liveaboardnetwork/liveaboardindex.com'
 const VESSEL_STATUSES = ['active', 'retired', 'lost', 'merged']
 const OPERATOR_STATUSES = ['active', 'defunct', 'merged']
 const SLUG = /^[a-z0-9]+(-[a-z0-9]+)*$/
@@ -65,20 +73,28 @@ for (const [region, boats] of regions) {
 for (const o of operators) await emitJson(`api/v1/operators/${o.id}.json`, publicRecord(o), 2)
 
 // Pages
-await emit('boats/index.html', listPage('Boats', liveVessels))
+const ctx = { operatorById }
+await emit(
+  'boats/index.html',
+  boatListPage({ ...ctx, title: 'Boats', eyebrow: 'Index', canonical: '/boats/', current: '/boats/', json: '/api/v1/boats.json', boats: liveVessels }),
+)
 for (const v of vessels) {
-  if (v.status !== 'merged') await emit(`boats/${v.id}/${v.slug}.html`, vesselPage(v))
+  if (v.status !== 'merged') await emit(`boats/${v.id}/${v.slug}.html`, vesselPage(v, ctx))
   await emitAliases('boats', v)
 }
 
-await emit('regions/index.html', regionIndexPage())
+await emit('regions/index.html', regionIndexPage(regions))
 for (const [region, boats] of regions) {
-  await emit(`regions/${region}.html`, listPage(regionName(region), boats, `/regions/${region}`))
+  await emit(
+    `regions/${region}.html`,
+    boatListPage({ ...ctx, title: regionName(region), eyebrow: 'Region', canonical: `/regions/${region}`, current: '/regions/', json: `/api/v1/regions/${region}.json`, boats }),
+  )
 }
 
-await emit('operators/index.html', operatorIndexPage())
+await emit('operators/index.html', operatorIndexPage(liveOperators, liveVessels))
 for (const o of operators) {
-  if (o.status !== 'merged') await emit(`operators/${o.id}/${o.slug}.html`, operatorPage(o))
+  const fleet = liveVessels.filter((v) => v.operator === o.id)
+  if (o.status !== 'merged') await emit(`operators/${o.id}/${o.slug}.html`, operatorPage(o, { ...ctx, fleet }))
   await emitAliases('operators', o)
 }
 
@@ -286,230 +302,6 @@ async function emitAliases(section, record) {
   const slugs = new Set(record.names.map((n) => slugify(n.name)))
   if (record.status !== 'merged') slugs.delete(record.slug)
   for (const slug of slugs) await emit(`${section}/${record.id}/${slug}.html`, redirectPage(record.url))
-}
-
-// ---------- HTML ----------
-
-function esc(value) {
-  return String(value ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c])
-}
-
-function layout({ title, canonical, body }) {
-  return `<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>${esc(title)} · Liveaboard Index</title>
-    ${canonical ? `<link rel="canonical" href="${SITE}${esc(canonical)}" />` : ''}
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="/site.css" />
-  </head>
-  <body>
-    <header>
-      <a class="brand" href="/">Liveaboard Index</a>
-      <nav><a href="/boats/">Boats</a><a href="/regions/">Regions</a><a href="/operators/">Operators</a></nav>
-    </header>
-    <main>
-${body}
-    </main>
-  </body>
-</html>
-`
-}
-
-function redirectPage(target) {
-  return `<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Redirecting…</title>
-    <meta name="robots" content="noindex" />
-    <link rel="canonical" href="${SITE}${esc(target)}" />
-    <meta http-equiv="refresh" content="0; url=${esc(target)}" />
-    <script>location.replace(${JSON.stringify(target)} + location.search + location.hash)</script>
-  </head>
-  <body><a href="${esc(target)}">${esc(target)}</a></body>
-</html>
-`
-}
-
-function dash(value, suffix = '') {
-  return value == null || value === '' ? '<span class="muted">—</span>' : `${esc(value)}${suffix}`
-}
-
-function humanize(value) {
-  return value == null ? null : value.replace(/_/g, ' ')
-}
-
-function regionName(region) {
-  return region.split('-').map((w) => w[0].toUpperCase() + w.slice(1)).join(' ')
-}
-
-function operatorLink(id) {
-  const o = id && operatorById.get(id)
-  return o ? `<a href="${esc(o.url)}">${esc(o.name)}</a>` : dash(null)
-}
-
-function regionLink(region) {
-  return region ? `<a href="/regions/${esc(region)}">${esc(regionName(region))}</a>` : dash(null)
-}
-
-function boatTable(boats) {
-  if (!boats.length) return '<p class="muted">No boats yet.</p>'
-  const rows = boats
-    .map(
-      (v) => `        <tr>
-          <td><a href="${esc(v.url)}">${esc(v.name)}</a></td>
-          <td>${dash(v.flag)}</td>
-          <td>${regionLink(v.region)}</td>
-          <td>${operatorLink(v.operator)}</td>
-          <td class="num">${dash(v.loa_m, ' m')}</td>
-          <td class="num">${dash(v.imo)}</td>
-          <td class="num">${dash(v.mmsi)}</td>
-          <td>${esc(v.status)}</td>
-        </tr>`,
-    )
-    .join('\n')
-  return `      <table class="boats">
-        <thead><tr><th>Name</th><th>Flag</th><th>Region</th><th>Operator</th><th class="num">LOA</th><th class="num">IMO</th><th class="num">MMSI</th><th>Status</th></tr></thead>
-        <tbody>
-${rows}
-        </tbody>
-      </table>`
-}
-
-function listPage(title, boats, canonical = '/boats/') {
-  return layout({
-    title,
-    canonical,
-    body: `      <h1>${esc(title)}</h1>
-      <p class="muted">${boats.length} boat${boats.length === 1 ? '' : 's'} · <a href="/api/v1/boats.json">JSON</a></p>
-      <input id="filter" type="search" placeholder="Filter by name, IMO, MMSI, flag…" autocomplete="off" />
-${boatTable(boats)}
-      <script>
-        document.getElementById('filter').addEventListener('input', (e) => {
-          const q = e.target.value.trim().toLowerCase()
-          for (const row of document.querySelectorAll('table.boats tbody tr')) {
-            row.hidden = q !== '' && !row.textContent.toLowerCase().includes(q)
-          }
-        })
-      </script>`,
-  })
-}
-
-function namesList(names) {
-  const range = (n) => `${n.from ?? '?'} – ${n.to ?? 'present'}`
-  return `<ul class="names">${names.map((n) => `<li>${esc(n.name)} <span class="muted">${esc(range(n))}</span></li>`).join('')}</ul>`
-}
-
-function sourcesList(sources) {
-  if (!sources.length) return dash(null)
-  return `<ul>${sources.map((s) => `<li><a href="${esc(s)}" rel="nofollow noopener">${esc(s)}</a></li>`).join('')}</ul>`
-}
-
-function facts(rows) {
-  return `      <dl class="facts">
-${rows.map(([label, value]) => `        <dt>${label}</dt><dd>${value}</dd>`).join('\n')}
-      </dl>`
-}
-
-function vesselPage(v) {
-  return layout({
-    title: v.name,
-    canonical: v.url,
-    body: `      <p class="muted"><a href="/boats/">Boats</a> / <code>${esc(v.id)}</code></p>
-      <h1>${esc(v.name)}</h1>
-${facts([
-  ['Status', esc(v.status)],
-  ['Names', namesList(v.names)],
-  ['Region', regionLink(v.region)],
-  ['Operator', operatorLink(v.operator)],
-  ['Hull', dash(humanize(v.hull))],
-  ['Built', v.built.year || v.built.yard ? `${dash(v.built.year)} · ${dash(v.built.yard)}` : dash(null)],
-  ['IMO', dash(v.imo)],
-  ['MMSI', dash(v.mmsi)],
-  ['Call sign', dash(v.call_sign)],
-  ['Flag', dash(v.flag)],
-  ['Length (LOA)', dash(v.loa_m, ' m')],
-  ['Beam', dash(v.beam_m, ' m')],
-  ['Gross tonnage', dash(v.gt)],
-  ['Sources', sourcesList(v.sources)],
-  ...(v.notes ? [['Notes', esc(v.notes)]] : []),
-])}
-      <p class="muted"><a href="/api/v1/boats/${esc(v.id)}.json">JSON</a> · <a href="${REPO}/blob/main/${esc(v._file)}">Edit on GitHub</a> · <a href="${REPO}/commits/main/${esc(v._file)}">History</a></p>`,
-  })
-}
-
-function regionIndexPage() {
-  const items = [...regions]
-    .sort(([a], [b]) => a.localeCompare(b))
-    .map(([region, boats]) => `<li><a href="/regions/${esc(region)}">${esc(regionName(region))}</a> <span class="muted">${boats.length}</span></li>`)
-  return layout({
-    title: 'Regions',
-    canonical: '/regions/',
-    body: `      <h1>Regions</h1>
-      ${items.length ? `<ul>${items.join('')}</ul>` : '<p class="muted">No regions yet.</p>'}`,
-  })
-}
-
-function operatorIndexPage() {
-  const items = liveOperators.map((o) => {
-    const fleet = liveVessels.filter((v) => v.operator === o.id).length
-    return `<li><a href="${esc(o.url)}">${esc(o.name)}</a> <span class="muted">${fleet}</span></li>`
-  })
-  return layout({
-    title: 'Operators',
-    canonical: '/operators/',
-    body: `      <h1>Operators</h1>
-      ${items.length ? `<ul>${items.join('')}</ul>` : '<p class="muted">No operators yet.</p>'}`,
-  })
-}
-
-function operatorPage(o) {
-  const fleet = liveVessels.filter((v) => v.operator === o.id)
-  return layout({
-    title: o.name,
-    canonical: o.url,
-    body: `      <p class="muted"><a href="/operators/">Operators</a> / <code>${esc(o.id)}</code></p>
-      <h1>${esc(o.name)}</h1>
-${facts([
-  ['Status', esc(o.status)],
-  ['Names', namesList(o.names)],
-  ['Country', dash(o.country)],
-  ['Website', o.website ? `<a href="${esc(o.website)}" rel="nofollow noopener">${esc(o.website)}</a>` : dash(null)],
-  ['Sources', sourcesList(o.sources)],
-  ...(o.notes ? [['Notes', esc(o.notes)]] : []),
-])}
-      <h2>Fleet</h2>
-${boatTable(fleet)}
-      <p class="muted"><a href="/api/v1/operators/${esc(o.id)}.json">JSON</a> · <a href="${REPO}/blob/main/${esc(o._file)}">Edit on GitHub</a></p>`,
-  })
-}
-
-// Any /boats/<id>/<wrong-slug> lands here; resolve the ID and redirect to the canonical URL.
-// IDs are normalized the Crockford way so dictated or mistyped IDs (O→0, I/L→1, uppercase) still work.
-function notFoundPage() {
-  return layout({
-    title: 'Not found',
-    body: `      <h1>Not found</h1>
-      <p id="status">This page does not exist. <a href="/boats/">Browse all boats</a>.</p>
-      <script>
-        const match = location.pathname.match(/^\\/(boats|operators)\\/([a-z]+)_([0-9a-z]+)/i)
-        if (match) {
-          const section = match[1].toLowerCase()
-          const code = match[3].toLowerCase().replace(/o/g, '0').replace(/[il]/g, '1')
-          const id = match[2].toLowerCase() + '_' + code
-          document.getElementById('status').textContent = 'Looking up ' + id + '…'
-          fetch('/api/v1/' + section + '/' + id + '.json')
-            .then((res) => (res.ok ? res.json() : Promise.reject()))
-            .then((record) => location.replace(record.url + location.search + location.hash))
-            .catch(() => {
-              document.getElementById('status').innerHTML = 'No record with ID <code>' + id + '</code>. <a href="/boats/">Browse all boats</a>.'
-            })
-        }
-      </script>`,
-  })
 }
 
 function byName(a, b) {

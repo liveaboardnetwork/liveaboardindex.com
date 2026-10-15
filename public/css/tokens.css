@@ -1,0 +1,43 @@
+:root {
+  color-scheme: light;
+
+  --color-bg: #ffffff;
+  --color-cream: #faf9f7;
+  --color-surface: #f4f4f4;
+  --color-line: #ededed;
+  --color-line-strong: #d0d5d2;
+  --color-ink: #171a18;
+  --color-ink-hover: #2c302d;
+  --color-text: #454341;
+  --color-muted: #73706c;
+  --color-faint: #a09c97;
+  --color-accent: #1863dc;
+  --color-footer-link: #e5dfd7;
+
+  --badge-blue-bg: #bdd2ec;
+  --badge-blue-fg: #4d5d71;
+  --badge-green-bg: #d4e4d8;
+  --badge-green-fg: #3f5a47;
+  --badge-red-bg: #f0dcd6;
+  --badge-red-fg: #7a4436;
+  --badge-neutral-bg: #edeae6;
+  --badge-neutral-fg: #73706c;
+
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+
+  --container: 1200px;
+  --gutter: 40px;
+  --header-height: 77px;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --gutter: 20px;
+  }
+}
