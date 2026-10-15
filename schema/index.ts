@@ -2,6 +2,7 @@
 // schemas; the TypeScript types and the editor JSON Schemas are derived from them.
 import * as z from 'zod'
 import { COUNTRY_CODES } from './countries.ts'
+import { AMENITIES, CABIN_BATHROOMS, CABIN_DECKS, CABIN_WINDOWS, DINING, DIVE_FACILITIES, ENGINE_MAKES, LANGUAGE_CODES, SAFETY_EQUIPMENT, vocabKeys } from './vocab.ts'
 
 const CROCKFORD = '[0-9a-hjkmnp-tv-z]'
 const CURRENT_YEAR = new Date().getFullYear()
@@ -95,6 +96,52 @@ const ExternalIds = z.strictObject({
 export type ExternalIds = z.infer<typeof ExternalIds>
 export const EXTERNAL_ID_KEYS = ['liveaboard_com'] as const satisfies ReadonlyArray<keyof ExternalIds>
 
+// ---------- facilities & cabins ----------
+
+/** A list of vocabulary keys without duplicates. */
+function vocabList<T extends Record<string, string>>(vocab: T, label: string) {
+  const values = vocabKeys(vocab)
+  return z
+    .array(z.enum(values, { error: `must be one of the ${label} listed in schema/vocab.ts` }))
+    .refine((list) => new Set(list).size === list.length, 'contains duplicates')
+}
+
+export const Engines = z.strictObject({
+  count: z.int().min(1).max(8).nullable(),
+  make: z.enum(vocabKeys(ENGINE_MAKES), { error: 'must be an engine make listed in schema/vocab.ts' }).nullable(),
+  model: Text.nullable(),
+  /** Per engine. */
+  power_hp: z.int().positive().max(20_000).nullable(),
+})
+export type Engines = z.infer<typeof Engines>
+
+export const CabinType = z.strictObject({
+  name: Text,
+  /** How many cabins of this type the boat has. */
+  count: z.int().positive().max(250).nullable(),
+  max_guests: z.int().positive().max(12).nullable(),
+  beds: z
+    .strictObject({
+      single: z.int().min(0).max(12),
+      double: z.int().min(0).max(6),
+      bunk: z.int().min(0).max(6),
+      /** A double that can be split into two singles (or the reverse). */
+      convertible: z.boolean(),
+    })
+    .refine((b) => b.single + b.double + b.bunk > 0, 'needs at least one bed')
+    .nullable(),
+  size_m2: z
+    .strictObject({ min: z.number().positive().max(200), max: z.number().positive().max(200) })
+    .refine((s) => s.min <= s.max, { message: 'min must not be above max', path: ['min'] })
+    .nullable(),
+  deck: z.enum(vocabKeys(CABIN_DECKS)).nullable(),
+  window: z.enum(vocabKeys(CABIN_WINDOWS)).nullable(),
+  bathroom: z.enum(vocabKeys(CABIN_BATHROOMS)).nullable(),
+  aircon: z.boolean().nullable(),
+  external_ids: ExternalIds,
+})
+export type CabinType = z.infer<typeof CabinType>
+
 // ---------- names ----------
 
 export const NameEntry = z
@@ -131,6 +178,22 @@ export const VesselShape = z.strictObject({
   refit_year: z.int().min(1850).max(CURRENT_YEAR + 1).nullable(),
   guests: z.int().positive().max(500).nullable(),
   cabins: z.int().positive().max(250).nullable(),
+  bathrooms: z.int().positive().max(250).nullable(),
+  max_speed_kn: z.number().positive().max(60).nullable(),
+  cruising_speed_kn: z.number().positive().max(60).nullable(),
+  engines: Engines.nullable(),
+  tenders: z.int().min(0).max(12).nullable(),
+  fuel_l: z.int().positive().max(2_000_000).nullable(),
+  water_l: z.int().positive().max(2_000_000).nullable(),
+  watermaker_lpd: z.int().positive().max(1_000_000).nullable(),
+  cabin_types: z.array(CabinType),
+  amenities: vocabList(AMENITIES, 'amenities'),
+  dive_facilities: vocabList(DIVE_FACILITIES, 'dive facilities'),
+  safety: vocabList(SAFETY_EQUIPMENT, 'safety items'),
+  dining: vocabList(DINING, 'dining options'),
+  languages: z
+    .array(z.enum(LANGUAGE_CODES, { error: 'must be an ISO 639-1 language code, e.g. en' }))
+    .refine((list) => new Set(list).size === list.length, 'contains duplicates'),
   operator: OperatorId.nullable(),
   region: RegionId.nullable(),
   status: VesselStatus,
@@ -141,6 +204,21 @@ export const VesselShape = z.strictObject({
 })
 
 export const Vessel = VesselShape.superRefine((v, ctx) => {
+  if (v.cruising_speed_kn !== null && v.max_speed_kn !== null && v.cruising_speed_kn > v.max_speed_kn) {
+    ctx.addIssue({ code: 'custom', path: ['cruising_speed_kn'], message: 'cannot be above max_speed_kn' })
+  }
+  const names = v.cabin_types.map((c) => c.name)
+  if (new Set(names).size !== names.length) {
+    ctx.addIssue({ code: 'custom', path: ['cabin_types'], message: 'cabin type names must be unique' })
+  }
+  const counts = v.cabin_types.map((c) => c.count)
+  const total = counts.reduce<number>((sum, n) => sum + (n ?? 0), 0)
+  if (v.cabins !== null && total > v.cabins) {
+    ctx.addIssue({ code: 'custom', path: ['cabin_types'], message: `cabin type counts add up to ${total}, more than cabins (${v.cabins})` })
+  }
+  if (v.cabins !== null && counts.length > 0 && counts.every((n) => n !== null) && total !== v.cabins) {
+    ctx.addIssue({ code: 'custom', path: ['cabin_types'], message: `cabin type counts add up to ${total}, but cabins is ${v.cabins}` })
+  }
   if (v.loa_m !== null && v.beam_m !== null && v.beam_m >= v.loa_m) {
     ctx.addIssue({ code: 'custom', path: ['beam_m'], message: 'must be smaller than loa_m' })
   }

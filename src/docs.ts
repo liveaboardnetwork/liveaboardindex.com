@@ -1,5 +1,6 @@
 import type { Region } from '../schema/index.ts'
 import { HULL_MATERIALS, OPERATOR_STATUSES, PROPULSIONS, VESSEL_STATUSES } from '../schema/index.ts'
+import { AMENITIES, CABIN_BATHROOMS, CABIN_DECKS, CABIN_WINDOWS, DINING, DIVE_FACILITIES, ENGINE_MAKES, SAFETY_EQUIPMENT } from '../schema/vocab.ts'
 import { API_BASE } from './api.ts'
 import type { CompactOperator, CompactVessel, PublicOperator, PublicVessel } from './api.ts'
 import { Badge, CodeBlock, CodeBlockScript, DataTable, DocsLayout, Layout, PageHero, esc } from './components/index.ts'
@@ -37,6 +38,23 @@ const VESSEL_FIELDS = {
   refit_year: { type: 'number | null', description: 'Year of the last major refit.' },
   guests: { type: 'number | null', description: 'Maximum guests.' },
   cabins: { type: 'number | null', description: 'Guest cabins.' },
+  bathrooms: { type: 'number | null', description: 'Number of bathrooms.' },
+  cabin_types: {
+    type: 'array',
+    description: `Cabin types: ${code('{ name, count, max_guests, beds, size_m2, deck, window, bathroom, aircon, external_ids }')}. ${code('beds')} is ${code('{ single, double, bunk, convertible }')}; ${code('size_m2')} is ${code('{ min, max }')}. Deck: ${list(Object.keys(CABIN_DECKS))}. Window: ${list(Object.keys(CABIN_WINDOWS))}. Bathroom: ${list(Object.keys(CABIN_BATHROOMS))}. ${code('count')} is the number of cabins of that type, when known.`,
+  },
+  amenities: { type: 'string[]', description: `On-board amenities: ${list(Object.keys(AMENITIES))}.` },
+  dive_facilities: { type: 'string[]', description: `Diving setup: ${list(Object.keys(DIVE_FACILITIES))}.` },
+  safety: { type: 'string[]', description: `Navigation and safety equipment: ${list(Object.keys(SAFETY_EQUIPMENT))}.` },
+  dining: { type: 'string[]', description: `Food and drink: ${list(Object.keys(DINING))}.` },
+  languages: { type: 'string[]', description: 'Languages the crew speaks, ISO 639-1 (e.g. en, es).' },
+  max_speed_kn: { type: 'number | null', description: 'Top speed, knots.' },
+  cruising_speed_kn: { type: 'number | null', description: 'Cruising speed, knots.' },
+  engines: { type: 'object | null', description: `${code('{ count, make, model, power_hp }')}, ${code('power_hp')} per engine. Makes: ${list(Object.keys(ENGINE_MAKES))}.` },
+  tenders: { type: 'number | null', description: 'Number of tenders (dinghies / skiffs).' },
+  fuel_l: { type: 'number | null', description: 'Fuel capacity, liters.' },
+  water_l: { type: 'number | null', description: 'Fresh water capacity, liters.' },
+  watermaker_lpd: { type: 'number | null', description: 'Watermaker output, liters per day.' },
   loa_m: { type: 'number | null', description: 'Length overall, meters.' },
   beam_m: { type: 'number | null', description: 'Beam, meters.' },
   gt: { type: 'number | null', description: 'Gross tonnage.' },

@@ -13,6 +13,8 @@ import type { OperatorId, RegionId, VesselId } from '../../schema/index.ts'
 import { root, slugify } from '../../scripts/data.ts'
 import { newOperatorId, newVesselId } from '../../scripts/ids.ts'
 import { emptyOperator, emptyVessel, operatorYaml, vesselYaml } from '../../scripts/records.ts'
+import { AMENITIES, DINING, DIVE_FACILITIES, SAFETY_EQUIPMENT, vocabKeys } from '../../schema/vocab.ts'
+import { UnknownLabels, vesselFacts } from './map.ts'
 import { LiveaboardBoat } from './parse.ts'
 
 const { values: args } = parseArgs({
@@ -40,6 +42,14 @@ async function loadAll<T>(dir: string, parse: (raw: Record<string, unknown>) => 
 const vessels = await loadAll('vessels', (raw) => Vessel.parse({ ...emptyVessel(raw['id'] as VesselId, ''), ...raw }))
 const operators = await loadAll('operators', (raw) => Operator.parse({ ...emptyOperator(raw['id'] as OperatorId, ''), ...raw }))
 const regionIds = new Set<string>(Regions.parse(YAML.parse(await readFile(path.join(root, 'data/regions.yaml'), 'utf8'))).map((r) => r.id))
+
+const unknown = new UnknownLabels()
+const VOCAB_ORDER = {
+  amenities: vocabKeys(AMENITIES),
+  dive: vocabKeys(DIVE_FACILITIES),
+  safety: vocabKeys(SAFETY_EQUIPMENT),
+  dining: vocabKeys(DINING),
+}
 
 const currentName = (names: Array<{ name: string; to: unknown }>) => (names.find((n) => n.to === null) ?? names.at(-1))?.name ?? ''
 const changed = new Set<string>()
@@ -93,6 +103,13 @@ for (const boat of scraped) {
   fill(candidate, 'guests', boat.max_guests)
   fill(candidate, 'cabins', boat.cabins)
   fill(candidate.built, 'year', boat.year_built)
+  const facts = vesselFacts(boat, VOCAB_ORDER, unknown)
+  for (const key of ['bathrooms', 'max_speed_kn', 'cruising_speed_kn', 'engines', 'tenders', 'fuel_l', 'water_l', 'watermaker_lpd'] as const) {
+    fill(candidate, key, facts[key])
+  }
+  for (const key of ['cabin_types', 'amenities', 'dive_facilities', 'safety', 'dining', 'languages'] as const) {
+    if (candidate[key].length === 0) (candidate[key] as unknown[]) = facts[key]
+  }
   if (candidate.external_ids.liveaboard_com === null) candidate.external_ids.liveaboard_com = boat.liveaboard_boat_id
   if (!candidate.sources.includes(boat.url)) candidate.sources.push(boat.url)
   if (candidate.operator === null && boat.operator) {
@@ -112,6 +129,12 @@ for (const boat of scraped) {
 }
 
 console.log(log.join('\n'))
+const unmapped = unknown.report()
+if (unmapped.length) {
+  console.error(`\nUnmapped liveaboard.com labels (add them to tools/liveaboard/map.ts, as a vocabulary key or null):\n  - ${unmapped.join('\n  - ')}`)
+  console.error('Nothing was written.')
+  process.exit(1)
+}
 if (dryRun) {
   console.log(`\nDry run: ${changed.size} files would be written.`)
   process.exit(0)

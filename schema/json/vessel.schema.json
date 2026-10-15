@@ -478,6 +478,650 @@
         }
       ]
     },
+    "bathrooms": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 250
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "max_speed_kn": {
+      "anyOf": [
+        {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 60
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "cruising_speed_kn": {
+      "anyOf": [
+        {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 60
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "engines": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "count": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 8
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "make": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "caterpillar",
+                    "cummins",
+                    "detroit_diesel",
+                    "deutz",
+                    "john_deere",
+                    "man",
+                    "mitsubishi",
+                    "mtu",
+                    "mwm",
+                    "perkins",
+                    "scania",
+                    "volvo_penta",
+                    "yanmar"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "model": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^\\S(.*\\S)?$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "power_hp": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "exclusiveMinimum": 0,
+                  "maximum": 20000
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "count",
+            "make",
+            "model",
+            "power_hp"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "tenders": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 12
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "fuel_l": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 2000000
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "water_l": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 2000000
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "watermaker_lpd": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 1000000
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "cabin_types": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^\\S(.*\\S)?$"
+          },
+          "count": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "exclusiveMinimum": 0,
+                "maximum": 250
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "max_guests": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "exclusiveMinimum": 0,
+                "maximum": 12
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "beds": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "single": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 12
+                  },
+                  "double": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 6
+                  },
+                  "bunk": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 6
+                  },
+                  "convertible": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "single",
+                  "double",
+                  "bunk",
+                  "convertible"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "size_m2": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "min": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 200
+                  },
+                  "max": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 200
+                  }
+                },
+                "required": [
+                  "min",
+                  "max"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "deck": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "lower",
+                  "main",
+                  "upper",
+                  "sun",
+                  "across"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "window": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "none",
+                  "porthole",
+                  "standard",
+                  "picture",
+                  "panoramic"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "bathroom": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "ensuite",
+                  "shared"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "aircon": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "external_ids": {
+            "type": "object",
+            "properties": {
+              "liveaboard_com": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "liveaboard_com"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "name",
+          "count",
+          "max_guests",
+          "beds",
+          "size_m2",
+          "deck",
+          "window",
+          "bathroom",
+          "aircon",
+          "external_ids"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "amenities": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "ensuite_bathrooms",
+          "aircon_cabins",
+          "seaview_cabins",
+          "family_cabins",
+          "non_smoking_cabins",
+          "tv_in_cabins",
+          "hot_showers",
+          "outside_showers",
+          "indoor_saloon",
+          "aircon_saloon",
+          "outdoor_dining",
+          "bar",
+          "bbq",
+          "sun_deck",
+          "observation_deck",
+          "leisure_deck",
+          "jacuzzi",
+          "library",
+          "entertainment",
+          "internet",
+          "charging_stations",
+          "camera_station",
+          "camera_rinse",
+          "laundry",
+          "housekeeping",
+          "kayaks",
+          "snorkeling_gear",
+          "naturalist_guide",
+          "non_diver_friendly",
+          "purpose_built_dive",
+          "private_charter"
+        ]
+      }
+    },
+    "dive_facilities": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "dive_deck",
+          "shaded_dive_area",
+          "dive_tenders",
+          "rinse_hoses",
+          "nitrox",
+          "din_adaptors",
+          "sidemount",
+          "tech_diving",
+          "gear_rental"
+        ]
+      }
+    },
+    "safety": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "radar",
+          "gps",
+          "vhf_dsc_ssb",
+          "satellite_phone",
+          "depth_sounder",
+          "fishfinder",
+          "searchlight",
+          "epirb",
+          "flares",
+          "life_rafts",
+          "life_vests",
+          "fire_suppression",
+          "bilge_alarm",
+          "engine_room_cctv",
+          "oxygen",
+          "first_aid_kit",
+          "crew_first_aid"
+        ]
+      }
+    },
+    "dining": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "local_food",
+          "western_food",
+          "vegetarian",
+          "vegan",
+          "buffet",
+          "set_menu",
+          "snacks",
+          "beer",
+          "wine"
+        ]
+      }
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "aa",
+          "ab",
+          "ae",
+          "af",
+          "ak",
+          "am",
+          "an",
+          "ar",
+          "as",
+          "av",
+          "ay",
+          "az",
+          "ba",
+          "be",
+          "bg",
+          "bi",
+          "bm",
+          "bn",
+          "bo",
+          "br",
+          "bs",
+          "ca",
+          "ce",
+          "ch",
+          "co",
+          "cr",
+          "cs",
+          "cu",
+          "cv",
+          "cy",
+          "da",
+          "de",
+          "dv",
+          "dz",
+          "ee",
+          "el",
+          "en",
+          "eo",
+          "es",
+          "et",
+          "eu",
+          "fa",
+          "ff",
+          "fi",
+          "fj",
+          "fo",
+          "fr",
+          "fy",
+          "ga",
+          "gd",
+          "gl",
+          "gn",
+          "gu",
+          "gv",
+          "ha",
+          "he",
+          "hi",
+          "ho",
+          "hr",
+          "ht",
+          "hu",
+          "hy",
+          "hz",
+          "ia",
+          "id",
+          "ie",
+          "ig",
+          "ii",
+          "ik",
+          "io",
+          "is",
+          "it",
+          "iu",
+          "ja",
+          "jv",
+          "ka",
+          "kg",
+          "ki",
+          "kj",
+          "kk",
+          "kl",
+          "km",
+          "kn",
+          "ko",
+          "kr",
+          "ks",
+          "ku",
+          "kv",
+          "kw",
+          "ky",
+          "la",
+          "lb",
+          "lg",
+          "li",
+          "ln",
+          "lo",
+          "lt",
+          "lu",
+          "lv",
+          "mg",
+          "mh",
+          "mi",
+          "mk",
+          "ml",
+          "mn",
+          "mr",
+          "ms",
+          "mt",
+          "my",
+          "na",
+          "nb",
+          "nd",
+          "ne",
+          "ng",
+          "nl",
+          "nn",
+          "no",
+          "nr",
+          "nv",
+          "ny",
+          "oc",
+          "oj",
+          "om",
+          "or",
+          "os",
+          "pa",
+          "pi",
+          "pl",
+          "ps",
+          "pt",
+          "qu",
+          "rm",
+          "rn",
+          "ro",
+          "ru",
+          "rw",
+          "sa",
+          "sc",
+          "sd",
+          "se",
+          "sg",
+          "si",
+          "sk",
+          "sl",
+          "sm",
+          "sn",
+          "so",
+          "sq",
+          "sr",
+          "ss",
+          "st",
+          "su",
+          "sv",
+          "sw",
+          "ta",
+          "te",
+          "tg",
+          "th",
+          "ti",
+          "tk",
+          "tl",
+          "tn",
+          "to",
+          "tr",
+          "ts",
+          "tt",
+          "tw",
+          "ty",
+          "ug",
+          "uk",
+          "ur",
+          "uz",
+          "ve",
+          "vi",
+          "vo",
+          "wa",
+          "wo",
+          "xh",
+          "yi",
+          "yo",
+          "za",
+          "zh",
+          "zu"
+        ]
+      }
+    },
     "operator": {
       "anyOf": [
         {
@@ -578,6 +1222,20 @@
     "refit_year",
     "guests",
     "cabins",
+    "bathrooms",
+    "max_speed_kn",
+    "cruising_speed_kn",
+    "engines",
+    "tenders",
+    "fuel_l",
+    "water_l",
+    "watermaker_lpd",
+    "cabin_types",
+    "amenities",
+    "dive_facilities",
+    "safety",
+    "dining",
+    "languages",
     "operator",
     "region",
     "status",

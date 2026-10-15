@@ -1,6 +1,6 @@
 // Serializes records to the canonical YAML layout of data/, so hand edits, `npm run new`
 // and importers all produce the same diff-friendly files.
-import type { NameEntry, Operator, OperatorId, Vessel, VesselId } from '../schema/index.ts'
+import type { CabinType, NameEntry, Operator, OperatorId, Vessel, VesselId } from '../schema/index.ts'
 
 const RESERVED = /^(null|true|false|yes|no|on|off|~)$/i
 
@@ -20,6 +20,34 @@ function sources(list: string[]): string {
   return list.length ? `\n${list.map((s) => `  - ${s}`).join('\n')}` : ' []'
 }
 
+function flow(obj: Record<string, string | number | boolean | null>): string {
+  return `{ ${Object.entries(obj)
+    .map(([k, v]) => `${k}: ${scalar(v)}`)
+    .join(', ')} }`
+}
+
+function inlineList(list: readonly string[]): string {
+  return `[${list.join(', ')}]`
+}
+
+function cabinTypes(list: CabinType[]): string {
+  if (!list.length) return ' []'
+  return `\n${list
+    .map(
+      (c) => `  - name: ${scalar(c.name)}
+    count: ${scalar(c.count)}
+    max_guests: ${scalar(c.max_guests)}
+    beds: ${c.beds ? flow(c.beds) : 'null'}
+    size_m2: ${c.size_m2 ? flow(c.size_m2) : 'null'}
+    deck: ${scalar(c.deck)}
+    window: ${scalar(c.window)}
+    bathroom: ${scalar(c.bathroom)}
+    aircon: ${scalar(c.aircon)}
+    external_ids: ${flow(c.external_ids)}`,
+    )
+    .join('\n')}`
+}
+
 export function vesselYaml(v: Vessel): string {
   return `# yaml-language-server: $schema=../../schema/json/vessel.schema.json
 id: ${v.id}
@@ -37,6 +65,21 @@ gt: ${scalar(v.gt)}
 refit_year: ${scalar(v.refit_year)}
 guests: ${scalar(v.guests)}
 cabins: ${scalar(v.cabins)}
+bathrooms: ${scalar(v.bathrooms)}
+max_speed_kn: ${scalar(v.max_speed_kn)}
+cruising_speed_kn: ${scalar(v.cruising_speed_kn)}
+engines: ${v.engines ? flow(v.engines) : 'null'}   # power_hp is per engine
+tenders: ${scalar(v.tenders)}
+fuel_l: ${scalar(v.fuel_l)}
+water_l: ${scalar(v.water_l)}
+watermaker_lpd: ${scalar(v.watermaker_lpd)}   # liters per day
+cabin_types:${cabinTypes(v.cabin_types)}
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: ${inlineList(v.amenities)}
+dive_facilities: ${inlineList(v.dive_facilities)}
+safety: ${inlineList(v.safety)}
+dining: ${inlineList(v.dining)}
+languages: ${inlineList(v.languages)}   # ISO 639-1, e.g. en, es
 operator: ${scalar(v.operator)}            # op_xxxx from data/operators
 region: ${scalar(v.region)}              # id from data/regions.yaml
 status: ${v.status}            # active | retired | lost | merged
@@ -78,6 +121,20 @@ export function emptyVessel(id: VesselId, name: string): Vessel {
     refit_year: null,
     guests: null,
     cabins: null,
+    bathrooms: null,
+    max_speed_kn: null,
+    cruising_speed_kn: null,
+    engines: null,
+    tenders: null,
+    fuel_l: null,
+    water_l: null,
+    watermaker_lpd: null,
+    cabin_types: [],
+    amenities: [],
+    dive_facilities: [],
+    safety: [],
+    dining: [],
+    languages: [],
     operator: null,
     region: null,
     status: 'active',

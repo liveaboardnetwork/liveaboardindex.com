@@ -14,6 +14,41 @@ gt: null
 refit_year: null
 guests: 16
 cabins: 8
+bathrooms: 8
+max_speed_kn: 10
+cruising_speed_kn: null
+engines: { count: null, make: detroit_diesel, model: "6V92", power_hp: 350 }   # power_hp is per engine
+tenders: 2
+fuel_l: 20063
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Main Deck Staterooms
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: main
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 5974 }
+  - name: Lower Deck Staterooms
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11056 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, tv_in_cabins, hot_showers, indoor_saloon, aircon_saloon, bar, sun_deck, jacuzzi, library, entertainment, internet, charging_stations, camera_station, camera_rinse, snorkeling_gear, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, nitrox, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, depth_sounder, life_rafts, life_vests, oxygen, first_aid_kit]
+dining: [local_food, set_menu, snacks, beer, wine]
+languages: [en, es]   # ISO 639-1, e.g. en, es
 operator: op_98r4            # op_xxxx from data/operators
 region: galapagos              # id from data/regions.yaml
 status: active            # active | retired | lost | merged

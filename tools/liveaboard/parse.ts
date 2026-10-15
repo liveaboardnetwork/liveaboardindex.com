@@ -14,6 +14,17 @@ export const Departure = z.object({
 })
 export type Departure = z.infer<typeof Departure>
 
+export const LiveaboardCabin = z.object({
+  liveaboard_cabin_id: z.int(),
+  name: z.string(),
+  /** Icon-list facts, e.g. "2 Single beds", "11.0 - 13.0 m²", "Ensuite Bathroom", "Max 2 guests". */
+  facts: z.array(z.string()),
+  description: z.string().nullable(),
+  /** The <dl> pairs, e.g. { "Deck level of cabin": "Lower deck", "Cabin window(s)": "Porthole window" }. */
+  details: z.record(z.string(), z.string()),
+})
+export type LiveaboardCabin = z.infer<typeof LiveaboardCabin>
+
 export const LiveaboardBoat = z.object({
   url: z.url(),
   region_slug: z.string(),
@@ -45,6 +56,13 @@ export const LiveaboardBoat = z.object({
   freshwater_maker: z.boolean().nullable(),
   specs_raw: z.record(z.string(), z.string()),
   features: z.array(z.object({ id: z.int(), label: z.string() })),
+  boat_features: z.array(z.string()),
+  food_drinks: z.array(z.string()),
+  diving: z.array(z.string()),
+  navigation_safety: z.array(z.string()),
+  languages_raw: z.string().nullable(),
+  gear_rental: z.boolean(),
+  cabin_types: z.array(LiveaboardCabin),
   departures: z.array(Departure),
 })
 export type LiveaboardBoat = z.infer<typeof LiveaboardBoat>
@@ -112,6 +130,45 @@ function features(html: string): Array<{ id: number; label: string }> {
     if (!seen.has(id)) seen.set(id, text(m[2] ?? ''))
   }
   return [...seen].map(([id, label]) => ({ id, label }))
+}
+
+const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+// An opening tag whose quoted attributes may contain ">" (their Tailwind classes do: [&>*]:mx-3).
+const OPEN = (tag: string) => `<${tag}(?:"[^"]*"|'[^']*'|[^>"'])*>`
+
+// Section lists: <h3 class=h3>Diving</h3> <ul class="tick-list ..."><li>Nitrox available <li>...</ul>
+function sectionList(html: string, title: string): string[] {
+  const m = html.match(new RegExp(`<h3[^>]*>\\s*${escapeRe(title)}\\s*</h3>\\s*${OPEN('ul')}([\\s\\S]*?)</ul>`))
+  if (!m) return []
+  return (m[1] ?? '')
+    .split(/<li[^>]*>/)
+    .map(text)
+    .filter(Boolean)
+}
+
+function sectionParagraph(html: string, title: string): string | null {
+  const m = html.match(new RegExp(`<h3[^>]*>\\s*${escapeRe(title)}\\s*</h3>\\s*<p[^>]*>([\\s\\S]*?)(?:</p>|</div>)`))
+  return m ? text(m[1] ?? '') || null : null
+}
+
+// Cabin modals: <div id=help-content-cabin-details-9274 data-element=modal> … <h5>Name</h5> <ul><li><span>fact</span>…</ul>
+// </div> <div>description</div> <hr> <div><dl><dt>Label <dd>Value</dl>…
+function cabinTypes(html: string): LiveaboardCabin[] {
+  const clean = html.replace(/<svg[\s\S]*?<\/svg>/g, '')
+  const starts = [...clean.matchAll(/id="?help-content-cabin-details-(\d+)"? data-element=modal/g)]
+  return starts.flatMap((m, i) => {
+    const next = starts[i + 1]?.index ?? clean.length
+    const footer = clean.indexOf('Cabin is selected on the next step', m.index)
+    const block = clean.slice(m.index, footer !== -1 && footer < next ? footer : Math.min(next, m.index + 20_000))
+    const name = block.match(/<h5[^>]*>([\s\S]*?)<\/h5>/)
+    if (!name) return []
+    const list = block.match(/<\/h5>\s*<ul[^>]*>([\s\S]*?)<\/ul>/)?.[1] ?? ''
+    const facts = [...list.matchAll(/<span[^>]*>([\s\S]*?)<\/span>/g)].map((s) => text(s[1] ?? '')).filter(Boolean)
+    const description = block.match(/<\/ul>\s*<\/div>\s*<div[^>]*>([\s\S]*?)<\/div>\s*<hr/)?.[1]
+    const details: Record<string, string> = {}
+    for (const d of block.matchAll(/<dl[^>]*>\s*<dt[^>]*>([\s\S]*?)<dd[^>]*>([\s\S]*?)<\/dl>/g)) details[text(d[1] ?? '')] = text(d[2] ?? '')
+    return [{ liveaboard_cabin_id: Number(m[1]), name: text(name[1] ?? ''), facts, description: description ? text(description) || null : null, details }]
+  })
 }
 
 function num(value: string | undefined): number | null {
@@ -199,6 +256,13 @@ export function parseBoatPage(url: string, html: string): LiveaboardBoat | null 
     freshwater_maker: s['Freshwater maker'] === undefined ? null : s['Freshwater maker'].toLowerCase() === 'yes',
     specs_raw: s,
     features: features(html),
+    boat_features: sectionList(html, 'Boat features'),
+    food_drinks: sectionList(html, 'Food &amp; Drinks'),
+    diving: sectionList(html, 'Diving'),
+    navigation_safety: sectionList(html, 'Boat navigation and safety'),
+    languages_raw: sectionParagraph(html, 'Languages Spoken'),
+    gear_rental: /<h3[^>]*>\s*Gear Rental\s*<\/h3>/.test(html),
+    cabin_types: cabinTypes(html),
     departures,
   })
 }

@@ -1,6 +1,8 @@
 import type { Dataset, OperatorRecord, VesselRecord } from '../schema/dataset.ts'
 import type { CountryCode, Hull, NameEntry, OperatorId, OperatorStatus, Region, RegionId, VesselStatus } from '../schema/index.ts'
-import { Badge, DataTable, FactList, FilterInput, IndexList, Layout, PageHero, Section, esc } from './components/index.ts'
+import type { CabinType, Engines } from '../schema/index.ts'
+import { AMENITIES, CABIN_BATHROOMS, CABIN_DECKS, CABIN_WINDOWS, DINING, DIVE_FACILITIES, ENGINE_MAKES, SAFETY_EQUIPMENT } from '../schema/vocab.ts'
+import { Badge, DataTable, FactList, FilterInput, IndexList, Layout, PageHero, Panel, PanelGrid, Section, TagList, esc } from './components/index.ts'
 import type { BadgeTone, Html } from './components/index.ts'
 import { asset } from './assets.ts'
 import { site } from './site.ts'
@@ -142,28 +144,114 @@ export function vesselPage(data: Dataset, v: VesselRecord): Html {
         actions: [{ label: 'JSON', href: `/api/v1/boats/${v.id}.json`, variant: 'secondary' }],
       }),
       Section({
-        content: FactList([
-          ['Status', statusBadge(v.status)],
-          ['Names', namesList(v.names)],
-          ['Region', regionLink(data, v.region)],
-          ['Operator', operatorLink(data, v.operator)],
-          ['Hull', val(hullLabel(v.hull))],
-          ['Built', v.built.year !== null || v.built.yard !== null ? `${val(v.built.year)} · ${val(v.built.yard)}` : dash],
-          ['Last refit', val(v.refit_year)],
-          ['Guests', val(v.guests)],
-          ['Cabins', val(v.cabins)],
-          ['IMO', val(v.imo)],
-          ['MMSI', val(v.mmsi)],
-          ['Call sign', val(v.call_sign)],
-          ['Flag', country(v.flag)],
-          ['Length (LOA)', val(v.loa_m, ' m')],
-          ['Beam', val(v.beam_m, ' m')],
-          ['Gross tonnage', val(v.gt)],
-          ['Sources', sourcesList(v.sources)],
-          ...(v.notes ? [['Notes', esc(v.notes)] as const] : []),
-        ]),
+        content: [
+          PanelGrid([
+            Panel({
+              title: 'Identity',
+              content: FactList([
+                ['Status', statusBadge(v.status)],
+                ['Names', namesList(v.names)],
+                ['Operator', operatorLink(data, v.operator)],
+                ['Region', regionLink(data, v.region)],
+                ['Flag', country(v.flag)],
+                ['IMO', val(v.imo)],
+                ['MMSI', val(v.mmsi)],
+                ['Call sign', val(v.call_sign)],
+              ]),
+            }),
+            Panel({
+              title: 'Build & dimensions',
+              content: FactList([
+                ['Hull', val(hullLabel(v.hull))],
+                ['Built', v.built.year !== null || v.built.yard !== null ? `${val(v.built.year)} · ${val(v.built.yard)}` : dash],
+                ['Last refit', val(v.refit_year)],
+                ['Length (LOA)', val(v.loa_m, ' m')],
+                ['Beam', val(v.beam_m, ' m')],
+                ['Gross tonnage', val(v.gt)],
+              ]),
+            }),
+            Panel({
+              title: 'Machinery',
+              content: FactList([
+                ['Engines', enginesText(v.engines)],
+                ['Top speed', val(v.max_speed_kn, ' kn')],
+                ['Cruising speed', val(v.cruising_speed_kn, ' kn')],
+                ['Tenders', val(v.tenders)],
+                ['Fuel', volume(v.fuel_l)],
+                ['Fresh water', volume(v.water_l)],
+                ['Watermaker', v.watermaker_lpd === null ? dash : `${volume(v.watermaker_lpd)} / day`],
+              ]),
+            }),
+            Panel({
+              title: 'Accommodation',
+              content: FactList([
+                ['Guests', val(v.guests)],
+                ['Cabins', val(v.cabins)],
+                ['Bathrooms', val(v.bathrooms)],
+                ['Crew languages', v.languages.length ? esc(v.languages.map((l) => languageNames.of(l) ?? l).join(', ')) : dash],
+              ]),
+            }),
+          ]),
+          Panel({ title: 'Cabin types', meta: v.cabin_types.length ? String(v.cabin_types.length) : '', content: cabinTable(v.cabin_types) }),
+          PanelGrid([
+            Panel({ title: 'On board', content: TagList(v.amenities.map((k) => AMENITIES[k])) }),
+            Panel({ title: 'Diving', content: TagList(v.dive_facilities.map((k) => DIVE_FACILITIES[k])) }),
+            Panel({ title: 'Navigation & safety', content: TagList(v.safety.map((k) => SAFETY_EQUIPMENT[k])) }),
+            Panel({ title: 'Food & drink', content: TagList(v.dining.map((k) => DINING[k])) }),
+          ]),
+          Panel({
+            title: 'Sources',
+            content: FactList([['Checked against', sourcesList(v.sources)], ...(v.notes ? [['Notes', esc(v.notes)] as const] : [])]),
+          }),
+        ].join('\n'),
       }),
     ].join('\n'),
+  })
+}
+
+const languageNames = new Intl.DisplayNames(['en'], { type: 'language' })
+const numberFormat = new Intl.NumberFormat('en')
+
+function volume(liters: number | null): Html {
+  return liters === null ? dash : `${numberFormat.format(liters)} L`
+}
+
+function enginesText(e: Engines | null): Html {
+  if (!e) return dash
+  const name = [e.make && ENGINE_MAKES[e.make], e.model].filter(Boolean).join(' ')
+  const head = [e.count !== null ? `${e.count} ×` : '', name].filter(Boolean).join(' ')
+  const power = e.power_hp !== null ? `${numberFormat.format(e.power_hp)} hp${e.count !== null && e.count > 1 ? ' each' : ''}` : ''
+  return esc([head, power].filter(Boolean).join(', ') || '—')
+}
+
+function bedsText(beds: CabinType['beds']): string {
+  if (!beds) return '—'
+  const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`
+  const parts = [beds.double && plural(beds.double, 'double'), beds.single && plural(beds.single, 'single'), beds.bunk && plural(beds.bunk, 'bunk')].filter(Boolean)
+  return `${parts.join(' + ')}${beds.convertible ? ' (convertible to twin)' : ''}`
+}
+
+function sizeText(size: CabinType['size_m2']): string {
+  if (!size) return '—'
+  return size.min === size.max ? `${size.min} m²` : `${size.min}–${size.max} m²`
+}
+
+function cabinTable(cabins: CabinType[]): Html {
+  const text = (s: string | null | undefined) => (s ? esc(s) : dash)
+  return DataTable<CabinType>({
+    rows: cabins,
+    empty: 'No cabin types recorded yet.',
+    columns: [
+      { label: 'Type', cell: (c) => `<span class="strong">${esc(c.name)}</span>` },
+      { label: 'Count', align: 'num', cell: (c) => val(c.count) },
+      { label: 'Beds', cell: (c) => text(bedsText(c.beds)) },
+      { label: 'Guests', align: 'num', cell: (c) => val(c.max_guests) },
+      { label: 'Size', align: 'num', cell: (c) => text(sizeText(c.size_m2)) },
+      { label: 'Deck', cell: (c) => text(c.deck && CABIN_DECKS[c.deck]) },
+      { label: 'Window', cell: (c) => text(c.window && CABIN_WINDOWS[c.window]) },
+      { label: 'Bathroom', cell: (c) => text(c.bathroom && CABIN_BATHROOMS[c.bathroom]) },
+      { label: 'A/C', cell: (c) => (c.aircon === null ? dash : c.aircon ? 'Yes' : 'No') },
+    ],
   })
 }
 
