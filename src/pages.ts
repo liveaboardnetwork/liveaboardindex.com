@@ -250,7 +250,7 @@ export function homePage(): Html {
     lead: esc(`${site.tagline.lead} ${site.tagline.rest}`),
     actions: [
       { label: 'Browse boats', href: '/boats/', variant: 'primary' },
-      { label: 'API', href: '/api/v1/boats.json', variant: 'secondary' },
+      { label: 'API docs', href: '/docs/', variant: 'secondary' },
     ],
   })
 }

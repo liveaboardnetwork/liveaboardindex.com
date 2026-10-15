@@ -35,7 +35,7 @@ export const site: SiteConfig = {
     { label: 'Regions', href: '/regions/' },
     { label: 'Operators', href: '/operators/' },
   ],
-  actions: [{ label: 'API', href: '/api/v1/boats.json', variant: 'secondary' }],
+  actions: [{ label: 'API', href: '/docs/', variant: 'secondary' }],
   footer: [
     {
       title: 'Index',
@@ -48,8 +48,9 @@ export const site: SiteConfig = {
     {
       title: 'API',
       links: [
+        { label: 'Docs', href: '/docs/' },
+        { label: 'Quick start', href: '/docs/#quick-start' },
         { label: 'boats.json', href: '/api/v1/boats.json' },
-        { label: 'regions.json', href: '/api/v1/regions.json' },
       ],
     },
   ],

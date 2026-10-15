@@ -12,6 +12,8 @@ import {
   regionIndexPage,
   vesselPage,
 } from '../src/pages.ts'
+import { compactOperator, compactVessel, publicRecord } from '../src/api.ts'
+import { apiDocsPage } from '../src/docs.ts'
 import { loadDataset, root, slugify } from './data.ts'
 import type { OperatorRecord, VesselRecord } from './data.ts'
 
@@ -52,31 +54,11 @@ async function emitAliases(section: 'boats' | 'operators', record: VesselRecord 
   for (const slug of slugs) await emit(`${section}/${record.id}/${slug}.html`, redirectPage(record.url))
 }
 
-function publicRecord<T extends { file: string; slug: string }>(record: T): Omit<T, 'file' | 'slug'> {
-  const { file: _file, slug: _slug, ...rest } = record
-  return rest
-}
-
-function compactVessel(v: VesselRecord) {
-  return {
-    id: v.id,
-    name: v.name,
-    url: v.url,
-    imo: v.imo,
-    mmsi: v.mmsi,
-    flag: v.flag,
-    region: v.region,
-    operator: v.operator,
-    hull: v.hull,
-    loa_m: v.loa_m,
-    guests: v.guests,
-    cabins: v.cabins,
-    status: v.status,
-  }
-}
+const fleetSize = (o: OperatorRecord) => liveVessels.filter((v) => v.operator === o.id).length
 
 // API
 await emitJson('api/v1/boats.json', liveVessels.map(compactVessel))
+await emitJson('api/v1/operators.json', liveOperators.map((o) => compactOperator(o, fleetSize(o))))
 for (const v of data.vessels) {
   await emitJson(`api/v1/boats/${v.id}.json`, publicRecord(v), 2)
   if (v.status === 'merged') continue
@@ -109,6 +91,21 @@ await emit('operators/index.html', operatorIndexPage(liveOperators, liveVessels)
 for (const o of data.operators) {
   if (o.status !== 'merged') await emit(`operators/${o.id}/${o.slug}.html`, operatorPage(data, o, liveVessels.filter((v) => v.operator === o.id)))
   await emitAliases('operators', o)
+}
+
+const exampleVessel = liveVessels.find((v) => v.imo !== null && v.mmsi !== null && v.operator !== null) ?? liveVessels[0]
+const exampleOperator = data.operators.find((o) => o.id === exampleVessel?.operator) ?? liveOperators[0]
+if (exampleVessel && exampleOperator) {
+  await emit(
+    'docs/index.html',
+    apiDocsPage({
+      boats: liveVessels.map(compactVessel),
+      operators: liveOperators.map((o) => compactOperator(o, fleetSize(o))),
+      regions: data.regions,
+      vessel: publicRecord(exampleVessel),
+      operator: publicRecord(exampleOperator),
+    }),
+  )
 }
 
 await emit('404.html', notFoundPage())
