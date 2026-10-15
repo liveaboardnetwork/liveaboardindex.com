@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# tools/ (local only, never deployed)
+tools/.cache
+tools/out

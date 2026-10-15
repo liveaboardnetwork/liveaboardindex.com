@@ -10,7 +10,10 @@
     "check": "tsc && node --disable-warning=ExperimentalWarning scripts/schema.ts && node --disable-warning=ExperimentalWarning scripts/build.ts --check",
     "new": "node --disable-warning=ExperimentalWarning scripts/new.ts",
     "typecheck": "tsc",
-    "schema": "node --disable-warning=ExperimentalWarning scripts/schema.ts"
+    "schema": "node --disable-warning=ExperimentalWarning scripts/schema.ts",
+    "tools:liveaboard": "node --disable-warning=ExperimentalWarning tools/liveaboard/scrape.ts",
+    "tools:har": "node --disable-warning=ExperimentalWarning tools/liveaboard/har.ts",
+    "tools:typecheck": "tsc -p tools"
   },
   "devDependencies": {
     "@types/node": "^25.9.1",
