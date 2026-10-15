@@ -88,6 +88,13 @@ const Sources = z
   .array(z.url({ protocol: /^https?$/, error: 'must be an http(s) URL' }))
   .refine((urls) => new Set(urls).size === urls.length, 'contains duplicate URLs')
 
+// IDs of the same record on other sites, used to match records when importing.
+const ExternalIds = z.strictObject({
+  liveaboard_com: z.int().positive().nullable(),
+})
+export type ExternalIds = z.infer<typeof ExternalIds>
+export const EXTERNAL_ID_KEYS = ['liveaboard_com'] as const satisfies ReadonlyArray<keyof ExternalIds>
+
 // ---------- names ----------
 
 export const NameEntry = z
@@ -121,10 +128,14 @@ export const VesselShape = z.strictObject({
   loa_m: Meters.nullable(),
   beam_m: Meters.nullable(),
   gt: z.int().positive().max(100_000).nullable(),
+  refit_year: z.int().min(1850).max(CURRENT_YEAR + 1).nullable(),
+  guests: z.int().positive().max(500).nullable(),
+  cabins: z.int().positive().max(250).nullable(),
   operator: OperatorId.nullable(),
   region: RegionId.nullable(),
   status: VesselStatus,
   merged_into: VesselId.nullable(),
+  external_ids: ExternalIds,
   sources: Sources,
   notes: z.string(),
 })
@@ -132,6 +143,9 @@ export const VesselShape = z.strictObject({
 export const Vessel = VesselShape.superRefine((v, ctx) => {
   if (v.loa_m !== null && v.beam_m !== null && v.beam_m >= v.loa_m) {
     ctx.addIssue({ code: 'custom', path: ['beam_m'], message: 'must be smaller than loa_m' })
+  }
+  if (v.refit_year !== null && v.built.year !== null && v.refit_year < v.built.year) {
+    ctx.addIssue({ code: 'custom', path: ['refit_year'], message: 'cannot be before built.year' })
   }
   checkMerge(v, ctx)
 })
@@ -144,6 +158,7 @@ export const OperatorShape = z.strictObject({
   website: z.url({ protocol: /^https?$/, error: 'must be an http(s) URL' }).nullable(),
   status: OperatorStatus,
   merged_into: OperatorId.nullable(),
+  external_ids: ExternalIds,
   sources: Sources,
   notes: z.string(),
 })

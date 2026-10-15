@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_9qjz7c
+names:   # to: null = current
+  - { name: Galapagos Sky, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2001, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 30.5
+beam_m: 7.3
+gt: null
+refit_year: null
+guests: 16
+cabins: 8
+operator: op_9gbj            # op_xxxx from data/operators
+region: galapagos              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 4425 }
+sources:
+  - https://www.liveaboard.com/diving/galapagos/galapagos-sky
+notes: ""

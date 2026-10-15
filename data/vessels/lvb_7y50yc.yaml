@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_7y50yc
+names:   # to: null = current
+  - { name: Aqua, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 1998, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 26
+beam_m: 5.5
+gt: null
+refit_year: 2023
+guests: 16
+cabins: 9
+operator: op_kmy8            # op_xxxx from data/operators
+region: galapagos              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5818 }
+sources:
+  - https://www.liveaboard.com/diving/galapagos/aqua
+notes: ""

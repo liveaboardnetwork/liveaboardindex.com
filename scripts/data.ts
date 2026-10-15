@@ -2,8 +2,8 @@ import { readFile, readdir } from 'node:fs/promises'
 import path from 'node:path'
 import YAML from 'yaml'
 import type * as z from 'zod'
-import type { Dataset, Derived, VesselRecord } from '../schema/dataset.ts'
-import { Operator, Regions, Vessel } from '../schema/index.ts'
+import type { Dataset, Derived } from '../schema/dataset.ts'
+import { EXTERNAL_ID_KEYS, Operator, Regions, Vessel } from '../schema/index.ts'
 import type { Region, RegionId } from '../schema/index.ts'
 
 export type { Dataset, OperatorRecord, VesselRecord } from '../schema/dataset.ts'
@@ -94,8 +94,12 @@ export async function loadDataset(): Promise<LoadResult> {
     if (v.region !== null && !regionById.has(v.region)) errors.push(`${v.file}: region: ${v.region} is not defined in ${regionsFile}`)
   }
 
-  checkUnique(vessels, 'imo', errors)
-  checkUnique(vessels, 'mmsi', errors)
+  checkUnique(vessels, 'imo', (v) => v.imo, errors)
+  checkUnique(vessels, 'mmsi', (v) => v.mmsi, errors)
+  for (const key of EXTERNAL_ID_KEYS) {
+    checkUnique(vessels, `external_ids.${key}`, (v) => v.external_ids[key], errors)
+    checkUnique(operators, `external_ids.${key}`, (o) => o.external_ids[key], errors)
+  }
 
   if (errors.length) return { ok: false, errors }
 
@@ -113,13 +117,18 @@ function checkMergeTarget<T extends { file: string; merged_into: string | null; 
   else if (target.status === 'merged') errors.push(`${record.file}: merged_into: ${record.merged_into} is itself merged; point to the surviving record`)
 }
 
-function checkUnique(vessels: VesselRecord[], key: 'imo' | 'mmsi', errors: string[]): void {
-  const seen = new Map<number, VesselRecord>()
-  for (const v of vessels) {
-    const value = v[key]
-    if (value === null || v.status === 'merged') continue
+function checkUnique<T extends { id: string; file: string; status: string }>(
+  records: T[],
+  label: string,
+  get: (record: T) => number | null,
+  errors: string[],
+): void {
+  const seen = new Map<number, T>()
+  for (const record of records) {
+    const value = get(record)
+    if (value === null || record.status === 'merged') continue
     const other = seen.get(value)
-    if (other) errors.push(`${v.file}: ${key}: ${value} is already used by ${other.id}`)
-    else seen.set(value, v)
+    if (other) errors.push(`${record.file}: ${label}: ${value} is already used by ${other.id}`)
+    else seen.set(value, record)
   }
 }

@@ -442,11 +442,56 @@
         }
       ]
     },
+    "refit_year": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 1850,
+          "maximum": 2027
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "guests": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 500
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "cabins": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 250
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
     "operator": {
       "anyOf": [
         {
           "type": "string",
-          "pattern": "^op_[0-9a-hjkmnp-tv-z]{4}$"
+          "enum": [
+            "op_366c",
+            "op_98r4",
+            "op_9gbj",
+            "op_9nfs",
+            "op_hg88",
+            "op_kmy8",
+            "op_qkp6",
+            "op_snng"
+          ]
         },
         {
           "type": "null"
@@ -486,6 +531,27 @@
         }
       ]
     },
+    "external_ids": {
+      "type": "object",
+      "properties": {
+        "liveaboard_com": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "liveaboard_com"
+      ],
+      "additionalProperties": false
+    },
     "sources": {
       "type": "array",
       "items": {
@@ -509,10 +575,14 @@
     "loa_m",
     "beam_m",
     "gt",
+    "refit_year",
+    "guests",
+    "cabins",
     "operator",
     "region",
     "status",
     "merged_into",
+    "external_ids",
     "sources",
     "notes"
   ],

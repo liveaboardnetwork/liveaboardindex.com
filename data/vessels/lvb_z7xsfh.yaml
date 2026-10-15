@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_z7xsfh
+names:   # to: null = current
+  - { name: Galaxy Diver II, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: null, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 29
+beam_m: 6.6
+gt: null
+refit_year: 2023
+guests: 16
+cabins: 9
+operator: op_hg88            # op_xxxx from data/operators
+region: galapagos              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6209 }
+sources:
+  - https://www.liveaboard.com/diving/galapagos/galaxy-diver-ii
+notes: ""

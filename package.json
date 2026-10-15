@@ -13,7 +13,9 @@
     "schema": "node --disable-warning=ExperimentalWarning scripts/schema.ts",
     "tools:liveaboard": "node --disable-warning=ExperimentalWarning tools/liveaboard/scrape.ts",
     "tools:har": "node --disable-warning=ExperimentalWarning tools/liveaboard/har.ts",
-    "tools:typecheck": "tsc -p tools"
+    "tools:typecheck": "tsc -p tools",
+    "tools:liveaboard:import": "node --disable-warning=ExperimentalWarning tools/liveaboard/import.ts",
+    "format": "node --disable-warning=ExperimentalWarning scripts/format.ts"
   },
   "devDependencies": {
     "@types/node": "^25.9.1",

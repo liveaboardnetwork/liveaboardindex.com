@@ -69,6 +69,8 @@ function compactVessel(v: VesselRecord) {
     operator: v.operator,
     hull: v.hull,
     loa_m: v.loa_m,
+    guests: v.guests,
+    cabins: v.cabins,
     status: v.status,
   }
 }

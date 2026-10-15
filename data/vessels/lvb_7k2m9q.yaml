@@ -1,20 +1,25 @@
 # yaml-language-server: $schema=../../schema/json/vessel.schema.json
 id: lvb_7k2m9q
-names:
-  - { name: Calipso, from: null, to: null }   # to: null = current
-hull: steel_motor
-built: { year: null, yard: null }
+names:   # to: null = current
+  - { name: Calipso, from: null, to: null }
+hull: steel_motor                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 1991, yard: null }
 imo: 8978930
 mmsi: 735023481
 call_sign: HC-2081
-flag: EC
+flag: EC                # ISO country code, e.g. EC
 loa_m: 36
 beam_m: 8
 gt: 249
-operator: null
-region: galapagos
+refit_year: 2019
+guests: 16
+cabins: 8
+operator: op_snng            # op_xxxx from data/operators
+region: galapagos              # id from data/regions.yaml
 status: active            # active | retired | lost | merged
 merged_into: null
+external_ids: { liveaboard_com: 5901 }
 sources:
   - https://magicport.ai/vessels/passenger/calipso-mmsi-735023481
+  - https://www.liveaboard.com/diving/galapagos/calipso
 notes: ""

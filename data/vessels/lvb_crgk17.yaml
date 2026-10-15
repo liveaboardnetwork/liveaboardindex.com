@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_crgk17
+names:   # to: null = current
+  - { name: Galapagos Master, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2004, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 32
+beam_m: 7.5
+gt: null
+refit_year: 2015
+guests: 16
+cabins: 9
+operator: op_qkp6            # op_xxxx from data/operators
+region: galapagos              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 4456 }
+sources:
+  - https://www.liveaboard.com/diving/galapagos/galapagos-master
+notes: ""
