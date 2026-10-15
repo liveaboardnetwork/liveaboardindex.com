@@ -1,9 +1,12 @@
+import { asset } from '../assets.ts'
 import { BRAND_COLORS } from '../brand.ts'
 import { site } from '../site.ts'
 import { Footer } from './Footer.ts'
 import { Header } from './Header.ts'
 import { esc } from './html.ts'
 import type { Html } from './html.ts'
+
+const STYLESHEETS = ['/css/tokens.css', '/css/base.css', '/css/components.css'] as const
 
 const FONTS = 'https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap'
 
@@ -38,7 +41,7 @@ export function Head({ title, canonical, description = site.description }: HeadP
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="${FONTS}" />
-    <link rel="stylesheet" href="/css/site.css" />`
+    ${STYLESHEETS.map((href) => `<link rel="stylesheet" href="${asset(href)}" />`).join('\n    ')}`
 }
 
 export interface LayoutProps extends HeadProps {

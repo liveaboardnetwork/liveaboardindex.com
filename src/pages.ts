@@ -2,6 +2,7 @@ import type { Dataset, OperatorRecord, VesselRecord } from '../schema/dataset.ts
 import type { CountryCode, Hull, NameEntry, OperatorId, OperatorStatus, Region, RegionId, VesselStatus } from '../schema/index.ts'
 import { Badge, DataTable, FactList, FilterInput, IndexList, Layout, PageHero, Section, esc } from './components/index.ts'
 import type { BadgeTone, Html } from './components/index.ts'
+import { asset } from './assets.ts'
 import { site } from './site.ts'
 
 const STATUS_TONE: Record<VesselStatus | OperatorStatus, BadgeTone> = {
@@ -238,7 +239,7 @@ export function notFoundPage(): Html {
         title: 'Not found',
         lead: '<span data-resolve-status>This page does not exist.</span>',
         actions: [{ label: 'Browse boats', href: '/boats/', variant: 'primary' }],
-      }) + '\n<script src="/js/resolve-id.js" defer></script>',
+      }) + `\n<script src="${asset('/js/resolve-id.js')}" defer></script>`,
   })
 }
 
