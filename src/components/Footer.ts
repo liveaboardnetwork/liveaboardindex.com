@@ -1,13 +1,15 @@
-import { site } from '../site.js'
-import { esc, isExternal } from './html.js'
-import { Logo } from './Logo.js'
+import { site } from '../site.ts'
+import type { NavLink } from '../site.ts'
+import { esc, isExternal } from './html.ts'
+import type { Html } from './html.ts'
+import { Logo } from './Logo.ts'
 
-function link({ label, href }, className) {
+function link({ label, href }: NavLink, className: string): Html {
   const rel = isExternal(href) ? ' rel="noopener"' : ''
   return `<a class="${className}" href="${esc(href)}"${rel}>${esc(label)}</a>`
 }
 
-export function Footer() {
+export function Footer(): Html {
   const columns = site.footer
     .map(
       (col) => `<div>
@@ -16,6 +18,9 @@ export function Footer() {
       </div>`,
     )
     .join('')
+  const legal = site.legal.length
+    ? `<nav class="footer__legal" aria-label="Footer">${site.legal.map((l) => link(l, 'footer__legal-link')).join('')}</nav>`
+    : ''
   return `<footer class="footer">
   <div class="container">
     <div class="footer__top">
@@ -26,8 +31,8 @@ export function Footer() {
       ${columns}
     </div>
     <div class="footer__bottom">
-      <p>©${new Date().getFullYear()} ${esc(site.name)}. Open data.</p>
-      <nav class="footer__legal" aria-label="Footer">${site.legal.map((l) => link(l, 'footer__legal-link')).join('')}</nav>
+      <p>©${new Date().getFullYear()} ${esc(site.name)}</p>
+      ${legal}
     </div>
   </div>
 </footer>`

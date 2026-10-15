@@ -5,13 +5,18 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/build-data.mjs",
+    "build": "tsc && vite build && node --disable-warning=ExperimentalWarning scripts/build.ts",
     "preview": "vite preview",
-    "check": "node scripts/build-data.mjs --check",
-    "new": "node scripts/new.mjs"
+    "check": "tsc && node --disable-warning=ExperimentalWarning scripts/schema.ts && node --disable-warning=ExperimentalWarning scripts/build.ts --check",
+    "new": "node --disable-warning=ExperimentalWarning scripts/new.ts",
+    "typecheck": "tsc",
+    "schema": "node --disable-warning=ExperimentalWarning scripts/schema.ts"
   },
   "devDependencies": {
+    "@types/node": "^25.9.1",
+    "typescript": "^6.0.3",
     "vite": "^8.0.12",
-    "yaml": "^2.9.0"
+    "yaml": "^2.9.0",
+    "zod": "^4.4.3"
   }
 }

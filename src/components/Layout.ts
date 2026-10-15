@@ -1,11 +1,18 @@
-import { site } from '../site.js'
-import { Footer } from './Footer.js'
-import { Header } from './Header.js'
-import { esc } from './html.js'
+import { site } from '../site.ts'
+import { Footer } from './Footer.ts'
+import { Header } from './Header.ts'
+import { esc } from './html.ts'
+import type { Html } from './html.ts'
 
 const FONTS = 'https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap'
 
-export function Head({ title, canonical, description } = {}) {
+export interface HeadProps {
+  title?: string | undefined
+  canonical?: string | undefined
+  description?: string | undefined
+}
+
+export function Head({ title, canonical, description }: HeadProps = {}): Html {
   const fullTitle = title ? `${title} · ${site.name}` : site.name
   return `<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,8 +26,13 @@ export function Head({ title, canonical, description } = {}) {
     <link rel="stylesheet" href="/css/site.css" />`
 }
 
-// `current` is the nav href to highlight; `content` is the HTML inside <main>.
-export function Layout({ title, canonical, description, current, content }) {
+export interface LayoutProps extends HeadProps {
+  /** Nav href to highlight. */
+  current?: string | undefined
+  content: Html
+}
+
+export function Layout({ title, canonical, description, current, content }: LayoutProps): Html {
   return `<!doctype html>
 <html lang="en">
   <head>

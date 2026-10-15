@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../schema/json/regions.schema.json
+# Closed list: a vessel's `region` must be one of these IDs.
+- id: galapagos
+  name: Galápagos
+  countries: [EC]

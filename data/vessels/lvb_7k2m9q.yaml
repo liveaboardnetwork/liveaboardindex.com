@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
 id: lvb_7k2m9q
 names:
   - { name: Calipso, from: null, to: null }   # to: null = current
