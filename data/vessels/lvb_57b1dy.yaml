@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: null, yard: null }
 imo: null
-mmsi: null
+mmsi: 567001385
 call_sign: null
-flag: null                # ISO country code, e.g. EC
+flag: TH                # ISO country code, e.g. EC
 loa_m: null
 beam_m: null
 gt: null
@@ -76,4 +76,5 @@ merged_into: null
 external_ids: { liveaboard_com: 5514 }
 sources:
   - https://www.liveaboard.com/diving/thailand/pawara
+  - https://www.vesselfinder.com/vessels/details/567001385
 notes: ""

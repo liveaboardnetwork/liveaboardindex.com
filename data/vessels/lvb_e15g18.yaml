@@ -3,14 +3,14 @@ id: lvb_e15g18
 names:   # to: null = current
   - { name: Palau Aggressor II, from: null, to: null }
 hull: null                # <material>_<propulsion>, e.g. steel_motor
-built: { year: null, yard: null }
-imo: null
+built: { year: 1994, yard: null }
+imo: 8972429
 mmsi: null
 call_sign: null
-flag: null                # ISO country code, e.g. EC
+flag: BZ                # ISO country code, e.g. EC
 loa_m: 32.3
 beam_m: 9.1
-gt: null
+gt: 251
 refit_year: null
 guests: 18
 cabins: 9
@@ -56,4 +56,5 @@ merged_into: null
 external_ids: { liveaboard_com: 4386 }
 sources:
   - https://www.liveaboard.com/diving/micronesia/palau-aggressor-ii
+  - https://www.vesselfinder.com/vessels/details/8972429
 notes: ""

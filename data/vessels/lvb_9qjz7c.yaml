@@ -4,13 +4,13 @@ names:   # to: null = current
   - { name: Galapagos Sky, from: null, to: null }
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 2001, yard: null }
-imo: null
-mmsi: null
-call_sign: null
-flag: null                # ISO country code, e.g. EC
+imo: 8979075
+mmsi: 735057585
+call_sign: HC4379
+flag: EC                # ISO country code, e.g. EC
 loa_m: 30.5
 beam_m: 7.3
-gt: null
+gt: 205
 refit_year: null
 guests: 16
 cabins: 8
@@ -56,4 +56,6 @@ merged_into: null
 external_ids: { liveaboard_com: 4425 }
 sources:
   - https://www.liveaboard.com/diving/galapagos/galapagos-sky
+  - https://www.vesselfinder.com/vessels/details/8979075
+  - https://www.vesselfinder.com/vessels/details/735057585
 notes: ""

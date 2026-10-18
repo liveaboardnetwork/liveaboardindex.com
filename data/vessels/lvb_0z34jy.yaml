@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 2022, yard: null }
 imo: null
-mmsi: null
-call_sign: null
-flag: null                # ISO country code, e.g. EC
+mmsi: 525701298
+call_sign: YBA5036
+flag: ID                # ISO country code, e.g. EC
 loa_m: 30
 beam_m: 6.4
 gt: null
@@ -56,4 +56,5 @@ merged_into: null
 external_ids: { liveaboard_com: 6408 }
 sources:
   - https://www.liveaboard.com/diving/indonesia/scuba-junkie-eliya
+  - https://www.vesselfinder.com/vessels/details/525701298
 notes: ""

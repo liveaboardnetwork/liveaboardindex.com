@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 1990, yard: null }
 imo: null
-mmsi: null
-call_sign: null
-flag: null                # ISO country code, e.g. EC
+mmsi: 503686000
+call_sign: VZQ4769
+flag: AU                # ISO country code, e.g. EC
 loa_m: 30
 beam_m: 10.5
 gt: null
@@ -76,4 +76,5 @@ merged_into: null
 external_ids: { liveaboard_com: 4401 }
 sources:
   - https://www.liveaboard.com/diving/australia/spoilsport
+  - https://www.vesselfinder.com/vessels/details/503686000
 notes: ""

@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 2014, yard: null }
 imo: null
-mmsi: null
-call_sign: null
-flag: null                # ISO country code, e.g. EC
+mmsi: 455143020
+call_sign: "8QT7730"
+flag: MV                # ISO country code, e.g. EC
 loa_m: 50
 beam_m: 11
 gt: null
@@ -86,4 +86,5 @@ merged_into: null
 external_ids: { liveaboard_com: 5419 }
 sources:
   - https://www.liveaboard.com/diving/maldives/scubaspa-yang
+  - https://www.vesselfinder.com/vessels/details/455143020
 notes: ""

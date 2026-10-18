@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: null, yard: null }
 imo: null
-mmsi: null
+mmsi: 622171201
 call_sign: null
-flag: null                # ISO country code, e.g. EC
+flag: EG                # ISO country code, e.g. EC
 loa_m: 36.6
 beam_m: 7.25
 gt: null
@@ -86,4 +86,5 @@ merged_into: null
 external_ids: { liveaboard_com: 5733 }
 sources:
   - https://www.liveaboard.com/diving/egypt/tala
+  - https://www.vesselfinder.com/vessels/details/622171201
 notes: ""

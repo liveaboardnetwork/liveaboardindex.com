@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 2004, yard: null }
 imo: null
-mmsi: null
-call_sign: null
-flag: null                # ISO country code, e.g. EC
+mmsi: 271040914
+call_sign: YM5784
+flag: TR                # ISO country code, e.g. EC
 loa_m: 24
 beam_m: 6.4
 gt: null
@@ -66,4 +66,5 @@ merged_into: null
 external_ids: { liveaboard_com: 6067 }
 sources:
   - https://www.liveaboard.com/diving/turkey/okyanus-jd
+  - https://www.vesselfinder.com/vessels/details/271040914
 notes: ""

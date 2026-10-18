@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 2020, yard: null }
 imo: null
-mmsi: null
-call_sign: null
-flag: null                # ISO country code, e.g. EC
+mmsi: 525101844
+call_sign: YB7226
+flag: ID                # ISO country code, e.g. EC
 loa_m: 33.72
 beam_m: null
 gt: null
@@ -96,4 +96,5 @@ merged_into: null
 external_ids: { liveaboard_com: 6025 }
 sources:
   - https://www.liveaboard.com/diving/indonesia/supraba
+  - https://www.vesselfinder.com/vessels/details/525101844
 notes: ""

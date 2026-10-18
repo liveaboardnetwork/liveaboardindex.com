@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 2007, yard: null }
 imo: null
-mmsi: null
-call_sign: null
-flag: null                # ISO country code, e.g. EC
+mmsi: 525003603
+call_sign: PMJY
+flag: ID                # ISO country code, e.g. EC
 loa_m: 57
 beam_m: 12
 gt: null
@@ -56,4 +56,5 @@ merged_into: null
 external_ids: { liveaboard_com: 5458 }
 sources:
   - https://www.liveaboard.com/diving/indonesia/dewi-nusantara
+  - https://www.vesselfinder.com/vessels/details/525003603
 notes: ""

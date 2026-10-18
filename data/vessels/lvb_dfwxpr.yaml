@@ -4,13 +4,13 @@ names:   # to: null = current
   - { name: Caribbean Explorer II, from: null, to: null }
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 1978, yard: null }
-imo: null
+imo: 8949408
 mmsi: null
 call_sign: null
-flag: null                # ISO country code, e.g. EC
+flag: VU                # ISO country code, e.g. EC
 loa_m: 35.1
 beam_m: 6.1
-gt: null
+gt: 173
 refit_year: 1999
 guests: 18
 cabins: 9
@@ -46,4 +46,5 @@ merged_into: null
 external_ids: { liveaboard_com: 4424 }
 sources:
   - https://www.liveaboard.com/diving/st-maarten/caribbean-explorer-ii
+  - https://www.vesselfinder.com/vessels/details/8949408
 notes: ""

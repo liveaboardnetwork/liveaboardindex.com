@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 2013, yard: null }
 imo: null
-mmsi: null
-call_sign: null
-flag: null                # ISO country code, e.g. EC
+mmsi: 525700086
+call_sign: YB5652
+flag: ID                # ISO country code, e.g. EC
 loa_m: null
 beam_m: null
 gt: null
@@ -56,4 +56,5 @@ merged_into: null
 external_ids: { liveaboard_com: 5928 }
 sources:
   - https://www.liveaboard.com/diving/indonesia/gaya-baru-indah
+  - https://www.vesselfinder.com/vessels/details/525700086
 notes: ""

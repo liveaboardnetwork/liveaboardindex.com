@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 2018, yard: null }
 imo: null
-mmsi: null
-call_sign: null
-flag: null                # ISO country code, e.g. EC
+mmsi: 567002347
+call_sign: HSB7394
+flag: TH                # ISO country code, e.g. EC
 loa_m: 25
 beam_m: null
 gt: null
@@ -66,4 +66,5 @@ merged_into: null
 external_ids: { liveaboard_com: 5789 }
 sources:
   - https://www.liveaboard.com/diving/thailand/smiling-seahorse
+  - https://www.vesselfinder.com/vessels/details/567002347
 notes: ""

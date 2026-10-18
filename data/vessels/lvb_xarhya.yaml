@@ -3,14 +3,14 @@ id: lvb_xarhya
 names:   # to: null = current
   - { name: Belize Aggressor III, from: null, to: null }
 hull: null                # <material>_<propulsion>, e.g. steel_motor
-built: { year: null, yard: null }
-imo: null
-mmsi: null
-call_sign: null
-flag: null                # ISO country code, e.g. EC
+built: { year: 1994, yard: null }
+imo: 8972417
+mmsi: 312611000
+call_sign: V3PP5
+flag: BZ                # ISO country code, e.g. EC
 loa_m: 33.5
 beam_m: 6.7
-gt: null
+gt: 188
 refit_year: null
 guests: 18
 cabins: 9
@@ -66,4 +66,6 @@ merged_into: null
 external_ids: { liveaboard_com: 4373 }
 sources:
   - https://www.liveaboard.com/diving/belize/belize-aggressor-iii
+  - https://www.vesselfinder.com/vessels/details/8972417
+  - https://www.vesselfinder.com/vessels/details/312611000
 notes: ""

@@ -4,13 +4,13 @@ names:   # to: null = current
   - { name: Solitude One, from: null, to: null }
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 1979, yard: null }
-imo: null
-mmsi: null
-call_sign: null
-flag: null                # ISO country code, e.g. EC
+imo: 7824118
+mmsi: 511011007
+call_sign: DUE2121
+flag: PW                # ISO country code, e.g. EC
 loa_m: 52
 beam_m: 8.6
-gt: null
+gt: 491
 refit_year: 2013
 guests: 24
 cabins: 11
@@ -106,4 +106,6 @@ merged_into: null
 external_ids: { liveaboard_com: 4463 }
 sources:
   - https://www.liveaboard.com/diving/philippines/solitude-one
+  - https://www.vesselfinder.com/vessels/details/7824118
+  - https://www.vesselfinder.com/vessels/details/511011007
 notes: ""

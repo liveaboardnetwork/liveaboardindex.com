@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 1992, yard: null }
 imo: null
-mmsi: null
-call_sign: null
-flag: null                # ISO country code, e.g. EC
+mmsi: 525024063
+call_sign: YB4199
+flag: ID                # ISO country code, e.g. EC
 loa_m: 37.8
 beam_m: 8.8
 gt: null
@@ -56,4 +56,5 @@ merged_into: null
 external_ids: { liveaboard_com: 4429 }
 sources:
   - https://www.liveaboard.com/diving/indonesia/pindito
+  - https://www.vesselfinder.com/vessels/details/525024063
 notes: ""

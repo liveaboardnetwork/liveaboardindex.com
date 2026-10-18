@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 2019, yard: null }
 imo: null
-mmsi: null
-call_sign: null
-flag: null                # ISO country code, e.g. EC
+mmsi: 546015820
+call_sign: FLYE
+flag: PF                # ISO country code, e.g. EC
 loa_m: 20
 beam_m: null
 gt: null
@@ -66,4 +66,5 @@ merged_into: null
 external_ids: { liveaboard_com: 5868 }
 sources:
   - https://www.liveaboard.com/diving/polynesia/aqua-tiki-iii
+  - https://www.vesselfinder.com/vessels/details/546015820
 notes: ""

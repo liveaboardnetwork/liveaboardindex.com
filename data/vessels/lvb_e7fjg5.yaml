@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 2012, yard: null }
 imo: null
-mmsi: null
-call_sign: null
-flag: null                # ISO country code, e.g. EC
+mmsi: 525200377
+call_sign: YB4853
+flag: ID                # ISO country code, e.g. EC
 loa_m: 32
 beam_m: 7.5
 gt: null
@@ -66,4 +66,5 @@ merged_into: null
 external_ids: { liveaboard_com: 4395 }
 sources:
   - https://www.liveaboard.com/diving/indonesia/ambai
+  - https://www.vesselfinder.com/vessels/details/525200377
 notes: ""

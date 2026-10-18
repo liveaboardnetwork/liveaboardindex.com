@@ -3,14 +3,14 @@ id: lvb_y6nhw9
 names:   # to: null = current
   - { name: Belize Aggressor IV, from: null, to: null }
 hull: null                # <material>_<propulsion>, e.g. steel_motor
-built: { year: null, yard: null }
-imo: null
-mmsi: null
+built: { year: 1974, yard: null }
+imo: 8949965
+mmsi: 312881000
 call_sign: null
-flag: null                # ISO country code, e.g. EC
+flag: BZ                # ISO country code, e.g. EC
 loa_m: 42.1
 beam_m: 7.9
-gt: null
+gt: 371
 refit_year: null
 guests: 20
 cabins: 10
@@ -66,4 +66,6 @@ merged_into: null
 external_ids: { liveaboard_com: 4374 }
 sources:
   - https://www.liveaboard.com/diving/belize/belize-aggressor-iv
+  - https://www.vesselfinder.com/vessels/details/8949965
+  - https://www.vesselfinder.com/vessels/details/312881000
 notes: ""

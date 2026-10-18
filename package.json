@@ -16,7 +16,9 @@
     "tools:typecheck": "tsc -p tools",
     "tools:liveaboard:import": "node --disable-warning=ExperimentalWarning tools/liveaboard/import.ts",
     "format": "node --disable-warning=ExperimentalWarning scripts/format.ts",
-    "icons": "node --disable-warning=ExperimentalWarning scripts/icons.ts"
+    "icons": "node --disable-warning=ExperimentalWarning scripts/icons.ts",
+    "tools:registry": "node --disable-warning=ExperimentalWarning tools/registry/identify.ts",
+    "tools:test": "node --disable-warning=ExperimentalWarning --test 'tools/**/*.test.ts'"
   },
   "devDependencies": {
     "@resvg/resvg-js": "^2.6.2",

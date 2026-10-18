@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 2021, yard: null }
 imo: null
-mmsi: null
+mmsi: 622109276
 call_sign: null
-flag: null                # ISO country code, e.g. EC
+flag: EG                # ISO country code, e.g. EC
 loa_m: 37
 beam_m: 8.2
 gt: null
@@ -86,4 +86,5 @@ merged_into: null
 external_ids: { liveaboard_com: 6070 }
 sources:
   - https://www.liveaboard.com/diving/egypt/ghazala-explorer
+  - https://www.vesselfinder.com/vessels/details/622109276
 notes: ""

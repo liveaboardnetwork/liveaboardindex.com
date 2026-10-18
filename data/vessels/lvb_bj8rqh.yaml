@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 1989, yard: null }
 imo: null
-mmsi: null
-call_sign: null
-flag: null                # ISO country code, e.g. EC
+mmsi: 548920200
+call_sign: DUE2384
+flag: PH                # ISO country code, e.g. EC
 loa_m: 32.6
 beam_m: 5.5
 gt: null
@@ -56,4 +56,5 @@ merged_into: null
 external_ids: { liveaboard_com: 4439 }
 sources:
   - https://www.liveaboard.com/diving/philippines/atlantis-adventurer
+  - https://www.vesselfinder.com/vessels/details/548920200
 notes: ""

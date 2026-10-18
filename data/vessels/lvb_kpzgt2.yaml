@@ -3,14 +3,14 @@ id: lvb_kpzgt2
 names:   # to: null = current
   - { name: Royal Evolution, from: null, to: null }
 hull: null                # <material>_<propulsion>, e.g. steel_motor
-built: { year: null, yard: null }
-imo: null
-mmsi: null
-call_sign: null
-flag: null                # ISO country code, e.g. EC
+built: { year: 2006, yard: null }
+imo: 9391191
+mmsi: 622170401
+call_sign: "6AEQ"
+flag: EG                # ISO country code, e.g. EC
 loa_m: 39
 beam_m: null
-gt: null
+gt: 476
 refit_year: null
 guests: 24
 cabins: 12
@@ -66,4 +66,6 @@ merged_into: null
 external_ids: { liveaboard_com: 5669 }
 sources:
   - https://www.liveaboard.com/diving/egypt/royal-evolution
+  - https://www.vesselfinder.com/vessels/details/9391191
+  - https://www.vesselfinder.com/vessels/details/622170401
 notes: ""

@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 2011, yard: null }
 imo: null
-mmsi: null
-call_sign: null
-flag: null                # ISO country code, e.g. EC
+mmsi: 525048787
+call_sign: YC7358
+flag: ID                # ISO country code, e.g. EC
 loa_m: 25
 beam_m: 6
 gt: null
@@ -56,4 +56,5 @@ merged_into: null
 external_ids: { liveaboard_com: 5888 }
 sources:
   - https://www.liveaboard.com/diving/indonesia/wellenreng
+  - https://www.vesselfinder.com/vessels/details/525048787
 notes: ""

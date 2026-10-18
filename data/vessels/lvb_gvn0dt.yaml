@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 2014, yard: null }
 imo: null
-mmsi: null
-call_sign: null
-flag: null                # ISO country code, e.g. EC
+mmsi: 525500711
+call_sign: YC7357
+flag: ID                # ISO country code, e.g. EC
 loa_m: 30
 beam_m: null
 gt: null
@@ -66,4 +66,5 @@ merged_into: null
 external_ids: { liveaboard_com: 4455 }
 sources:
   - https://www.liveaboard.com/diving/indonesia/calico-jack
+  - https://www.vesselfinder.com/vessels/details/525500711
 notes: ""

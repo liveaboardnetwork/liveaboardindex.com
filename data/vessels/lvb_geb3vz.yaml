@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 2012, yard: null }
 imo: null
-mmsi: null
-call_sign: null
-flag: null                # ISO country code, e.g. EC
+mmsi: 457515000
+call_sign: JVTB4
+flag: MN                # ISO country code, e.g. EC
 loa_m: 40
 beam_m: 10
 gt: null
@@ -66,4 +66,5 @@ merged_into: null
 external_ids: { liveaboard_com: 4451 }
 sources:
   - https://www.liveaboard.com/diving/micronesia/palau-siren
+  - https://www.vesselfinder.com/vessels/details/457515000
 notes: ""

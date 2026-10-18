@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 2007, yard: null }
 imo: null
-mmsi: null
+mmsi: 622168902
 call_sign: null
-flag: null                # ISO country code, e.g. EC
+flag: EG                # ISO country code, e.g. EC
 loa_m: 38
 beam_m: 8.3
 gt: null
@@ -56,4 +56,5 @@ merged_into: null
 external_ids: { liveaboard_com: 4408 }
 sources:
   - https://www.liveaboard.com/diving/egypt/blue-melody
+  - https://www.vesselfinder.com/vessels/details/622168902
 notes: ""

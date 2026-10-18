@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 2010, yard: null }
 imo: null
-mmsi: null
+mmsi: 525300264
 call_sign: null
-flag: null                # ISO country code, e.g. EC
+flag: ID                # ISO country code, e.g. EC
 loa_m: 30
 beam_m: 7.5
 gt: null
@@ -86,4 +86,5 @@ merged_into: null
 external_ids: { liveaboard_com: 4445 }
 sources:
   - https://www.liveaboard.com/diving/indonesia/pearl-of-papua
+  - https://www.vesselfinder.com/vessels/details/525300264
 notes: ""

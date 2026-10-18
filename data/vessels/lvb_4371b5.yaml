@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 2008, yard: null }
 imo: null
-mmsi: null
-call_sign: null
-flag: null                # ISO country code, e.g. EC
+mmsi: 567001877
+call_sign: HSB4773
+flag: TH                # ISO country code, e.g. EC
 loa_m: null
 beam_m: null
 gt: null
@@ -96,4 +96,5 @@ merged_into: null
 external_ids: { liveaboard_com: 5429 }
 sources:
   - https://www.liveaboard.com/diving/thailand/deep-andaman-queen
+  - https://www.vesselfinder.com/vessels/details/567001877
 notes: ""

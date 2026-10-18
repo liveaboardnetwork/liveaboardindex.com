@@ -5,9 +5,9 @@ names:   # to: null = current
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 2019, yard: null }
 imo: null
-mmsi: null
+mmsi: 548890900
 call_sign: null
-flag: null                # ISO country code, e.g. EC
+flag: PH                # ISO country code, e.g. EC
 loa_m: 25
 beam_m: 7
 gt: null
@@ -56,4 +56,5 @@ merged_into: null
 external_ids: { liveaboard_com: 6681 }
 sources:
   - https://www.liveaboard.com/diving/philippines/marie-ines
+  - https://www.vesselfinder.com/vessels/details/548890900
 notes: ""

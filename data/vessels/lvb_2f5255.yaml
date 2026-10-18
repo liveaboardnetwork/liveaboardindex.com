@@ -4,13 +4,13 @@ names:   # to: null = current
   - { name: Aqua Blu, from: null, to: null }
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 1968, yard: null }
-imo: null
-mmsi: null
-call_sign: null
-flag: null                # ISO country code, e.g. EC
+imo: 4902921
+mmsi: 525600798
+call_sign: YCWM2
+flag: ID                # ISO country code, e.g. EC
 loa_m: 60
 beam_m: 11.4
-gt: null
+gt: 1140
 refit_year: 2019
 guests: 30
 cabins: 15
@@ -96,4 +96,6 @@ merged_into: null
 external_ids: { liveaboard_com: 6538 }
 sources:
   - https://www.liveaboard.com/diving/indonesia/aqua-blu
+  - https://www.vesselfinder.com/vessels/details/4902921
+  - https://www.vesselfinder.com/vessels/details/525600798
 notes: ""

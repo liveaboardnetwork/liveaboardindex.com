@@ -4,13 +4,13 @@ names:   # to: null = current
   - { name: Solomons Master, from: null, to: null }
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 1974, yard: null }
-imo: null
+imo: 8361553
 mmsi: null
 call_sign: null
-flag: null                # ISO country code, e.g. EC
+flag: SB                # ISO country code, e.g. EC
 loa_m: 37
 beam_m: 7
-gt: null
+gt: 196
 refit_year: 2016
 guests: 16
 cabins: 8
@@ -76,4 +76,5 @@ merged_into: null
 external_ids: { liveaboard_com: 6085 }
 sources:
   - https://www.liveaboard.com/diving/solomon-islands/solomons-master
+  - https://www.vesselfinder.com/vessels/details/8361553
 notes: ""

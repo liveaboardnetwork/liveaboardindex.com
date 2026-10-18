@@ -3,14 +3,14 @@ id: lvb_ektj12
 names:   # to: null = current
   - { name: Thailand Aggressor, from: null, to: null }
 hull: null                # <material>_<propulsion>, e.g. steel_motor
-built: { year: null, yard: null }
-imo: null
+built: { year: 1977, yard: null }
+imo: 8662919
 mmsi: null
 call_sign: null
-flag: null                # ISO country code, e.g. EC
+flag: TH                # ISO country code, e.g. EC
 loa_m: 35.1
 beam_m: 7
-gt: null
+gt: 250
 refit_year: null
 guests: 16
 cabins: 8
@@ -66,4 +66,5 @@ merged_into: null
 external_ids: { liveaboard_com: 4388 }
 sources:
   - https://www.liveaboard.com/diving/thailand/thailand-aggressor
+  - https://www.vesselfinder.com/vessels/details/8662919
 notes: ""

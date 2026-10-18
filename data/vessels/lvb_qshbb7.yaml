@@ -4,13 +4,13 @@ names:   # to: null = current
   - { name: Black Noddy, from: null, to: null }
 hull: null                # <material>_<propulsion>, e.g. steel_motor
 built: { year: 1990, yard: null }
-imo: null
+imo: 9011258
 mmsi: null
 call_sign: null
 flag: null                # ISO country code, e.g. EC
 loa_m: 33
 beam_m: 6.5
-gt: null
+gt: 113
 refit_year: 2025
 guests: 16
 cabins: 8
@@ -86,4 +86,5 @@ merged_into: null
 external_ids: { liveaboard_com: 6672 }
 sources:
   - https://www.liveaboard.com/diving/philippines/black-noddy
+  - https://www.vesselfinder.com/vessels/details/9011258
 notes: ""
