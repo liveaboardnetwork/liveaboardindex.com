@@ -1,0 +1,99 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_0d7dmx
+names:   # to: null = current
+  - { name: Blue, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2019, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 41.1
+beam_m: 13.7
+gt: null
+refit_year: null
+guests: 20
+cabins: 11
+bathrooms: 11
+max_speed_kn: null
+cruising_speed_kn: null
+engines: null   # power_hp is per engine
+tenders: 1
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Ocean View Twin Room - Upper Deck
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9855 }
+  - name: Master Twin Cabin - Main Deck
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9856 }
+  - name: Deluxe Double Cabin - Lower Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 26, max: 26 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9857 }
+  - name: Deluxe Twin Cabins - Lower Deck
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 13, max: 13 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9858 }
+  - name: Ocean View Double Room - Upper Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12440 }
+  - name: Master Double Cabin - Main Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12441 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, non_smoking_cabins, hot_showers, indoor_saloon, aircon_saloon, outdoor_dining, bar, sun_deck, observation_deck, leisure_deck, entertainment, internet, charging_stations, camera_station, camera_rinse, housekeeping, snorkeling_gear, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, sidemount, gear_rental]
+safety: [life_vests, fire_suppression, oxygen, first_aid_kit]
+dining: [local_food, vegetarian, vegan, buffet, snacks, beach_bbq, beer, wine]
+languages: [en, ja]   # ISO 639-1, e.g. en, es
+operator: op_p8dh            # op_xxxx from data/operators
+region: maldives              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6020 }
+sources:
+  - https://www.liveaboard.com/diving/maldives/blue
+notes: ""

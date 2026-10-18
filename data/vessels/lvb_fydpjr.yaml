@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_fydpjr
+names:   # to: null = current
+  - { name: Scubaspa Zen, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2012, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 53
+beam_m: 9.5
+gt: null
+refit_year: 2020
+guests: 20
+cabins: 9
+bathrooms: 9
+max_speed_kn: 10
+cruising_speed_kn: 7
+engines: null   # power_hp is per engine
+tenders: 2
+fuel_l: 19000
+water_l: 22540
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Owner's Manta Suite
+    count: null
+    max_guests: 3
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 60, max: 60 }
+    deck: main
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9802 }
+  - name: Cowrie Suite
+    count: null
+    max_guests: 3
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: { min: 20, max: 20 }
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9803 }
+  - name: Dolphin Suite
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: { min: 18, max: 18 }
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9804 }
+  - name: Sea Star Suites
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: { min: 16, max: 16 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9805 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, family_cabins, non_smoking_cabins, balcony_cabins, cabin_safe, hot_showers, outdoor_dining, bar, bbq, sun_deck, observation_deck, leisure_deck, spa, massage, library, entertainment, internet, charging_stations, camera_station, camera_rinse, laundry, housekeeping, kayaks, paddleboards, fishing, naturalist_guide, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, sidemount, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, searchlight, epirb, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, buffet, set_menu, snacks, beach_bbq, beer, wine]
+languages: [en, id]   # ISO 639-1, e.g. en, es
+operator: op_3n3q            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6009 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/scubaspa-zen
+notes: ""

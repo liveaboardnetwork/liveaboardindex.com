@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_ddxfva
+names:   # to: null = current
+  - { name: Bajak, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2015, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 28
+beam_m: 7
+gt: null
+refit_year: 2021
+guests: 14
+cabins: 4
+bathrooms: 2
+max_speed_kn: 8
+cruising_speed_kn: 7
+engines: { count: null, make: mitsubishi, model: null, power_hp: 120 }   # power_hp is per engine
+tenders: null
+fuel_l: 2500
+water_l: 5000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Master Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10276 }
+  - name: Shared Cabins
+    count: null
+    max_guests: 4
+    beds: { single: 4, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 10277 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [aircon_cabins, family_cabins, non_smoking_cabins, outdoor_dining, sun_deck, leisure_deck, charging_stations, camera_station, housekeeping, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, life_rafts, life_vests, fire_suppression, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, vegetarian, vegan, buffet, beer]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_vfr0            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6130 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/bajak
+notes: ""

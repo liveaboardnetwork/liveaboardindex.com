@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_fm4jzb
+names:   # to: null = current
+  - { name: Cajoma IV, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2015, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 30
+beam_m: null
+gt: null
+refit_year: null
+guests: 8
+cabins: 4
+bathrooms: 4
+max_speed_kn: 12
+cruising_speed_kn: null
+engines: { count: 6, make: null, model: null, power_hp: null }   # power_hp is per engine
+tenders: 2
+fuel_l: null
+water_l: 10000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Master Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: null
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9017 }
+  - name: Deluxe Double Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9018 }
+  - name: Deluxe Twin Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9019 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, family_cabins, non_smoking_cabins, balcony_cabins, hot_showers, indoor_saloon, outdoor_dining, bar, sun_deck, observation_deck, leisure_deck, entertainment, charging_stations, camera_rinse, housekeeping, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, depth_sounder, epirb, life_rafts, life_vests, fire_suppression, bilge_alarm, oxygen, first_aid_kit]
+dining: [local_food, western_food, vegetarian, vegan, buffet, set_menu, snacks, beer, wine]
+languages: [en, nl, fr, id]   # ISO 639-1, e.g. en, es
+operator: op_jyqr            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5713 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/cajoma-iv
+notes: ""

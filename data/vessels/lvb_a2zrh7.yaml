@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_a2zrh7
+names:   # to: null = current
+  - { name: Sea Safari 8, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2003, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 34.35
+beam_m: null
+gt: null
+refit_year: null
+guests: 23
+cabins: 12
+bathrooms: 13
+max_speed_kn: 10
+cruising_speed_kn: null
+engines: { count: 1, make: cummins, model: KT-19, power_hp: null }   # power_hp is per engine
+tenders: 2
+fuel_l: 30000
+water_l: 40000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Upper Deck Twin Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 7203 }
+  - name: Lower Deck Twin Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 7204 }
+  - name: Middle Deck Twin Cabins
+    count: null
+    max_guests: 4
+    beds: { single: 0, double: 2, bunk: 0, convertible: true }
+    size_m2: null
+    deck: main
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 7205 }
+  - name: Middle Deck Double Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 7206 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, non_smoking_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, sun_deck, library, entertainment, internet, charging_stations, camera_station, laundry, housekeeping, kayaks, snorkeling_gear, naturalist_guide, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, dive_tenders, nitrox, din_adaptors, sidemount, tech_diving, rebreathers, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, searchlight, epirb, life_rafts, life_vests, fire_suppression, oxygen, first_aid_kit]
+dining: [local_food, western_food, vegetarian, vegan, buffet, snacks, beer, wine]
+languages: [en, ja]   # ISO 639-1, e.g. en, es
+operator: op_3cbf            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5406 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/sea-safari-8
+notes: ""

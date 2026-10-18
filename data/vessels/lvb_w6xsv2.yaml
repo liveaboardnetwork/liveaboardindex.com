@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_w6xsv2
+names:   # to: null = current
+  - { name: Ocean Hunter 3, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 1978, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 29
+beam_m: 8
+gt: null
+refit_year: 2008
+guests: 16
+cabins: 8
+bathrooms: 8
+max_speed_kn: null
+cruising_speed_kn: 11
+engines: { count: null, make: null, model: null, power_hp: 375 }   # power_hp is per engine
+tenders: null
+fuel_l: 24000
+water_l: 15142
+watermaker_lpd: 4542   # liters per day
+cabin_types:
+  - name: Standard Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 6014 }
+  - name: Deluxe Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: across
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 6015 }
+  - name: Master State Rooms
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 6016 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, non_smoking_cabins, hot_showers, indoor_saloon, aircon_saloon, bar, sun_deck, observation_deck, leisure_deck, library, entertainment, charging_stations, camera_station, camera_rinse, housekeeping, kayaks, fishing, naturalist_guide, purpose_built_dive]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, sidemount, tech_diving, rebreathers, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, depth_sounder, fishfinder, life_rafts, life_vests, oxygen]
+dining: [local_food, western_food, vegetarian, vegan, buffet, snacks, beer, wine]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_6b93            # op_xxxx from data/operators
+region: micronesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 4433 }
+sources:
+  - https://www.liveaboard.com/diving/micronesia/ocean-hunter-3
+notes: ""

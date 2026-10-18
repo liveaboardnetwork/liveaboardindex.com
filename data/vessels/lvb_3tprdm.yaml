@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_3tprdm
+names:   # to: null = current
+  - { name: EcoPro Mariana, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2005, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 30
+beam_m: 8
+gt: null
+refit_year: 2021
+guests: 16
+cabins: 9
+bathrooms: 10
+max_speed_kn: 10
+cruising_speed_kn: 9
+engines: { count: null, make: null, model: null, power_hp: 320 }   # power_hp is per engine
+tenders: 1
+fuel_l: 10000
+water_l: 6000
+watermaker_lpd: 6000   # liters per day
+cabin_types:
+  - name: Lower Deck Single
+    count: null
+    max_guests: 1
+    beds: { single: 1, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10236 }
+  - name: Lower Deck Double/Twin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10237 }
+  - name: Upper Deck Double/Twin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: upper
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10238 }
+  - name: Upper Deck Double
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10239 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, non_smoking_cabins, hot_showers, indoor_saloon, aircon_saloon, outdoor_dining, bar, bbq, sun_deck, observation_deck, leisure_deck, library, entertainment, internet, charging_stations, camera_station, camera_rinse, housekeeping, fishing, naturalist_guide, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, dive_tenders, rinse_hoses, nitrox, din_adaptors, gear_rental]
+safety: [gps, vhf_dsc_ssb, satellite_phone, life_vests, oxygen, first_aid_kit]
+dining: [local_food, vegetarian, vegan, buffet, snacks, beach_bbq, beer, wine]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_qjxw            # op_xxxx from data/operators
+region: maldives              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6113 }
+sources:
+  - https://www.liveaboard.com/diving/maldives/ecopro-mariana
+notes: ""

@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_mj16zb
+names:   # to: null = current
+  - { name: Emperor Asmaa, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2003, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 30
+beam_m: 7
+gt: null
+refit_year: 2015
+guests: 20
+cabins: 9
+bathrooms: 10
+max_speed_kn: null
+cruising_speed_kn: null
+engines: { count: 2, make: null, model: null, power_hp: 440 }   # power_hp is per engine
+tenders: 2
+fuel_l: null
+water_l: 2
+watermaker_lpd: 5500   # liters per day
+cabin_types:
+  - name: Lower Deck Twin Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 9, max: 9 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 5980 }
+  - name: Upper Deck Twin Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 9, max: 9 }
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9639 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, hot_showers, indoor_saloon, aircon_saloon, bar, sun_deck, library, entertainment, internet, charging_stations, camera_station, housekeeping, non_diver_friendly]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, rebreathers, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, life_rafts, life_vests, fire_suppression, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, buffet, snacks, beer, wine]
+languages: [en, de, fr, es, ru, it]   # ISO 639-1, e.g. en, es
+operator: op_gybp            # op_xxxx from data/operators
+region: egypt              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 4418 }
+sources:
+  - https://www.liveaboard.com/diving/egypt/emperor-asmaa
+notes: ""

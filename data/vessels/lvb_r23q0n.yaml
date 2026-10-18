@@ -1,0 +1,119 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_r23q0n
+names:   # to: null = current
+  - { name: Hondius Antarctica Diving, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2019, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 107.6
+beam_m: 17.6
+gt: null
+refit_year: null
+guests: 170
+cabins: 80
+bathrooms: null
+max_speed_kn: 15
+cruising_speed_kn: null
+engines: { count: 2, make: null, model: null, power_hp: null }   # power_hp is per engine
+tenders: null
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Quadruple Porthole
+    count: null
+    max_guests: 4
+    beds: { single: 0, double: 0, bunk: 2, convertible: false }
+    size_m2: { min: 15.3, max: 16 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12102 }
+  - name: Triple Porthole
+    count: null
+    max_guests: 3
+    beds: { single: 1, double: 0, bunk: 1, convertible: false }
+    size_m2: { min: 15.9, max: 16 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12103 }
+  - name: Twin Porthole
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 13.3, max: 16 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12104 }
+  - name: Twin Window
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 12.1, max: 14.3 }
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12105 }
+  - name: Twin Deluxe
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 19.4, max: 21.3 }
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12106 }
+  - name: Superior Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 20.7, max: 21.3 }
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12107 }
+  - name: Junior Suite
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 19.2, max: 20 }
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12108 }
+  - name: Grand Suite Private Balcony
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 26.7, max: 26.7 }
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12109 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, non_smoking_cabins, tv_in_cabins, balcony_cabins, cabin_safe, hair_dryer, indoor_saloon, bar, sun_deck, observation_deck, library, entertainment, internet, laundry, housekeeping, kayaks, naturalist_guide]
+dive_facilities: []
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, searchlight, flares, life_rafts, life_vests, fire_suppression, first_aid_kit, crew_first_aid]
+dining: [western_food, vegetarian, vegan, buffet, set_menu, snacks, beer, wine]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_v0xg            # op_xxxx from data/operators
+region: antarctica              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6516 }
+sources:
+  - https://www.liveaboard.com/diving/antarctica/hondius-antarctica-diving
+notes: ""

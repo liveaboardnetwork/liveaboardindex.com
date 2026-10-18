@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_8amzhq
+names:   # to: null = current
+  - { name: JP Marine, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2014, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 37
+beam_m: null
+gt: null
+refit_year: null
+guests: 28
+cabins: 14
+bathrooms: 14
+max_speed_kn: null
+cruising_speed_kn: null
+engines: { count: 2, make: man, model: null, power_hp: 610 }   # power_hp is per engine
+tenders: 2
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Lower Deck Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8836 }
+  - name: Upper Deck Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10008 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, non_smoking_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, bar, sun_deck, observation_deck, leisure_deck, entertainment, internet, charging_stations, camera_rinse, housekeeping, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, sidemount, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, fishfinder, searchlight, epirb, flares, life_rafts, life_vests, fire_suppression, engine_room_cctv, oxygen, first_aid_kit]
+dining: [local_food, western_food, vegetarian, vegan, buffet, snacks, beer, wine]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_9ycf            # op_xxxx from data/operators
+region: egypt              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5641 }
+sources:
+  - https://www.liveaboard.com/diving/egypt/jp-marine
+notes: ""

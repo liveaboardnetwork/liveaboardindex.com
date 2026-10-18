@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_yq8njh
+names:   # to: null = current
+  - { name: Manta Queen 2, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 1993, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 22
+beam_m: 5
+gt: null
+refit_year: 2026
+guests: 20
+cabins: 9
+bathrooms: 3
+max_speed_kn: 9
+cruising_speed_kn: 8
+engines: { count: 2, make: null, model: null, power_hp: 350 }   # power_hp is per engine
+tenders: 1
+fuel_l: 3000
+water_l: 10000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Quad Cabin
+    count: null
+    max_guests: 4
+    beds: { single: 0, double: 0, bunk: 2, convertible: false }
+    size_m2: { min: 6, max: 6 }
+    deck: lower
+    window: none
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 8488 }
+  - name: Twin Non Ensuite cabin
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 6, max: 6 }
+    deck: main
+    window: standard
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 8489 }
+  - name: Double Bed Non Ensuite Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 6, max: 6 }
+    deck: main
+    window: standard
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 8490 }
+  - name: Double Bed Non Ensuite Cabin (Lower Deck)
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 6, max: 6 }
+    deck: lower
+    window: none
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 12835 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [aircon_cabins, seaview_cabins, non_smoking_cabins, hot_showers, outside_showers, outdoor_dining, sun_deck, observation_deck, leisure_deck, entertainment, internet, charging_stations, camera_station, camera_rinse, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, gear_rental]
+safety: [gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, searchlight, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, buffet, snacks, beer]
+languages: [en, nl, de, th, fr, zh, es, it]   # ISO 639-1, e.g. en, es
+operator: op_wta7            # op_xxxx from data/operators
+region: thailand              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5538 }
+sources:
+  - https://www.liveaboard.com/diving/thailand/manta-queen-2
+notes: ""

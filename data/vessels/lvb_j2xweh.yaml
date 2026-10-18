@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_j2xweh
+names:   # to: null = current
+  - { name: Bunmee 4, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 1996, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 29
+beam_m: 6
+gt: null
+refit_year: 2023
+guests: 20
+cabins: 10
+bathrooms: 10
+max_speed_kn: 12
+cruising_speed_kn: 9
+engines: { count: 2, make: null, model: null, power_hp: 380 }   # power_hp is per engine
+tenders: 1
+fuel_l: 5000
+water_l: 10000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Horizon Double/Twin Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 10670 }
+  - name: Marina Twin Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10671 }
+  - name: Marina Double/Twin Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: main
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10672 }
+  - name: Marina Double Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10673 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, non_smoking_cabins, hot_showers, outside_showers, outdoor_dining, bar, bbq, sun_deck, observation_deck, leisure_deck, massage, library, entertainment, internet, charging_stations, camera_station, camera_rinse, housekeeping, paddleboards, naturalist_guide, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, sidemount, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, searchlight, epirb, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, buffet, set_menu, snacks, beer, wine]
+languages: [en, fr, ru, it]   # ISO 639-1, e.g. en, es
+operator: op_48mq            # op_xxxx from data/operators
+region: thailand              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6223 }
+sources:
+  - https://www.liveaboard.com/diving/thailand/bunmee-4
+notes: ""

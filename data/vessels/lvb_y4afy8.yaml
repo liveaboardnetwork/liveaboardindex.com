@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_y4afy8
+names:   # to: null = current
+  - { name: Narayana, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2014, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 26
+beam_m: null
+gt: null
+refit_year: 2018
+guests: 14
+cabins: 7
+bathrooms: 8
+max_speed_kn: null
+cruising_speed_kn: null
+engines: null   # power_hp is per engine
+tenders: null
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Double/Twin Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: across
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9239 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, tv_in_cabins, outdoor_dining, sun_deck, library, entertainment, charging_stations, housekeeping, non_diver_friendly, private_charter]
+dive_facilities: [dive_deck, rinse_hoses, din_adaptors, rebreathers, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, searchlight, life_rafts, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit]
+dining: [local_food, western_food, vegetarian, vegan, buffet, beer, wine]
+languages: [en, de, zh, ja, ko]   # ISO 639-1, e.g. en, es
+operator: op_zwmg            # op_xxxx from data/operators
+region: philippines              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5804 }
+sources:
+  - https://www.liveaboard.com/diving/philippines/narayana
+notes: ""

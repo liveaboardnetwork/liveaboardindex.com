@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_g06d5s
+names:   # to: null = current
+  - { name: Oceania, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2001, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 27
+beam_m: 9
+gt: null
+refit_year: 2018
+guests: 16
+cabins: 8
+bathrooms: 9
+max_speed_kn: 13
+cruising_speed_kn: 13
+engines: { count: null, make: caterpillar, model: "3306", power_hp: null }   # power_hp is per engine
+tenders: 2
+fuel_l: 13000
+water_l: 1600
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Queen Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: null
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9411 }
+  - name: Twin Bed Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12229 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, non_smoking_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, sun_deck, entertainment, charging_stations, camera_station, camera_rinse, laundry, housekeeping, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, nitrox, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, searchlight, epirb, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, buffet, set_menu, snacks, beer, wine]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_ptc6            # op_xxxx from data/operators
+region: papua-new-guinea              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5885 }
+sources:
+  - https://www.liveaboard.com/diving/papua-new-guinea/oceania
+notes: ""

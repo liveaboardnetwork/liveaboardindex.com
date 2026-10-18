@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_h3f862
+names:   # to: null = current
+  - { name: Nautilus Two, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2007, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 43
+beam_m: null
+gt: null
+refit_year: null
+guests: 24
+cabins: 12
+bathrooms: 12
+max_speed_kn: 14
+cruising_speed_kn: 10
+engines: { count: null, make: cummins, model: null, power_hp: null }   # power_hp is per engine
+tenders: 1
+fuel_l: null
+water_l: 5000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Superior Double / Twin Cabin - Lower Deck
+    count: null
+    max_guests: 2
+    beds: { single: 1, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 22, max: 22 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8886 }
+  - name: Superior Double / Twin Cabin - Main Deck
+    count: null
+    max_guests: 2
+    beds: { single: 1, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 20, max: 20 }
+    deck: main
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11184 }
+  - name: Double Cabin - Lower Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 18, max: 18 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11185 }
+  - name: Double Cabin - Main Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 18, max: 18 }
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11186 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, non_smoking_cabins, hot_showers, outside_showers, indoor_saloon, outdoor_dining, bar, sun_deck, observation_deck, leisure_deck, jacuzzi, library, entertainment, internet, charging_stations, camera_station, camera_rinse, housekeeping, kayaks, paddleboards, fishing, snorkeling_gear, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, gear_rental]
+safety: [gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, searchlight, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit]
+dining: [local_food, buffet, beach_bbq, beer, wine]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_bp2h            # op_xxxx from data/operators
+region: maldives              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5662 }
+sources:
+  - https://www.liveaboard.com/diving/maldives/nautilus-two
+notes: ""

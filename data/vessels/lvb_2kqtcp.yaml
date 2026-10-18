@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_2kqtcp
+names:   # to: null = current
+  - { name: Sindalahs, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2024, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 38
+beam_m: 8.4
+gt: null
+refit_year: 2025
+guests: 26
+cabins: 14
+bathrooms: 17
+max_speed_kn: 14
+cruising_speed_kn: 11
+engines: { count: null, make: null, model: null, power_hp: 788 }   # power_hp is per engine
+tenders: null
+fuel_l: 28510
+water_l: 26500
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Double/Twin Cabins - Upper Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11985 }
+  - name: Suite - Upper Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11986 }
+  - name: Double/Twin Cabins - Lower Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11987 }
+  - name: Suite - Lower Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11988 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, family_cabins, non_smoking_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, outdoor_dining, bar, bbq, sun_deck, observation_deck, leisure_deck, shop, entertainment, internet, charging_stations, camera_station, camera_rinse, laundry, housekeeping, snorkeling_gear, naturalist_guide, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, sidemount, tech_diving, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, searchlight, epirb, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, buffet, set_menu, snacks]
+languages: [en, ru]   # ISO 639-1, e.g. en, es
+operator: op_spjv            # op_xxxx from data/operators
+region: egypt              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6512 }
+sources:
+  - https://www.liveaboard.com/diving/egypt/sindalahs
+notes: ""

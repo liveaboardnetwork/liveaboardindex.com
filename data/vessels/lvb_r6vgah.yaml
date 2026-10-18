@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_r6vgah
+names:   # to: null = current
+  - { name: Gaia Love, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: null, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 40
+beam_m: null
+gt: null
+refit_year: null
+guests: 22
+cabins: 11
+bathrooms: 11
+max_speed_kn: 12
+cruising_speed_kn: 10
+engines: { count: 2, make: yanmar, model: "829", power_hp: null }   # power_hp is per engine
+tenders: null
+fuel_l: 66000
+water_l: 52000
+watermaker_lpd: 8   # liters per day
+cabin_types:
+  - name: Upper Deck Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: { min: 20, max: 20 }
+    deck: upper
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8975 }
+  - name: Lower Deck Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8976 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, tv_in_cabins, hot_showers, indoor_saloon, aircon_saloon, outdoor_dining, bar, sun_deck, observation_deck, leisure_deck, massage, library, entertainment, internet, charging_stations, camera_station, camera_rinse, laundry, housekeeping, kayaks, snorkeling_gear, naturalist_guide, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, sidemount, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, searchlight, epirb, life_rafts, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit]
+dining: [local_food, western_food, vegetarian, vegan, set_menu, snacks, beer, wine]
+languages: [en, nl, fr, id]   # ISO 639-1, e.g. en, es
+operator: op_ead6            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5695 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/gaia-love
+notes: ""

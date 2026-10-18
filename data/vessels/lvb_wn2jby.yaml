@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_wn2jby
+names:   # to: null = current
+  - { name: Manta Queen 6, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: null, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: null
+beam_m: null
+gt: null
+refit_year: null
+guests: 12
+cabins: 7
+bathrooms: 5
+max_speed_kn: 8
+cruising_speed_kn: null
+engines: { count: 2, make: null, model: null, power_hp: 450 }   # power_hp is per engine
+tenders: null
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Twin Bunk Shared Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: { min: 4, max: 4 }
+    deck: main
+    window: standard
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 10924 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [aircon_cabins, non_smoking_cabins, hot_showers, outside_showers, outdoor_dining, sun_deck, leisure_deck, entertainment, internet, charging_stations, camera_rinse, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, rinse_hoses, nitrox, din_adaptors, gear_rental]
+safety: [gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, searchlight, life_rafts, life_vests, fire_suppression, bilge_alarm, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, vegetarian, vegan, buffet, snacks]
+languages: [en, nl, de, es, it]   # ISO 639-1, e.g. en, es
+operator: op_wta7            # op_xxxx from data/operators
+region: thailand              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5542 }
+sources:
+  - https://www.liveaboard.com/diving/thailand/manta-queen-6
+notes: ""

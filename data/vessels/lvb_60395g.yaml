@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_60395g
+names:   # to: null = current
+  - { name: Aqua Tiki II, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2011, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 18
+beam_m: 8.5
+gt: null
+refit_year: null
+guests: 8
+cabins: 4
+bathrooms: 5
+max_speed_kn: null
+cruising_speed_kn: null
+engines: { count: 2, make: null, model: null, power_hp: 38 }   # power_hp is per engine
+tenders: null
+fuel_l: 500
+water_l: 800
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Double Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: null
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8972 }
+  - name: Twin Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: null
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8973 }
+  - name: Double VIP Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: null
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8974 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, non_smoking_cabins, hot_showers, outside_showers, indoor_saloon, outdoor_dining, bar, bbq, library, entertainment, internet, kayaks, fishing, snorkeling_gear, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_tenders, rinse_hoses, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, searchlight, epirb, life_rafts, life_vests, fire_suppression, bilge_alarm, oxygen, first_aid_kit]
+dining: [local_food, western_food, vegetarian, beer, wine]
+languages: [en, fr]   # ISO 639-1, e.g. en, es
+operator: op_11b7            # op_xxxx from data/operators
+region: polynesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5694 }
+sources:
+  - https://www.liveaboard.com/diving/polynesia/aqua-tiki-ii
+notes: ""

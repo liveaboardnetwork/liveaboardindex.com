@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_bk0hxa
+names:   # to: null = current
+  - { name: Seven Seas, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: null, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 45
+beam_m: 8
+gt: null
+refit_year: null
+guests: 14
+cabins: 8
+bathrooms: 8
+max_speed_kn: null
+cruising_speed_kn: 8
+engines: { count: null, make: mitsubishi, model: "8M22", power_hp: 450 }   # power_hp is per engine
+tenders: 2
+fuel_l: 18000
+water_l: 5000
+watermaker_lpd: 9000   # liters per day
+cabin_types:
+  - name: Bunk Beds (1 & 2)
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 6032 }
+  - name: Single Cabins (3 & 4)
+    count: null
+    max_guests: 1
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 6033 }
+  - name: Double Cabin (5 & 6)
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10690 }
+  - name: Upper Deck Double Cabin (7 & 9)
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10691 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, hot_showers, outside_showers, aircon_saloon, outdoor_dining, sun_deck, leisure_deck, massage, entertainment, charging_stations, camera_station, camera_rinse, laundry, housekeeping, kayaks, paddleboards, non_diver_friendly, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, nitrox, din_adaptors, rebreathers, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, life_rafts, fire_suppression, first_aid_kit]
+dining: [local_food, western_food, vegetarian, vegan, set_menu, beach_bbq, beer, wine]
+languages: [en, fr, es, id]   # ISO 639-1, e.g. en, es
+operator: op_hhma            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 4437 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/seven-seas
+notes: ""

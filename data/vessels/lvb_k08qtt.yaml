@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_k08qtt
+names:   # to: null = current
+  - { name: Blue Force One, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2013, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 42
+beam_m: 11
+gt: null
+refit_year: null
+guests: 24
+cabins: 12
+bathrooms: 12
+max_speed_kn: 11
+cruising_speed_kn: 9
+engines: { count: null, make: caterpillar, model: "750", power_hp: null }   # power_hp is per engine
+tenders: 2
+fuel_l: 8000
+water_l: 24000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Deluxe Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 1, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8365 }
+  - name: Junior Suite
+    count: null
+    max_guests: 2
+    beds: { single: 1, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8366 }
+  - name: Master Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8367 }
+  - name: Master Suite
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8368 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, family_cabins, tv_in_cabins, hot_showers, aircon_saloon, outdoor_dining, bar, sun_deck, leisure_deck, entertainment, camera_station, housekeeping, kayaks, paddleboards, snorkeling_gear, naturalist_guide]
+dive_facilities: [dive_deck, nitrox, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, depth_sounder, fishfinder, searchlight, flares, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, vegetarian, vegan, buffet, snacks, beach_bbq, beer, wine]
+languages: [en, es]   # ISO 639-1, e.g. en, es
+operator: op_hwvp            # op_xxxx from data/operators
+region: maldives              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5476 }
+sources:
+  - https://www.liveaboard.com/diving/maldives/blue-force-one
+notes: ""

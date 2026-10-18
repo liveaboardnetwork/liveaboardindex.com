@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_dmy9fc
+names:   # to: null = current
+  - { name: NusaTara, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: null, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 20.4
+beam_m: 4.6
+gt: null
+refit_year: null
+guests: 6
+cabins: 3
+bathrooms: 3
+max_speed_kn: 9
+cruising_speed_kn: 8
+engines: { count: null, make: null, model: null, power_hp: 105 }   # power_hp is per engine
+tenders: null
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Double Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11087 }
+  - name: Twin Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11088 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, indoor_saloon, sun_deck, library, charging_stations, camera_station, camera_rinse, housekeeping]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, din_adaptors]
+safety: [gps, vhf_dsc_ssb, satellite_phone, depth_sounder, life_rafts, life_vests, fire_suppression, oxygen, first_aid_kit]
+dining: [local_food, western_food, vegetarian, buffet, snacks, beach_bbq, beer]
+languages: [en, id]   # ISO 639-1, e.g. en, es
+operator: op_5rp8            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5672 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/nusatara
+notes: ""

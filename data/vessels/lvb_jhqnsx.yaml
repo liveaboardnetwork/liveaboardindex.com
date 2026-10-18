@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_jhqnsx
+names:   # to: null = current
+  - { name: Snefro Pearl, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2012, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: null
+beam_m: null
+gt: null
+refit_year: 2025
+guests: 12
+cabins: 6
+bathrooms: 8
+max_speed_kn: null
+cruising_speed_kn: null
+engines: { count: 2, make: null, model: null, power_hp: 340 }   # power_hp is per engine
+tenders: null
+fuel_l: null
+water_l: 7000
+watermaker_lpd: 1000   # liters per day
+cabin_types:
+  - name: Twin Cabins - Lower Deck
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 8, max: 8 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8216 }
+  - name: Twin Cabin - Upper Deck
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 7, max: 7 }
+    deck: upper
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8217 }
+  - name: Master Suite - Lower Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 10, max: 10 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9933 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, non_smoking_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, bar, sun_deck, leisure_deck, library, entertainment, internet, housekeeping, snorkeling_gear, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, nitrox, din_adaptors, sidemount, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, depth_sounder, epirb, flares, life_rafts, life_vests, fire_suppression, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, buffet, snacks, beer]
+languages: [en, de, fr, es, ru, it]   # ISO 639-1, e.g. en, es
+operator: op_re91            # op_xxxx from data/operators
+region: egypt              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5439 }
+sources:
+  - https://www.liveaboard.com/diving/egypt/snefro-pearl
+notes: ""

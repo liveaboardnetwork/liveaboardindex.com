@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_4th5ax
+names:   # to: null = current
+  - { name: Freedom IV, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2022, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 30
+beam_m: 11.4
+gt: null
+refit_year: 2022
+guests: 24
+cabins: 11
+bathrooms: 13
+max_speed_kn: 12
+cruising_speed_kn: 9
+engines: { count: null, make: null, model: null, power_hp: 30 }   # power_hp is per engine
+tenders: null
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Lower Deck - Twin Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10565 }
+  - name: Main Deck - Master Double/Triple Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10566 }
+  - name: Main Deck - Master Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 1, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10567 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, family_cabins, non_smoking_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, bar, bbq, sun_deck, observation_deck, leisure_deck, library, entertainment, internet, charging_stations, camera_station, housekeeping, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, sidemount, tech_diving, rebreathers, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, depth_sounder, fishfinder, searchlight, epirb, flares, life_rafts, life_vests, fire_suppression, engine_room_cctv, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, vegetarian, vegan, buffet, snacks, beer, wine]
+languages: [en, de, fr, es, ru, it]   # ISO 639-1, e.g. en, es
+operator: op_74hm            # op_xxxx from data/operators
+region: egypt              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6202 }
+sources:
+  - https://www.liveaboard.com/diving/egypt/freedom-iv
+notes: ""

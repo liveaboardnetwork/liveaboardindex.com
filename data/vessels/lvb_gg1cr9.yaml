@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_gg1cr9
+names:   # to: null = current
+  - { name: Ocean Quest, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 1988, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 36
+beam_m: 13
+gt: null
+refit_year: 2013
+guests: 44
+cabins: 9
+bathrooms: 23
+max_speed_kn: null
+cruising_speed_kn: 9
+engines: null   # power_hp is per engine
+tenders: null
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Double Cabin with En-Suite
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: null
+    window: null
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8248 }
+  - name: Twin Cabin with En-Suite
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: null
+    window: null
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8249 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, tv_in_cabins, hot_showers, indoor_saloon, aircon_saloon, housekeeping, non_diver_friendly]
+dive_facilities: [dive_deck, nitrox, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, searchlight, epirb, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit, crew_first_aid]
+dining: [western_food, vegetarian, buffet, beer]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_8ft4            # op_xxxx from data/operators
+region: australia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5417 }
+sources:
+  - https://www.liveaboard.com/diving/australia/ocean-quest
+notes: ""

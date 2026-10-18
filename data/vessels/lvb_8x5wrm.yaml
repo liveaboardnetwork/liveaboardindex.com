@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_8x5wrm
+names:   # to: null = current
+  - { name: Discovery II, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: null, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 35
+beam_m: 8
+gt: null
+refit_year: null
+guests: 22
+cabins: 11
+bathrooms: 11
+max_speed_kn: null
+cruising_speed_kn: null
+engines: { count: 2, make: null, model: null, power_hp: 580 }   # power_hp is per engine
+tenders: 2
+fuel_l: null
+water_l: 10000
+watermaker_lpd: 2000   # liters per day
+cabin_types:
+  - name: Twin Bed Upper
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9181 }
+  - name: Master Suite
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9182 }
+  - name: Twin Bed Lower
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9183 }
+  - name: Lower Deck Suite
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: null
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11261 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, non_smoking_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, outdoor_dining, bar, bbq, sun_deck, observation_deck, leisure_deck, library, entertainment, internet, camera_station, camera_rinse, housekeeping, snorkeling_gear, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, sidemount, tech_diving, rebreathers, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, depth_sounder, fishfinder, searchlight, epirb, life_rafts, life_vests, fire_suppression, bilge_alarm, oxygen, first_aid_kit]
+dining: [local_food, western_food, vegetarian, vegan, buffet, snacks, beer, wine]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_kkt1            # op_xxxx from data/operators
+region: egypt              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5784 }
+sources:
+  - https://www.liveaboard.com/diving/egypt/discovery-ii
+notes: ""

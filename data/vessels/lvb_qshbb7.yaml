@@ -1,0 +1,89 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_qshbb7
+names:   # to: null = current
+  - { name: Black Noddy, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 1990, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 33
+beam_m: 6.5
+gt: null
+refit_year: 2025
+guests: 16
+cabins: 8
+bathrooms: 9
+max_speed_kn: 12.5
+cruising_speed_kn: 10
+engines: { count: null, make: null, model: null, power_hp: 1100 }   # power_hp is per engine
+tenders: 2
+fuel_l: 8000
+water_l: 24000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Voyager Queen Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: none
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12814 }
+  - name: Voyager Twin Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: none
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12815 }
+  - name: Explorer Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: porthole
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 12816 }
+  - name: Ocean Twin Suite
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12817 }
+  - name: Horizon Suite
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12818 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, non_smoking_cabins, cabin_safe, hair_dryer, hot_showers, outside_showers, outdoor_dining, bar, bbq, sun_deck, leisure_deck, internet, charging_stations, camera_rinse, laundry, housekeeping, snorkeling_gear, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, searchlight, epirb, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, buffet, set_menu, snacks, beach_bbq, beer, wine]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_wd8k            # op_xxxx from data/operators
+region: philippines              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6672 }
+sources:
+  - https://www.liveaboard.com/diving/philippines/black-noddy
+notes: ""

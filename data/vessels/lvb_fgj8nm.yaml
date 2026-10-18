@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_fgj8nm
+names:   # to: null = current
+  - { name: The Junk, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 1962, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: null
+beam_m: null
+gt: null
+refit_year: 1997
+guests: 18
+cabins: 6
+bathrooms: 7
+max_speed_kn: 10
+cruising_speed_kn: 8
+engines: { count: 1, make: null, model: null, power_hp: 380 }   # power_hp is per engine
+tenders: 1
+fuel_l: 10000
+water_l: 8000
+watermaker_lpd: 6000   # liters per day
+cabin_types:
+  - name: Quad Cabins
+    count: null
+    max_guests: 4
+    beds: { single: 0, double: 0, bunk: 2, convertible: false }
+    size_m2: null
+    deck: null
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 7135 }
+  - name: Triple Cabin
+    count: null
+    max_guests: 3
+    beds: { single: 1, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: null
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 7136 }
+  - name: Double/Twin Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: null
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 7137 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, non_smoking_cabins, hot_showers, indoor_saloon, aircon_saloon, outdoor_dining, sun_deck, leisure_deck, library, entertainment, camera_station, camera_rinse, housekeeping, kayaks, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, dive_tenders, rinse_hoses, nitrox, din_adaptors, gear_rental]
+safety: [gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, buffet, snacks, beer, wine]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_hjpe            # op_xxxx from data/operators
+region: thailand              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5401 }
+sources:
+  - https://www.liveaboard.com/diving/thailand/the-junk
+notes: ""

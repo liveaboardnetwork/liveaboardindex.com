@@ -1,0 +1,89 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_xzpmvg
+names:   # to: null = current
+  - { name: Scubaspa Yang, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2014, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 50
+beam_m: 11
+gt: null
+refit_year: null
+guests: 26
+cabins: 17
+bathrooms: 24
+max_speed_kn: null
+cruising_speed_kn: 8
+engines: { count: 2, make: null, model: null, power_hp: null }   # power_hp is per engine
+tenders: null
+fuel_l: 18500
+water_l: 21000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Sea Star Double Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 13, max: 13 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 7163 }
+  - name: Sea Star Double/ Triple
+    count: null
+    max_guests: 2
+    beds: { single: 1, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 13, max: 13 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 7164 }
+  - name: Cowrie Suite
+    count: null
+    max_guests: 3
+    beds: { single: 1, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 16, max: 16 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 7165 }
+  - name: Dolphin Suites
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 16, max: 16 }
+    deck: main
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 7166 }
+  - name: Manta Suites
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: { min: 20, max: 20 }
+    deck: main
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11461 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, non_smoking_cabins, hot_showers, outdoor_dining, bar, sun_deck, observation_deck, leisure_deck, jacuzzi, spa, massage, entertainment, internet, charging_stations, camera_rinse, laundry, kayaks, paddleboards, non_diver_friendly, purpose_built_dive]
+dive_facilities: [dive_deck, dive_tenders, rinse_hoses, nitrox, din_adaptors, gear_rental]
+safety: [gps, satellite_phone, flares, life_rafts, life_vests, fire_suppression, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, vegetarian, vegan, buffet, beach_bbq, beer, wine]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_g00r            # op_xxxx from data/operators
+region: maldives              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5419 }
+sources:
+  - https://www.liveaboard.com/diving/maldives/scubaspa-yang
+notes: ""

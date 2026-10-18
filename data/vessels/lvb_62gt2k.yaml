@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_62gt2k
+names:   # to: null = current
+  - { name: Komodo Sea Dragon, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2022, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 38
+beam_m: null
+gt: null
+refit_year: 2026
+guests: 16
+cabins: 6
+bathrooms: 7
+max_speed_kn: 9
+cruising_speed_kn: 8
+engines: { count: null, make: null, model: null, power_hp: 400 }   # power_hp is per engine
+tenders: 2
+fuel_l: 5000
+water_l: 6000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Double/Twin Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: { min: 23, max: 23 }
+    deck: across
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10243 }
+  - name: Main Twin Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 18, max: 18 }
+    deck: main
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10244 }
+  - name: Second Twin Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 15, max: 15 }
+    deck: main
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10245 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, family_cabins, non_smoking_cabins, balcony_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, outdoor_dining, bar, sun_deck, observation_deck, leisure_deck, massage, library, entertainment, internet, charging_stations, camera_station, camera_rinse, housekeeping, kayaks, naturalist_guide, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, dive_tenders, nitrox, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, searchlight, flares, life_rafts, life_vests, fire_suppression, engine_room_cctv, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, vegetarian, vegan, set_menu, snacks, beach_bbq, beer, wine]
+languages: [en, id]   # ISO 639-1, e.g. en, es
+operator: op_5h0b            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6115 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/komodo-sea-dragon
+notes: ""

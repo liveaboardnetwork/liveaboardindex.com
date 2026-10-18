@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_138c0d
+names:   # to: null = current
+  - { name: Emperor Leo, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2009, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: null
+beam_m: null
+gt: null
+refit_year: 2012
+guests: 24
+cabins: 12
+bathrooms: 12
+max_speed_kn: 12
+cruising_speed_kn: 10
+engines: { count: null, make: mitsubishi, model: null, power_hp: 500 }   # power_hp is per engine
+tenders: null
+fuel_l: null
+water_l: null
+watermaker_lpd: 12000   # liters per day
+cabin_types:
+  - name: Lower Deck Twin Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: { min: 9, max: 9 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 4926 }
+  - name: Upper Deck Twin Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: { min: 9, max: 9 }
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 4927 }
+  - name: Upper Deck Suite Double
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 16, max: 16 }
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 4928 }
+  - name: Lower Deck Double Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 9, max: 9 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11009 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, hot_showers, indoor_saloon, aircon_saloon, jacuzzi, library, entertainment, internet, charging_stations, camera_station, housekeeping, non_diver_friendly, private_charter]
+dive_facilities: [dive_tenders, nitrox, din_adaptors, rebreathers, gear_rental]
+safety: [vhf_dsc_ssb, satellite_phone, life_rafts, life_vests, fire_suppression, bilge_alarm, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, buffet, snacks, beer, wine]
+languages: [en, fr, es]   # ISO 639-1, e.g. en, es
+operator: op_gybp            # op_xxxx from data/operators
+region: maldives              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 4384 }
+sources:
+  - https://www.liveaboard.com/diving/maldives/leo
+notes: ""

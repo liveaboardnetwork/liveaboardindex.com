@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_vedc51
+names:   # to: null = current
+  - { name: Raja Ampat Explorer, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 1994, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 33.52
+beam_m: 7.5
+gt: null
+refit_year: 2006
+guests: 14
+cabins: 7
+bathrooms: 7
+max_speed_kn: null
+cruising_speed_kn: null
+engines: { count: null, make: null, model: null, power_hp: 300 }   # power_hp is per engine
+tenders: null
+fuel_l: 10000
+water_l: 12000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Lower Deck Double Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8811 }
+  - name: Lower Deck Twin Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 8812 }
+  - name: Upper Deck Double Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11975 }
+  - name: Upper Deck Twin Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11976 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, hot_showers, indoor_saloon, aircon_saloon, sun_deck, library, charging_stations, camera_station, camera_rinse, housekeeping, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, din_adaptors]
+safety: [gps, vhf_dsc_ssb, satellite_phone, depth_sounder, life_rafts, life_vests, fire_suppression, oxygen, first_aid_kit]
+dining: [local_food, western_food, vegetarian, buffet, snacks, beach_bbq, beer]
+languages: [en, id]   # ISO 639-1, e.g. en, es
+operator: op_5rp8            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5510 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/raja-ampat-explorer
+notes: ""

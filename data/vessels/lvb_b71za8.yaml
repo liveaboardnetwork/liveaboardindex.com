@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_b71za8
+names:   # to: null = current
+  - { name: Blue Storm, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: null, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 40
+beam_m: null
+gt: null
+refit_year: null
+guests: 24
+cabins: 11
+bathrooms: 11
+max_speed_kn: 14
+cruising_speed_kn: 12
+engines: null   # power_hp is per engine
+tenders: null
+fuel_l: 20000
+water_l: 9000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Twin/Triple Lower Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10159 }
+  - name: Double Sea View Upper Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: null
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10160 }
+  - name: Twin Sea View Main Deck
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10161 }
+  - name: Double Sea View Main Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10162 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [aircon_cabins, seaview_cabins, indoor_saloon, aircon_saloon, sun_deck, entertainment, charging_stations, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, dive_tenders, rinse_hoses, nitrox, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, searchlight, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, buffet, snacks, beer, wine]
+languages: [en, de]   # ISO 639-1, e.g. en, es
+operator: op_s2b8            # op_xxxx from data/operators
+region: egypt              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6033 }
+sources:
+  - https://www.liveaboard.com/diving/egypt/blue-storm
+notes: ""

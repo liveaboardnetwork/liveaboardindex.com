@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_zjfj6p
+names:   # to: null = current
+  - { name: Mermaid II, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: null, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 33
+beam_m: 7
+gt: null
+refit_year: null
+guests: 18
+cabins: 9
+bathrooms: 11
+max_speed_kn: 12
+cruising_speed_kn: 9.5
+engines: { count: null, make: null, model: null, power_hp: 450 }   # power_hp is per engine
+tenders: 2
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Budget Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: lower
+    window: none
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 5947 }
+  - name: Deluxe Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: main
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9176 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, non_smoking_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, bbq, sun_deck, observation_deck, leisure_deck, library, entertainment, internet, charging_stations, camera_station, camera_rinse, laundry, housekeeping, kayaks, non_diver_friendly, purpose_built_dive]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, life_vests, fire_suppression]
+dining: [local_food, western_food, vegetarian, vegan, buffet, snacks, beer, wine]
+languages: [en, es, id]   # ISO 639-1, e.g. en, es
+operator: op_31kg            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 4400 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/mermaid-ii
+notes: ""

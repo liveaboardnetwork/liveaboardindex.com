@@ -85,7 +85,12 @@ for (const boat of scraped) {
   const nameSlug = slugify(boat.name)
   let v =
     all.find((x) => x.external_ids.liveaboard_com === boat.liveaboard_boat_id) ??
-    all.find((x) => x.region === region && x.names.some((n) => nameSlug === slugify(n.name) || nameSlug.startsWith(`${slugify(n.name)}-`)))
+    all.find(
+      (x) =>
+        x.external_ids.liveaboard_com === null &&
+        x.region === region &&
+        x.names.some((n) => nameSlug === slugify(n.name) || nameSlug.startsWith(`${slugify(n.name)}-`)),
+    )
   const isNew = !v
   if (!v) {
     let id: VesselId
@@ -116,7 +121,17 @@ for (const boat of scraped) {
     candidate.operator = upsertOperator(boat.operator.replace(/\s*&\s*/g, ' & '), boat.liveaboard_operator_id)
   }
 
-  const check = Vessel.safeParse(candidate)
+  // Their pages carry typos ("18000 tons" of water, cruising faster than top speed). Fields this run
+  // filled that break a rule are put back to what the record had, so one bad spec doesn't drop the boat.
+  let check = Vessel.safeParse(candidate)
+  for (let attempt = 0; !check.success && attempt < 3; attempt++) {
+    const keys = new Set(check.error.issues.flatMap((i) => (i.path.length ? [String(i.path[0])] : [])))
+    const reverted = [...keys].filter((k) => JSON.stringify(candidate[k as keyof Vessel]) !== JSON.stringify(v[k as keyof Vessel]))
+    if (reverted.length === 0) break
+    for (const k of reverted) (candidate as Record<string, unknown>)[k] = structuredClone(v[k as keyof Vessel])
+    log.push(`  ? ${boat.name}: dropped ${reverted.join(', ')} (${check.error.issues.map((i) => `${i.path.join('.')} ${i.message}`).join('; ')})`)
+    check = Vessel.safeParse(candidate)
+  }
   if (!check.success) {
     log.push(`  ! skipped ${boat.name}: ${check.error.issues.map((i) => `${i.path.join('.')} ${i.message}`).join('; ')}`)
     continue

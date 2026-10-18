@@ -41,9 +41,30 @@ export const AMENITY_LABELS: Record<string, Amenity | null> = {
   'Non-Diver (Snorkeler) Friendly': 'non_diver_friendly',
   'Custom built for diving': 'purpose_built_dive',
   'Available for Charter': 'private_charter',
+  'Rooms with Balcony': 'balcony_cabins',
+  'Safe Box in Cabin': 'cabin_safe',
+  'Hair Dryer in Cabin': 'hair_dryer',
+  Pool: 'pool',
+  Sauna: 'sauna',
+  Spa: 'spa',
+  Massage: 'massage',
+  'Fitness Room': 'gym',
+  'Boutique / Souvenir Shop': 'shop',
+  'Stand Up Paddleboard': 'paddleboards',
+  Kayaks: 'kayaks',
+  Fishing: 'fishing',
+  'Water Ski': 'water_ski',
+  Wakeboarding: 'wakeboarding',
+  'Jet Ski': 'jet_ski',
+  'Glass Bottom Boat Excursion': 'glass_bottom_boat',
   'Nearly 1:1 Crew-to-Guest Ratio': null,
   'Local & International Crew': null,
+  'Dedicated Local Crew': null,
   'Naturalist Itineraries': null,
+  'Budget Friendly Cruise': null,
+  'Family Friendly Cruise': null,
+  'Smart Voyager accreditation': null,
+  'Riverview Cabins': null,
 }
 
 export const DINING_LABELS: Record<string, DiningOption | null> = {
@@ -54,6 +75,7 @@ export const DINING_LABELS: Record<string, DiningOption | null> = {
   'Buffet style': 'buffet',
   'Set Menu Dinner': 'set_menu',
   'Snacks All Day': 'snacks',
+  'Beach BBQ': 'beach_bbq',
   'Beer available': 'beer',
   'Wine Available': 'wine',
   'Fine Wines Selection': 'wine',
@@ -63,6 +85,7 @@ export const DINING_LABELS: Record<string, DiningOption | null> = {
   'Welcome Cocktails': null,
   'Free Soft Drinks': null,
   'Full-board Option': null,
+  'Half-board Option': null,
 }
 
 export const DIVE_LABELS: Record<string, DiveFacility | null> = {
@@ -76,6 +99,7 @@ export const DIVE_LABELS: Record<string, DiveFacility | null> = {
   'Sidemount Diving': 'sidemount',
   'Sidemount diving – Single Tank Only': 'sidemount',
   'Tech diving': 'tech_diving',
+  'Rebreather Support': 'rebreathers',
 }
 
 export const SAFETY_LABELS: Record<string, SafetyItem | null> = {
@@ -98,24 +122,63 @@ export const SAFETY_LABELS: Record<string, SafetyItem | null> = {
   'Crew trained in first aid': 'crew_first_aid',
 }
 
-const DECK_LABELS: Record<string, CabinDeck> = {
-  'Lower deck': 'lower',
-  'Main deck': 'main',
-  'Upper deck': 'upper',
-  'Sun deck': 'sun',
-  'Across decks': 'across',
+// Lowercased. Cabins spread over several decks are `across`; numbered or foreign-language decks
+// ("Deck 3", "Premier Pont", "Floor 1") can't be placed on our scale and are dropped.
+const DECK_LABELS: Record<string, CabinDeck | null> = {
+  lower: 'lower',
+  'lower deck': 'lower',
+  'bottom plan': 'lower',
+  main: 'main',
+  'main deck': 'main',
+  'middle deck': 'middle',
+  'upper deck': 'upper',
+  'top deck': 'top',
+  'high deck': 'top',
+  'bridge deck': 'top',
+  'sun deck': 'sun',
+  sundeck: 'sun',
+  'across decks': 'across',
+  'main and upper deck': 'across',
+  'main and upper': 'across',
+  'upper and main deck': 'across',
+  'upper and lower deck': 'across',
+  'upper and high decks': 'across',
+  'lower, main': 'across',
+  'lower and main': 'across',
+  'deck 4, deck 5, & deck 6': 'across',
+  'deck 2': null,
+  'deck 3': null,
+  'deck 4': null,
+  'dive deck': null,
+  'floor 1': null,
+  'premier pont': null,
+  'deuxieme pont': null,
+  'solo stateroom': null,
+  'cabins 1 & 2': null,
+  'cabins 3 & 4': null,
+  'cabins 5 & 6': null,
+  'cabins 7 & 8': null,
+  'cabins 9': null,
 }
 
 const WINDOW_LABELS: Record<string, CabinWindow> = {
-  'No window': 'none',
-  'Porthole window': 'porthole',
-  'Standard window': 'standard',
-  'Picture window': 'picture',
-  'Panoramic window': 'panoramic',
+  'no window': 'none',
+  'no windows': 'none',
+  'porthole window': 'porthole',
+  'standard window': 'standard',
+  'picture window': 'picture',
+  'panoramic window': 'panoramic',
 }
 
 // Cabin facts that describe booking policy, not the cabin.
-const IGNORED_CABIN_FACTS = new Set(['Solo traveler friendly', 'Privacy optional', 'Private cabin'])
+const IGNORED_CABIN_FACTS = new Set([
+  'Solo traveler friendly',
+  'Privacy optional',
+  'Private cabin',
+  'Mixed gender',
+  'Group friendly',
+  'Adjoining room available',
+])
 
 export class UnknownLabels {
   readonly found = new Map<string, Set<string>>()
@@ -160,6 +223,16 @@ function languages(raw: string | null, boat: string, unknown: UnknownLabels): La
 const num = (s: string | null | undefined) => {
   const m = s?.replace(/[,']/g, '').match(/\d+(\.\d+)?/)
   return m ? Number(m[0]) : null
+}
+
+const COUNT_WORDS: Record<string, number> = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6 }
+
+// "2", "1 Dhoni", "2 x Zodiac", "Two 24 ft dive boats" → count. "16-foot RIB", "Yamaha 50HP" → null:
+// a leading number followed by a length or power unit is a size, not a count.
+function tenderCount(s: string | undefined): number | null {
+  const m = s?.trim().match(/^(\d+|one|two|three|four|five|six)\b(?!\s*(?:-|')?\s*(?:ft|foot|feet|m\b|meter|metre|hp|'|"))/i)
+  if (!m?.[1]) return null
+  return COUNT_WORDS[m[1].toLowerCase()] ?? Number(m[1])
 }
 
 const US_GALLON_L = 3.785411784
@@ -229,21 +302,28 @@ export function cabinType(c: LiveaboardCabin, boat: string, unknown: UnknownLabe
     external_ids: { liveaboard_com: c.liveaboard_cabin_id },
   }
   for (const fact of c.facts) {
-    const size = fact.match(/^([\d.]+)\s*(?:-\s*([\d.]+)\s*)?m²$/)
+    const size = fact.match(/^([\d.]+)\s*(?:m²|sqm|m2)?\s*(?:-\s*([\d.]+)\s*)?(?:m²|sqm|m2)$/)
     const bed = beds(fact)
     if (size) cabin.size_m2 = { min: Number(size[1]), max: Number(size[2] ?? size[1]) }
     else if (/^Max \d+ guests?$/.test(fact)) cabin.max_guests = num(fact)
     else if (/^Ensuite Bathroom$/i.test(fact)) cabin.bathroom = 'ensuite'
     else if (/^Shared Bathroom$/i.test(fact)) cabin.bathroom = 'shared'
-    else if (/^Aircon/i.test(fact)) cabin.aircon = true
+    else if (/^No fan or aircon$/i.test(fact)) cabin.aircon = false
+    else if (/^(Central )?Aircon/i.test(fact)) cabin.aircon = true
     else if (/^Fan\b/i.test(fact)) cabin.aircon = false
+    // "8 x 8.6 ft", "260 cm x 334 cm": sometimes the room, sometimes the bed, so not a size.
+    else if (/^[\d.]+\s*[a-z]*\s*[x×]\s*[\d.]+/i.test(fact)) continue
     else if (bed) cabin.beds = bed
     else if (!IGNORED_CABIN_FACTS.has(fact)) unknown.add('cabin fact', fact, boat)
   }
   const deck = c.details['Deck level of cabin']
   const window = c.details['Cabin window(s)']
-  if (deck) cabin.deck = DECK_LABELS[deck] ?? (unknown.add('cabin deck', deck, boat), null)
-  if (window) cabin.window = WINDOW_LABELS[window] ?? (unknown.add('cabin window', window, boat), null)
+  if (deck) {
+    const key = deck.trim().toLowerCase()
+    if (key in DECK_LABELS) cabin.deck = DECK_LABELS[key] ?? null
+    else unknown.add('cabin deck', deck, boat)
+  }
+  if (window) cabin.window = WINDOW_LABELS[window.trim().toLowerCase()] ?? (unknown.add('cabin window', window, boat), null)
   return cabin
 }
 
@@ -270,13 +350,12 @@ export function vesselFacts(
   unknown: UnknownLabels,
 ): VesselFacts {
   const dive = mapLabels(b.diving, DIVE_LABELS, order.dive, 'diving', b.name, unknown)
-  const tenders = num(b.specs_raw['Tenders'])
   return {
     bathrooms: b.bathrooms,
     max_speed_kn: b.top_speed_kn,
-    cruising_speed_kn: num(b.cruising_speed),
+    cruising_speed_kn: b.cruising_speed && /mph|km/i.test(b.cruising_speed) ? null : num(b.cruising_speed),
     engines: engines(b.engines),
-    tenders: tenders === null ? null : Math.round(tenders),
+    tenders: tenderCount(b.specs_raw['Tenders']),
     fuel_l: liters(b.fuel_capacity),
     water_l: liters(b.water_capacity),
     watermaker_lpd: watermakerLpd(b.specs_raw['Freshwater maker'] ?? null),

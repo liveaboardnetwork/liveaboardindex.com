@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_7cm7p5
+names:   # to: null = current
+  - { name: Wellenreng, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2011, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 25
+beam_m: 6
+gt: null
+refit_year: 2025
+guests: 9
+cabins: 3
+bathrooms: 4
+max_speed_kn: 8
+cruising_speed_kn: 7
+engines: { count: 1, make: null, model: null, power_hp: null }   # power_hp is per engine
+tenders: null
+fuel_l: 4000
+water_l: 2000
+watermaker_lpd: 2000   # liters per day
+cabin_types:
+  - name: Master Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 1, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9424 }
+  - name: Deluxe Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 1, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9425 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, family_cabins, non_smoking_cabins, cabin_safe, hot_showers, outside_showers, indoor_saloon, outdoor_dining, sun_deck, observation_deck, leisure_deck, library, entertainment, internet, charging_stations, camera_station, camera_rinse, housekeeping, kayaks, paddleboards, snorkeling_gear, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, nitrox, din_adaptors, sidemount, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, epirb, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, set_menu, beach_bbq, beer, wine]
+languages: [en, id]   # ISO 639-1, e.g. en, es
+operator: op_8a9q            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5888 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/wellenreng
+notes: ""

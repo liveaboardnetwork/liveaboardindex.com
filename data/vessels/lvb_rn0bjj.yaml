@@ -1,0 +1,89 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_rn0bjj
+names:   # to: null = current
+  - { name: Pearl of Papua, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2010, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 30
+beam_m: 7.5
+gt: null
+refit_year: null
+guests: 14
+cabins: 7
+bathrooms: 7
+max_speed_kn: 8
+cruising_speed_kn: 6
+engines: { count: null, make: mitsubishi, model: null, power_hp: 200 }   # power_hp is per engine
+tenders: null
+fuel_l: 6000
+water_l: 10000
+watermaker_lpd: 2000   # liters per day
+cabin_types:
+  - name: Seahorse Standard Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: main
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 6059 }
+  - name: Trevally Deluxe Twin Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 6060 }
+  - name: Trevally Deluxe Double Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 6061 }
+  - name: Manta Suite Cabin
+    count: null
+    max_guests: 3
+    beds: { single: 1, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 6062 }
+  - name: Seaview Suite Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: top
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10661 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, non_smoking_cabins, hot_showers, sun_deck, leisure_deck, entertainment, internet, charging_stations, camera_station, housekeeping, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, searchlight, epirb, life_rafts, life_vests, fire_suppression, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, buffet, snacks, beach_bbq, beer]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_7sww            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 4445 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/pearl-of-papua
+notes: ""

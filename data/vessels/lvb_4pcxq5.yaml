@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_4pcxq5
+names:   # to: null = current
+  - { name: Felicidad II, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 1991, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 30
+beam_m: 6.5
+gt: null
+refit_year: 2024
+guests: 18
+cabins: 8
+bathrooms: 10
+max_speed_kn: 12
+cruising_speed_kn: 5
+engines: { count: 1, make: caterpillar, model: "425HP", power_hp: 425 }   # power_hp is per engine
+tenders: null
+fuel_l: 20000
+water_l: 10000
+watermaker_lpd: 2   # liters per day
+cabin_types:
+  - name: Lower Deck Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11854 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, non_smoking_cabins, hot_showers, indoor_saloon, aircon_saloon, outdoor_dining, sun_deck, observation_deck, leisure_deck, library, internet, charging_stations, camera_rinse, laundry, housekeeping, fishing, snorkeling_gear, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, din_adaptors, sidemount, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, searchlight, epirb, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, set_menu, snacks, beer, wine]
+languages: [en, fr, it]   # ISO 639-1, e.g. en, es
+operator: op_dwap            # op_xxxx from data/operators
+region: djibouti              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6488 }
+sources:
+  - https://www.liveaboard.com/diving/djibouti/felicidad-ii
+notes: ""

@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_dpbqrb
+names:   # to: null = current
+  - { name: Nusantara, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2017, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 21
+beam_m: 3
+gt: null
+refit_year: 2021
+guests: 12
+cabins: 2
+bathrooms: 2
+max_speed_kn: 10
+cruising_speed_kn: 7
+engines: { count: null, make: mitsubishi, model: "6d16", power_hp: null }   # power_hp is per engine
+tenders: 1
+fuel_l: 1000
+water_l: 1000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: The Dorm Cabin
+    count: null
+    max_guests: 8
+    beds: { single: 0, double: 0, bunk: 4, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: shared
+    aircon: false
+    external_ids: { liveaboard_com: 9941 }
+  - name: The Sleeping Deck
+    count: null
+    max_guests: 4
+    beds: { single: 4, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: null
+    bathroom: shared
+    aircon: false
+    external_ids: { liveaboard_com: 9942 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [non_smoking_cabins, hot_showers, outside_showers, outdoor_dining, sun_deck, observation_deck, leisure_deck, charging_stations, camera_rinse, housekeeping, paddleboards, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, rinse_hoses, din_adaptors, gear_rental]
+safety: [gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, epirb, flares, life_rafts, life_vests, fire_suppression, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, buffet, set_menu, snacks, beer, wine]
+languages: [en, id]   # ISO 639-1, e.g. en, es
+operator: op_pvd8            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6029 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/nusantara
+notes: ""

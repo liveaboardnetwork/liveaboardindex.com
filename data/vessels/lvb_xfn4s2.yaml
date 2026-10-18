@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_xfn4s2
+names:   # to: null = current
+  - { name: Rum Runner, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 1984, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: null
+beam_m: null
+gt: null
+refit_year: null
+guests: 16
+cabins: 16
+bathrooms: null
+max_speed_kn: null
+cruising_speed_kn: null
+engines: null   # power_hp is per engine
+tenders: null
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Bunks
+    count: null
+    max_guests: 1
+    beds: { single: 1, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: null
+    window: porthole
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 9025 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [aircon_cabins, family_cabins, hot_showers, outdoor_dining, sun_deck, charging_stations, camera_station, camera_rinse, snorkeling_gear, non_diver_friendly, private_charter]
+dive_facilities: [dive_deck, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, searchlight, epirb, life_rafts, life_vests, fire_suppression, bilge_alarm, oxygen, first_aid_kit]
+dining: [local_food, western_food, vegetarian, vegan, buffet, snacks]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_kp9f            # op_xxxx from data/operators
+region: australia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5718 }
+sources:
+  - https://www.liveaboard.com/diving/australia/rum-runner
+notes: ""

@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_tx5ak9
+names:   # to: null = current
+  - { name: CU, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2008, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 38
+beam_m: 8.5
+gt: null
+refit_year: 2018
+guests: 28
+cabins: 14
+bathrooms: 16
+max_speed_kn: 17
+cruising_speed_kn: null
+engines: { count: 2, make: null, model: null, power_hp: 750 }   # power_hp is per engine
+tenders: null
+fuel_l: 15000
+water_l: 20000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Lower Deck Twin Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10618 }
+  - name: Main Deck Double Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10619 }
+  - name: High Deck Triple Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 1, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10620 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, family_cabins, non_smoking_cabins, cabin_safe, hot_showers, outside_showers, indoor_saloon, aircon_saloon, outdoor_dining, bar, bbq, sun_deck, observation_deck, leisure_deck, shop, library, entertainment, internet, charging_stations, camera_station, camera_rinse, laundry, housekeeping, fishing, snorkeling_gear, naturalist_guide, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, sidemount, tech_diving, rebreathers, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, searchlight, epirb, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, buffet, set_menu, snacks, beach_bbq, beer]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_8c8a            # op_xxxx from data/operators
+region: egypt              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6212 }
+sources:
+  - https://www.liveaboard.com/diving/egypt/cu
+notes: ""

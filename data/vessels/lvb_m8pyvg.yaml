@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_m8pyvg
+names:   # to: null = current
+  - { name: Sula, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: null, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 27.7
+beam_m: null
+gt: null
+refit_year: null
+guests: 12
+cabins: 6
+bathrooms: 2
+max_speed_kn: null
+cruising_speed_kn: null
+engines: null   # power_hp is per engine
+tenders: 2
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Twin Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: across
+    window: null
+    bathroom: shared
+    aircon: false
+    external_ids: { liveaboard_com: 9031 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [seaview_cabins, non_smoking_cabins, hot_showers, indoor_saloon, observation_deck, leisure_deck, jacuzzi, library, internet, charging_stations, laundry, housekeeping, fishing, naturalist_guide, non_diver_friendly]
+dive_facilities: [gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, searchlight, epirb, life_rafts, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit]
+dining: [local_food, western_food, vegetarian, vegan, buffet, snacks]
+languages: [en, fr]   # ISO 639-1, e.g. en, es
+operator: op_xaqb            # op_xxxx from data/operators
+region: arctic              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5724 }
+sources:
+  - https://www.liveaboard.com/diving/arctic/sula
+notes: ""

@@ -1,0 +1,89 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_hh3fpc
+names:   # to: null = current
+  - { name: ALSURAYA, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2024, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 37
+beam_m: 8
+gt: null
+refit_year: null
+guests: 24
+cabins: 12
+bathrooms: 14
+max_speed_kn: 16
+cruising_speed_kn: 10
+engines: { count: 2, make: null, model: null, power_hp: 1000 }   # power_hp is per engine
+tenders: null
+fuel_l: 15710
+water_l: 8000
+watermaker_lpd: 20000   # liters per day
+cabin_types:
+  - name: Main Deck Twin Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11557 }
+  - name: Upper Deck Twin Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11558 }
+  - name: Upper Deck Bunk Bed Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: upper
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11559 }
+  - name: Upper Deck Suite
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11560 }
+  - name: Sun Deck Suite
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: sun
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11561 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, non_smoking_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, bar, sun_deck, observation_deck, leisure_deck, entertainment, internet, charging_stations, camera_station, camera_rinse, housekeeping, snorkeling_gear, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, sidemount, tech_diving, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, depth_sounder, fishfinder, searchlight, epirb, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, buffet, set_menu, snacks, beach_bbq, beer, wine]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_0y7v            # op_xxxx from data/operators
+region: egypt              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6428 }
+sources:
+  - https://www.liveaboard.com/diving/egypt/alsuraya
+notes: ""

@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_8ykyj8
+names:   # to: null = current
+  - { name: Sokaraja, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: null, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 25
+beam_m: 5.5
+gt: null
+refit_year: 2024
+guests: 10
+cabins: 3
+bathrooms: 2
+max_speed_kn: null
+cruising_speed_kn: 9
+engines: { count: null, make: mitsubishi, model: null, power_hp: 220 }   # power_hp is per engine
+tenders: 1
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Private Double Cabin - Main Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: standard
+    bathroom: shared
+    aircon: false
+    external_ids: { liveaboard_com: 9453 }
+  - name: Private Double Cabin - Upper Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: shared
+    aircon: false
+    external_ids: { liveaboard_com: 11447 }
+  - name: Dorm
+    count: null
+    max_guests: 6
+    beds: { single: 6, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: standard
+    bathroom: shared
+    aircon: false
+    external_ids: { liveaboard_com: 11448 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [non_smoking_cabins, outside_showers, outdoor_dining, sun_deck, observation_deck, leisure_deck, charging_stations, camera_rinse, non_diver_friendly, private_charter]
+dive_facilities: [shaded_dive_area, dive_tenders, rinse_hoses, din_adaptors, gear_rental]
+safety: [gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, flares, life_rafts, life_vests, fire_suppression, oxygen, first_aid_kit]
+dining: [local_food, vegetarian, vegan, buffet, snacks, beer]
+languages: [en, es, id, it]   # ISO 639-1, e.g. en, es
+operator: op_a13v            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5898 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/sokaraja
+notes: ""

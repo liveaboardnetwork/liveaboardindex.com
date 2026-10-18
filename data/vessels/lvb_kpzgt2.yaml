@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_kpzgt2
+names:   # to: null = current
+  - { name: Royal Evolution, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: null, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 39
+beam_m: null
+gt: null
+refit_year: null
+guests: 24
+cabins: 12
+bathrooms: 12
+max_speed_kn: 14
+cruising_speed_kn: 12
+engines: { count: 2, make: cummins, model: null, power_hp: null }   # power_hp is per engine
+tenders: null
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Standard Twin Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: { min: 14.4, max: 14.4 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8894 }
+  - name: Double Suite
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 16, max: 16 }
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8895 }
+  - name: Twin Suite
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 16, max: 16 }
+    deck: main
+    window: standard
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 10028 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, non_smoking_cabins, tv_in_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, outdoor_dining, bar, bbq, sun_deck, observation_deck, leisure_deck, library, entertainment, internet, charging_stations, camera_station, camera_rinse, housekeeping, non_diver_friendly, purpose_built_dive]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, sidemount, tech_diving, rebreathers, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, searchlight, epirb, life_rafts, life_vests, fire_suppression, bilge_alarm, oxygen, first_aid_kit]
+dining: [local_food, western_food, vegetarian, vegan, buffet, snacks, wine]
+languages: [en, de, fr, sv]   # ISO 639-1, e.g. en, es
+operator: op_29s5            # op_xxxx from data/operators
+region: egypt              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5669 }
+sources:
+  - https://www.liveaboard.com/diving/egypt/royal-evolution
+notes: ""

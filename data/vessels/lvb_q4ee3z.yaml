@@ -1,0 +1,89 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_q4ee3z
+names:   # to: null = current
+  - { name: Blue, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2016, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: null
+beam_m: null
+gt: null
+refit_year: null
+guests: 24
+cabins: 12
+bathrooms: 12
+max_speed_kn: null
+cruising_speed_kn: null
+engines: { count: 2, make: man, model: V12, power_hp: 110 }   # power_hp is per engine
+tenders: 2
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Twin Lower Deck
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8482 }
+  - name: Double Sea View Upper Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8483 }
+  - name: Twin Sea View Upper Deck
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8484 }
+  - name: Master Main Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 12, max: 12 }
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8516 }
+  - name: Bow Lower Deck
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9897 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, non_smoking_cabins, tv_in_cabins, hot_showers, indoor_saloon, aircon_saloon, outdoor_dining, bbq, sun_deck, library, entertainment, charging_stations, camera_station, camera_rinse, housekeeping, snorkeling_gear, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, rinse_hoses, nitrox, din_adaptors, sidemount, rebreathers, gear_rental]
+safety: [gps, vhf_dsc_ssb, depth_sounder, life_rafts, life_vests, fire_suppression, oxygen, first_aid_kit, crew_first_aid]
+dining: [buffet, snacks, beer, wine]
+languages: [en, de]   # ISO 639-1, e.g. en, es
+operator: op_s2b8            # op_xxxx from data/operators
+region: egypt              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5516 }
+sources:
+  - https://www.liveaboard.com/diving/egypt/blue
+notes: ""

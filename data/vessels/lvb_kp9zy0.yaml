@@ -1,0 +1,89 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_kp9zy0
+names:   # to: null = current
+  - { name: Carpe Diem, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2008, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 35
+beam_m: 10
+gt: null
+refit_year: 2025
+guests: 20
+cabins: 10
+bathrooms: 13
+max_speed_kn: null
+cruising_speed_kn: null
+engines: { count: null, make: null, model: null, power_hp: 650 }   # power_hp is per engine
+tenders: null
+fuel_l: 7000
+water_l: 5000
+watermaker_lpd: 16000   # liters per day
+cabin_types:
+  - name: Standard - Lower Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 6046 }
+  - name: Double - Main Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 6047 }
+  - name: Deluxe - Upper Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 6048 }
+  - name: Suite - Upper Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: upper
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 6049 }
+  - name: Standard Bunk Style - Lower Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11633 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, outdoor_dining, bar, bbq, sun_deck, leisure_deck, library, entertainment, internet, charging_stations, camera_station, camera_rinse, housekeeping, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, nitrox, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, depth_sounder, life_vests, fire_suppression, bilge_alarm, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, buffet, snacks, beer, wine]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_5s26            # op_xxxx from data/operators
+region: maldives              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 4446 }
+sources:
+  - https://www.liveaboard.com/diving/maldives/carpe-diem
+notes: ""

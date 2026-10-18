@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_3rsj92
+names:   # to: null = current
+  - { name: Safy Mar, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2025, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 44
+beam_m: 9.5
+gt: null
+refit_year: null
+guests: 34
+cabins: 17
+bathrooms: 17
+max_speed_kn: 12
+cruising_speed_kn: 10
+engines: { count: 2, make: null, model: null, power_hp: 1000 }   # power_hp is per engine
+tenders: null
+fuel_l: 30000
+water_l: 20000
+watermaker_lpd: 20000   # liters per day
+cabin_types:
+  - name: Deluxe Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: across
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12690 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, non_smoking_cabins, cabin_safe, hot_showers, outside_showers, indoor_saloon, aircon_saloon, bar, sun_deck, observation_deck, leisure_deck, jacuzzi, massage, shop, entertainment, internet, charging_stations, camera_station, camera_rinse, housekeeping, naturalist_guide, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, sidemount, tech_diving, rebreathers, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, epirb, flares, life_rafts, life_vests, fire_suppression, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, buffet, set_menu, snacks, beer]
+languages: [en, de, pl]   # ISO 639-1, e.g. en, es
+operator: op_n13x            # op_xxxx from data/operators
+region: egypt              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6643 }
+sources:
+  - https://www.liveaboard.com/diving/egypt/safy-mar
+notes: ""

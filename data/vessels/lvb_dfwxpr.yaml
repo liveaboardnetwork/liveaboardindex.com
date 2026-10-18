@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_dfwxpr
+names:   # to: null = current
+  - { name: Caribbean Explorer II, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 1978, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 35.1
+beam_m: 6.1
+gt: null
+refit_year: 1999
+guests: 18
+cabins: 9
+bathrooms: 9
+max_speed_kn: 12
+cruising_speed_kn: null
+engines: { count: 2, make: null, model: null, power_hp: 450 }   # power_hp is per engine
+tenders: null
+fuel_l: 9464
+water_l: 5678
+watermaker_lpd: 4542   # liters per day
+cabin_types:
+  - name: Staterooms
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: null
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11322 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, bar, sun_deck, leisure_deck, library, entertainment, charging_stations, camera_station, camera_rinse, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, rinse_hoses, nitrox, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, flares, life_rafts, life_vests, bilge_alarm, oxygen, first_aid_kit]
+dining: [local_food, western_food, vegetarian, vegan, snacks, beer, wine]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_98r4            # op_xxxx from data/operators
+region: st-maarten              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 4424 }
+sources:
+  - https://www.liveaboard.com/diving/st-maarten/caribbean-explorer-ii
+notes: ""

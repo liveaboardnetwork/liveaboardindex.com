@@ -1,0 +1,89 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_hwn2pk
+names:   # to: null = current
+  - { name: Pacific Master, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2004, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 30
+beam_m: null
+gt: null
+refit_year: null
+guests: 20
+cabins: 12
+bathrooms: 11
+max_speed_kn: null
+cruising_speed_kn: 11
+engines: { count: null, make: mtu, model: "2000", power_hp: 1800 }   # power_hp is per engine
+tenders: null
+fuel_l: null
+water_l: 30
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Standard Single Cabin
+    count: null
+    max_guests: 1
+    beds: { single: 1, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: null
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 10147 }
+  - name: Standard Twin Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: null
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 10148 }
+  - name: Classic Twin Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: null
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10149 }
+  - name: Classic Twin/Double Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: upper
+    window: null
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10150 }
+  - name: Premium Double Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: null
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10151 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [aircon_cabins, hot_showers, outside_showers, indoor_saloon, sun_deck, library, entertainment, charging_stations, camera_station, kayaks, non_diver_friendly, private_charter]
+dive_facilities: [dive_deck, dive_tenders, rinse_hoses, nitrox, din_adaptors, tech_diving, rebreathers, gear_rental]
+safety: [vhf_dsc_ssb, epirb, life_rafts, life_vests, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, buffet, beer, wine]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_qkp6            # op_xxxx from data/operators
+region: micronesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6084 }
+sources:
+  - https://www.liveaboard.com/diving/micronesia/pacific-master
+notes: ""

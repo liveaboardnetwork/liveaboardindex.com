@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_gmcqxq
+names:   # to: null = current
+  - { name: Duke of York, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2010, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 36
+beam_m: 11
+gt: null
+refit_year: null
+guests: 23
+cabins: 11
+bathrooms: 11
+max_speed_kn: 12
+cruising_speed_kn: 9
+engines: { count: null, make: null, model: null, power_hp: 600 }   # power_hp is per engine
+tenders: null
+fuel_l: 8000
+water_l: 10000
+watermaker_lpd: 12000   # liters per day
+cabin_types:
+  - name: "Lower Deck Twin Cabins (# 3 & 6)"
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 6053 }
+  - name: "Lower Deck Double/Twin Cabins (# 1, 2, 7 & 8)"
+    count: null
+    max_guests: 2
+    beds: { single: 1, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 6054 }
+  - name: "Main & Upper Deck Cabins (# 9, 10, 11 & 12)"
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: across
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10405 }
+  - name: "Upper Deck Cabin (#14)"
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10951 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, family_cabins, non_smoking_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, outdoor_dining, bar, sun_deck, observation_deck, leisure_deck, massage, library, entertainment, internet, charging_stations, camera_station, camera_rinse, housekeeping, kayaks, snorkeling_gear, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, sidemount, tech_diving, rebreathers, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, fire_suppression, oxygen, first_aid_kit]
+dining: [local_food, western_food, vegetarian, vegan, buffet, snacks, beach_bbq, beer, wine]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_0qn2            # op_xxxx from data/operators
+region: maldives              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 4443 }
+sources:
+  - https://www.liveaboard.com/diving/maldives/duke-of-york
+notes: ""

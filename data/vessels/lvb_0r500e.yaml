@@ -1,0 +1,129 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_0r500e
+names:   # to: null = current
+  - { name: DUNE Aurora, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2007, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 42
+beam_m: 9
+gt: null
+refit_year: 2010
+guests: 18
+cabins: 9
+bathrooms: 9
+max_speed_kn: 8
+cruising_speed_kn: 6
+engines: { count: null, make: null, model: null, power_hp: 420 }   # power_hp is per engine
+tenders: null
+fuel_l: 12000
+water_l: 12000
+watermaker_lpd: 6000   # liters per day
+cabin_types:
+  - name: "Mexico Standard Cabin (#1)"
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11569 }
+  - name: "Raja Ampat Standard Cabin (#2)"
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11570 }
+  - name: "Banda Sea Standard Cabin (#3)"
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11571 }
+  - name: "Bali Standard Cabin (#4)"
+    count: null
+    max_guests: 2
+    beds: { single: 1, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 9, max: 9 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12442 }
+  - name: "Alor Standard Cabin (#5)"
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12443 }
+  - name: "Komodo Standard Cabin (#6)"
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12444 }
+  - name: "Maldives Standard Cabin (#7)"
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12445 }
+  - name: "Red Sea Superior Cabin (#8)"
+    count: null
+    max_guests: 2
+    beds: { single: 1, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 9, max: 9 }
+    deck: main
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12446 }
+  - name: "French Riviera Superior Cabin (#9)"
+    count: null
+    max_guests: 2
+    beds: { single: 1, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 9, max: 9 }
+    deck: main
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12447 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, family_cabins, non_smoking_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, bar, sun_deck, observation_deck, leisure_deck, library, entertainment, charging_stations, camera_station, camera_rinse, laundry, housekeeping, kayaks, paddleboards, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, dive_tenders, rinse_hoses, nitrox, din_adaptors, sidemount, rebreathers, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, epirb, flares, life_rafts, life_vests, fire_suppression, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, buffet, set_menu, snacks, beer, wine]
+languages: [en, fr, zh, es, id]   # ISO 639-1, e.g. en, es
+operator: op_hg8f            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 4372 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/dune-aurora
+notes: ""

@@ -1,0 +1,109 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_0hzgng
+names:   # to: null = current
+  - { name: Seaisee, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2014, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: null
+beam_m: null
+gt: null
+refit_year: 2019
+guests: 21
+cabins: 12
+bathrooms: 18
+max_speed_kn: 11
+cruising_speed_kn: 9
+engines: { count: null, make: cummins, model: QSM11x2, power_hp: null }   # power_hp is per engine
+tenders: 3
+fuel_l: null
+water_l: null
+watermaker_lpd: 10000   # liters per day
+cabin_types:
+  - name: Triple Cabin
+    count: null
+    max_guests: 6
+    beds: { single: 4, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10709 }
+  - name: Twin Master Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10710 }
+  - name: Single Room
+    count: null
+    max_guests: 1
+    beds: { single: 1, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: null
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10711 }
+  - name: Double Master Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: none
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10712 }
+  - name: Sea View Cabin - Jacuzzi & Balcony
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: upper
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10713 }
+  - name: Sea View Cabin - Balcony
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: upper
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10714 }
+  - name: Sea View Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: upper
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10715 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, family_cabins, non_smoking_cabins, balcony_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, outdoor_dining, bar, bbq, sun_deck, observation_deck, leisure_deck, jacuzzi, library, entertainment, internet, charging_stations, camera_station, camera_rinse, laundry, housekeeping, paddleboards, fishing, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, sidemount, tech_diving, rebreathers, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, searchlight, epirb, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, snacks, beach_bbq]
+languages: [en, zh, id]   # ISO 639-1, e.g. en, es
+operator: op_p14s            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5985 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/seaisee
+notes: ""

@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_g2f0n5
+names:   # to: null = current
+  - { name: Maria Seascape, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2025, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 26
+beam_m: 4
+gt: null
+refit_year: 2026
+guests: 10
+cabins: 4
+bathrooms: 5
+max_speed_kn: 7
+cruising_speed_kn: 5
+engines: { count: null, make: mitsubishi, model: "6D15-170HP", power_hp: 170 }   # power_hp is per engine
+tenders: null
+fuel_l: 600
+water_l: 2500
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Double Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12824 }
+  - name: Triple Cabin
+    count: null
+    max_guests: 3
+    beds: { single: 1, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: main
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12825 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, family_cabins, non_smoking_cabins, outside_showers, indoor_saloon, bar, sun_deck, leisure_deck, charging_stations, camera_rinse, housekeeping, snorkeling_gear, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, searchlight, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, vegetarian, vegan, buffet, beer]
+languages: [en, id]   # ISO 639-1, e.g. en, es
+operator: op_0crg            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6676 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/maria-seascape
+notes: ""

@@ -1,0 +1,99 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_wrv858
+names:   # to: null = current
+  - { name: Ortelius, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 1989, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 90.95
+beam_m: 17.2
+gt: null
+refit_year: null
+guests: 108
+cabins: 52
+bathrooms: 50
+max_speed_kn: null
+cruising_speed_kn: 10.5
+engines: { count: 6, make: null, model: null, power_hp: null }   # power_hp is per engine
+tenders: null
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Quadruple Porthole
+    count: null
+    max_guests: 4
+    beds: { single: 0, double: 0, bunk: 2, convertible: false }
+    size_m2: { min: 12.4, max: 14.1 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8839 }
+  - name: Triple Porthole
+    count: null
+    max_guests: 3
+    beds: { single: 1, double: 0, bunk: 1, convertible: false }
+    size_m2: { min: 15.3, max: 16 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8840 }
+  - name: Twin Porthole
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 11.4, max: 15.1 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8842 }
+  - name: Twin Window
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 17.5, max: 17.7 }
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8843 }
+  - name: Twin Deluxe
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 17.7, max: 17.7 }
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8844 }
+  - name: Superior
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 18.4, max: 20.4 }
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8845 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, tv_in_cabins, cabin_safe, hair_dryer, indoor_saloon, aircon_saloon, sun_deck, library, entertainment, internet, laundry, housekeeping, non_diver_friendly, private_charter]
+dive_facilities: [dive_tenders]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, searchlight, life_rafts, life_vests, fire_suppression, first_aid_kit, crew_first_aid]
+dining: [western_food, vegetarian, vegan, buffet, beer]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_v0xg            # op_xxxx from data/operators
+region: antarctica              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5648 }
+sources:
+  - https://www.liveaboard.com/diving/antarctica/ortelius
+notes: ""

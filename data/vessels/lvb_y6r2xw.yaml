@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_y6r2xw
+names:   # to: null = current
+  - { name: Explorer 1, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2019, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: null
+beam_m: null
+gt: null
+refit_year: null
+guests: 6
+cabins: 3
+bathrooms: 2
+max_speed_kn: 15
+cruising_speed_kn: 10
+engines: { count: 2, make: yanmar, model: null, power_hp: 440 }   # power_hp is per engine
+tenders: 1
+fuel_l: 5000
+water_l: 2000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Master Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: null
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9723 }
+  - name: Double Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: null
+    window: porthole
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 9724 }
+  - name: Single Bunk Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: null
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10773 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [aircon_cabins, seaview_cabins, non_smoking_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, outdoor_dining, bar, bbq, sun_deck, observation_deck, leisure_deck, library, entertainment, internet, charging_stations, camera_station, camera_rinse, housekeeping, fishing, naturalist_guide, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, rinse_hoses, nitrox, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, searchlight, epirb, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, vegetarian, snacks, beach_bbq, beer, wine]
+languages: [en, fr]   # ISO 639-1, e.g. en, es
+operator: op_z6mv            # op_xxxx from data/operators
+region: seychelles              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5979 }
+sources:
+  - https://www.liveaboard.com/diving/seychelles/explorer-1
+notes: ""

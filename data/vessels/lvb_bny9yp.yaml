@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_bny9yp
+names:   # to: null = current
+  - { name: Resolute, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 1974, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 34.6
+beam_m: 7
+gt: null
+refit_year: 1998
+guests: 16
+cabins: 8
+bathrooms: 8
+max_speed_kn: null
+cruising_speed_kn: 9.5
+engines: null   # power_hp is per engine
+tenders: null
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Regular Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9185 }
+  - name: Small (Cabins 7 & 8)
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: { min: 4.6, max: 4.6 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10692 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, non_smoking_cabins, outside_showers, indoor_saloon, outdoor_dining, library, charging_stations, camera_station, camera_rinse, laundry, housekeeping, non_diver_friendly, purpose_built_dive]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, searchlight, epirb, life_rafts, life_vests, fire_suppression, oxygen, first_aid_kit]
+dining: [vegetarian, buffet, snacks, beer]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_3ew9            # op_xxxx from data/operators
+region: philippines              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5785 }
+sources:
+  - https://www.liveaboard.com/diving/philippines/resolute
+notes: ""

@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_9kre36
+names:   # to: null = current
+  - { name: Marco Polo, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 1998, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 23
+beam_m: null
+gt: null
+refit_year: 2021
+guests: 12
+cabins: 6
+bathrooms: 8
+max_speed_kn: null
+cruising_speed_kn: null
+engines: null   # power_hp is per engine
+tenders: 1
+fuel_l: null
+water_l: 10000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Bunk-bed Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8311 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [aircon_cabins, non_smoking_cabins, outside_showers, indoor_saloon, outdoor_dining, sun_deck, leisure_deck, library, entertainment, internet, charging_stations, camera_station, camera_rinse, housekeeping, snorkeling_gear, naturalist_guide, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, rinse_hoses, nitrox, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, depth_sounder, flares, life_rafts, life_vests, fire_suppression, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, buffet, snacks, beer, wine]
+languages: [en, de, th]   # ISO 639-1, e.g. en, es
+operator: op_jsy7            # op_xxxx from data/operators
+region: thailand              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5431 }
+sources:
+  - https://www.liveaboard.com/diving/thailand/marco-polo
+notes: ""

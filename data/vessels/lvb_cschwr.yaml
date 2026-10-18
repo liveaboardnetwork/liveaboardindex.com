@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_cschwr
+names:   # to: null = current
+  - { name: Bavaria, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2016, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 28
+beam_m: null
+gt: null
+refit_year: null
+guests: 24
+cabins: 12
+bathrooms: null
+max_speed_kn: null
+cruising_speed_kn: null
+engines: { count: 2, make: null, model: null, power_hp: null }   # power_hp is per engine
+tenders: null
+fuel_l: 12000
+water_l: 30000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Standard Bunk
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 8966 }
+  - name: Comfort Twin Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10717 }
+  - name: Comfort Double Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10718 }
+  - name: Deluxe Double
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10719 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, non_smoking_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, outdoor_dining, bar, sun_deck, leisure_deck, entertainment, internet, camera_rinse, housekeeping, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, rinse_hoses, nitrox, din_adaptors, sidemount, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, searchlight, life_rafts, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit]
+dining: [local_food, western_food, vegetarian, vegan, buffet, snacks, beer, wine]
+languages: [en, de, th]   # ISO 639-1, e.g. en, es
+operator: op_tkgn            # op_xxxx from data/operators
+region: thailand              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5692 }
+sources:
+  - https://www.liveaboard.com/diving/thailand/bavaria
+notes: ""

@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_3mn978
+names:   # to: null = current
+  - { name: Sea Hunter, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 1994, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 35.1
+beam_m: 7.9
+gt: null
+refit_year: null
+guests: 20
+cabins: 10
+bathrooms: 10
+max_speed_kn: 10
+cruising_speed_kn: 9.5
+engines: null   # power_hp is per engine
+tenders: 2
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Lower Deck Twin Bunk-Style
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 7117 }
+  - name: Lower Deck Twin/Double Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 7210 }
+  - name: Upper Deck Suites
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: upper
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 7212 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, non_smoking_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, outdoor_dining, bbq, sun_deck, leisure_deck, entertainment, charging_stations, camera_station, camera_rinse, laundry, housekeeping, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, sidemount, tech_diving, rebreathers, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, searchlight, epirb, flares, life_rafts, life_vests, fire_suppression, first_aid_kit, crew_first_aid]
+dining: [western_food, vegetarian, vegan, buffet, snacks, beer, wine]
+languages: [en, es]   # ISO 639-1, e.g. en, es
+operator: op_he3q            # op_xxxx from data/operators
+region: costa-rica              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 4461 }
+sources:
+  - https://www.liveaboard.com/diving/costa-rica/sea-hunter
+notes: ""

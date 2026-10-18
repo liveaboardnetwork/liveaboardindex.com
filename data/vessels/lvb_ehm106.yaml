@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_ehm106
+names:   # to: null = current
+  - { name: White Manta, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: null, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 46
+beam_m: 10
+gt: null
+refit_year: null
+guests: 20
+cabins: 14
+bathrooms: 14
+max_speed_kn: null
+cruising_speed_kn: 9
+engines: { count: 2, make: cummins, model: null, power_hp: 450 }   # power_hp is per engine
+tenders: 4
+fuel_l: 45000
+water_l: 30000
+watermaker_lpd: 20000   # liters per day
+cabin_types:
+  - name: Upper Deck Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 1, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 20, max: 20 }
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 7080 }
+  - name: Main Deck Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 20, max: 20 }
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 7081 }
+  - name: Lower Deck Twin Share Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 20, max: 20 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 7082 }
+  - name: Lower Deck Double/Twin Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 1, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 20, max: 20 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10369 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, hot_showers, indoor_saloon, aircon_saloon, outdoor_dining, sun_deck, leisure_deck, massage, entertainment, internet, charging_stations, camera_station, camera_rinse, housekeeping, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, epirb, life_rafts, life_vests, fire_suppression, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, buffet, beer, wine]
+languages: [en, fr, id]   # ISO 639-1, e.g. en, es
+operator: op_9kdd            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 4453 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/white-manta
+notes: ""

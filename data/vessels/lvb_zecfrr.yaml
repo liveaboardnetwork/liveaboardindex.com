@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_zecfrr
+names:   # to: null = current
+  - { name: All Star Blackbeards Morning Star, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 1983, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 19.8
+beam_m: 5.8
+gt: null
+refit_year: null
+guests: 24
+cabins: 6
+bathrooms: 3
+max_speed_kn: 8
+cruising_speed_kn: 8
+engines: { count: 1, make: null, model: null, power_hp: null }   # power_hp is per engine
+tenders: 1
+fuel_l: 1703
+water_l: 2461
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Single Space Bunks
+    count: null
+    max_guests: 4
+    beds: { single: 0, double: 0, bunk: 2, convertible: false }
+    size_m2: null
+    deck: null
+    window: null
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 8507 }
+  - name: Double Space Bunks
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: null
+    window: null
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 8508 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [aircon_cabins, non_smoking_cabins, aircon_saloon, outdoor_dining, entertainment, internet, camera_rinse, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, rinse_hoses, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, depth_sounder, fishfinder, searchlight, epirb, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, buffet, snacks, beer, wine]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_hkmv            # op_xxxx from data/operators
+region: bahamas              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5543 }
+sources:
+  - https://www.liveaboard.com/diving/bahamas/all-star-blackbeards-morning-star
+notes: ""

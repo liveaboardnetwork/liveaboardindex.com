@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_e3rkwj
+names:   # to: null = current
+  - { name: Emperor Raja Laut, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2005, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 31
+beam_m: 7.2
+gt: null
+refit_year: 2017
+guests: 12
+cabins: 6
+bathrooms: 6
+max_speed_kn: null
+cruising_speed_kn: null
+engines: { count: null, make: yanmar, model: null, power_hp: 300 }   # power_hp is per engine
+tenders: 2
+fuel_l: null
+water_l: null
+watermaker_lpd: 12000   # liters per day
+cabin_types:
+  - name: Twin Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: { min: 12, max: 12 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8837 }
+  - name: Double Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 9, max: 9 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11010 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, non_smoking_cabins, hot_showers, indoor_saloon, aircon_saloon, outdoor_dining, bar, sun_deck, library, entertainment, internet, charging_stations, housekeeping, non_diver_friendly, private_charter]
+dive_facilities: [dive_tenders, nitrox, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, searchlight, flares, life_rafts, life_vests, fire_suppression, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, buffet, snacks, beer]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_gybp            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5647 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/emperor-raja-laut
+notes: ""

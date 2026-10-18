@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_k7zrj9
+names:   # to: null = current
+  - { name: Infiniti, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2013, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 39
+beam_m: 8
+gt: null
+refit_year: null
+guests: 25
+cabins: 11
+bathrooms: 11
+max_speed_kn: null
+cruising_speed_kn: 8
+engines: { count: 2, make: cummins, model: null, power_hp: 650 }   # power_hp is per engine
+tenders: null
+fuel_l: 20000
+water_l: 26000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Premium Deluxe (Cabins 1-6)
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: across
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 6074 }
+  - name: Deluxe Triple (Cabins 7 - 9)
+    count: null
+    max_guests: 3
+    beds: { single: 1, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9169 }
+  - name: Deluxe Twin (Cabins 10-11)
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10436 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, family_cabins, non_smoking_cabins, tv_in_cabins, hot_showers, outside_showers, aircon_saloon, bar, bbq, sun_deck, leisure_deck, library, entertainment, internet, charging_stations, camera_station, camera_rinse, housekeeping, snorkeling_gear, non_diver_friendly, purpose_built_dive]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, searchlight, epirb, life_rafts, life_vests, fire_suppression, engine_room_cctv, oxygen, first_aid_kit]
+dining: [local_food, western_food, vegetarian, buffet, snacks, beach_bbq, beer, wine]
+languages: [en, ru]   # ISO 639-1, e.g. en, es
+operator: op_c9ec            # op_xxxx from data/operators
+region: philippines              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 4449 }
+sources:
+  - https://www.liveaboard.com/diving/philippines/infiniti
+notes: ""

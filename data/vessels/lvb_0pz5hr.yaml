@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_0pz5hr
+names:   # to: null = current
+  - { name: Red Sea Blue Force 2, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: null, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 28
+beam_m: 7
+gt: null
+refit_year: null
+guests: 18
+cabins: 9
+bathrooms: 10
+max_speed_kn: null
+cruising_speed_kn: null
+engines: null   # power_hp is per engine
+tenders: 2
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Lower Deck Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8869 }
+  - name: Upper Deck Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8870 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, hot_showers, indoor_saloon, aircon_saloon, bar, sun_deck, leisure_deck, library, entertainment, camera_station, housekeeping]
+dive_facilities: [nitrox, din_adaptors, tech_diving, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, fire_suppression]
+dining: [local_food, vegetarian, vegan, buffet, snacks, beer]
+languages: [en, es]   # ISO 639-1, e.g. en, es
+operator: op_hwvp            # op_xxxx from data/operators
+region: egypt              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5654 }
+sources:
+  - https://www.liveaboard.com/diving/egypt/red-sea-blue-force-2
+notes: ""

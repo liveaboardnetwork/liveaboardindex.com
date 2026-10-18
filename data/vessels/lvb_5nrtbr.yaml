@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_5nrtbr
+names:   # to: null = current
+  - { name: Elegante, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: null, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 25
+beam_m: null
+gt: null
+refit_year: 2009
+guests: 14
+cabins: 7
+bathrooms: 7
+max_speed_kn: 10
+cruising_speed_kn: null
+engines: null   # power_hp is per engine
+tenders: 2
+fuel_l: 2500
+water_l: 4000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Standard Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: null
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9013 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, family_cabins, non_smoking_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, outdoor_dining, bar, sun_deck, observation_deck, leisure_deck, library, entertainment, internet, charging_stations, camera_station, camera_rinse, housekeeping, fishing, naturalist_guide, non_diver_friendly, purpose_built_dive]
+dive_facilities: [dive_tenders, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, searchlight, life_rafts, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit]
+dining: [vegetarian, beer, wine]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_8hsm            # op_xxxx from data/operators
+region: djibouti              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5709 }
+sources:
+  - https://www.liveaboard.com/diving/djibouti/elegante
+notes: ""

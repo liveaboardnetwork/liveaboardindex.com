@@ -1,0 +1,99 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_21c63k
+names:   # to: null = current
+  - { name: DUNE Black Manta, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2024, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 42
+beam_m: 9
+gt: null
+refit_year: 2024
+guests: 28
+cabins: 15
+bathrooms: 15
+max_speed_kn: 10
+cruising_speed_kn: 8
+engines: { count: 1, make: null, model: null, power_hp: 800 }   # power_hp is per engine
+tenders: null
+fuel_l: 10000
+water_l: 10000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: "Standard Cabins (#1,2,5,6,7,8)"
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11270 }
+  - name: "Premium Cabins (#9,10)"
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11271 }
+  - name: "Deluxe Cabin (#13,14)"
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: upper
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11277 }
+  - name: "Superior Cabins (#11,12,15)"
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: upper
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12135 }
+  - name: "Standard Single Double Cabin (#3)"
+    count: null
+    max_guests: 1
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12138 }
+  - name: "Superior Single Double Cabin (#16)"
+    count: null
+    max_guests: 1
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12139 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, non_smoking_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, outdoor_dining, bar, bbq, sun_deck, observation_deck, leisure_deck, jacuzzi, spa, massage, library, entertainment, internet, charging_stations, camera_station, camera_rinse, housekeeping, kayaks, paddleboards, snorkeling_gear, naturalist_guide, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, sidemount, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, fishfinder, searchlight, epirb, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, buffet, set_menu, snacks, beach_bbq, beer, wine]
+languages: [en, de, fr, zh, es]   # ISO 639-1, e.g. en, es
+operator: op_xtk2            # op_xxxx from data/operators
+region: maldives              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6369 }
+sources:
+  - https://www.liveaboard.com/diving/maldives/dune-black-manta
+notes: ""

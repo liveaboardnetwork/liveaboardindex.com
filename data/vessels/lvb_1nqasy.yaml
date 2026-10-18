@@ -1,0 +1,109 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_1nqasy
+names:   # to: null = current
+  - { name: Solitude One, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 1979, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 52
+beam_m: 8.6
+gt: null
+refit_year: 2013
+guests: 24
+cabins: 11
+bathrooms: 10
+max_speed_kn: 12
+cruising_speed_kn: 8
+engines: { count: null, make: null, model: null, power_hp: 2698 }   # power_hp is per engine
+tenders: 2
+fuel_l: 150000
+water_l: 50000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Deluxe Cabin DBL
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 12.5, max: 12.5 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 7120 }
+  - name: Deluxe Cabin SGL (B4)
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 10.7, max: 10.7 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 7121 }
+  - name: Deluxe Twin/DBL Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: { min: 11.5, max: 11.5 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 7122 }
+  - name: Standard Quad Cabin (B8)
+    count: null
+    max_guests: 4
+    beds: { single: 4, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 24.6, max: 24.6 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10608 }
+  - name: Staterooms (A1 & B6)
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 18, max: 18.5 }
+    deck: across
+    window: null
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10678 }
+  - name: Stateroom SGL (A3)
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 11.3, max: 11.3 }
+    deck: main
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10683 }
+  - name: Stateroom (A2)
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 14.4, max: 14.4 }
+    deck: main
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12432 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, family_cabins, non_smoking_cabins, tv_in_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, outdoor_dining, sun_deck, leisure_deck, library, entertainment, internet, charging_stations, camera_station, camera_rinse, laundry, housekeeping, kayaks, paddleboards, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, sidemount, rebreathers, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, searchlight, epirb, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit, crew_first_aid]
+dining: [western_food, vegetarian, vegan, buffet, snacks, beach_bbq, beer, wine]
+languages: [en, es]   # ISO 639-1, e.g. en, es
+operator: op_fywx            # op_xxxx from data/operators
+region: philippines              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 4463 }
+sources:
+  - https://www.liveaboard.com/diving/philippines/solitude-one
+notes: ""

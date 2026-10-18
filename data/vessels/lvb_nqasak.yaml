@@ -1,0 +1,119 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_nqasak
+names:   # to: null = current
+  - { name: Explorer, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2001, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 25
+beam_m: 7
+gt: null
+refit_year: 2024
+guests: 16
+cabins: 8
+bathrooms: 9
+max_speed_kn: 10
+cruising_speed_kn: 8
+engines: null   # power_hp is per engine
+tenders: 1
+fuel_l: 5000
+water_l: 10000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: "Cabin #1 DBL Ensuite"
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8469 }
+  - name: "Cabin #2 DBL Ensuite"
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8470 }
+  - name: "Cabin #3 DBL / Twin Ensuite"
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: lower
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8471 }
+  - name: "Cabin #4 DBL / Twin Ensuite"
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: lower
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10723 }
+  - name: "Cabin #5 DBL / Twin Ensuite"
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: lower
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10724 }
+  - name: "Cabin #6 DBL / Twin Ensuite"
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: lower
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10725 }
+  - name: "Cabin #7 Standard DBL"
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: standard
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 10726 }
+  - name: "Cabin #8 Standard DBL"
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: standard
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 10727 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, family_cabins, non_smoking_cabins, hot_showers, outside_showers, bar, sun_deck, observation_deck, leisure_deck, internet, charging_stations, camera_station, camera_rinse, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, sidemount, tech_diving, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, vegetarian, vegan, buffet, beer, wine]
+languages: [en, de, th, fr]   # ISO 639-1, e.g. en, es
+operator: op_7276            # op_xxxx from data/operators
+region: thailand              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5519 }
+sources:
+  - https://www.liveaboard.com/diving/thailand/explorer
+notes: ""

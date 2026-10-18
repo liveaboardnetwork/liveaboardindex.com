@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_6fre83
+names:   # to: null = current
+  - { name: Sundari Voyages, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2024, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 34.74
+beam_m: 2.5
+gt: null
+refit_year: 2026
+guests: 12
+cabins: 8
+bathrooms: 9
+max_speed_kn: 9.3
+cruising_speed_kn: 8
+engines: { count: null, make: mitsubishi, model: "6D22", power_hp: null }   # power_hp is per engine
+tenders: null
+fuel_l: 5000
+water_l: 11000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Deluxe Balcony Private Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12617 }
+  - name: Deluxe Balcony Shared Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: main
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12618 }
+  - name: Master Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12619 }
+  - name: Signature Ocean Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12620 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, family_cabins, non_smoking_cabins, tv_in_cabins, balcony_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, outdoor_dining, bbq, sun_deck, entertainment, internet, charging_stations, camera_station, camera_rinse, housekeeping, snorkeling_gear, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, dive_tenders, din_adaptors, gear_rental]
+safety: [gps, vhf_dsc_ssb, satellite_phone, flares, life_rafts, life_vests, fire_suppression, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_2frs            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6624 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/sundari-voyages
+notes: ""

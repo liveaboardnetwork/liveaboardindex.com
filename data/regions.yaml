@@ -1,5 +1,89 @@
 # yaml-language-server: $schema=../schema/json/regions.schema.json
 # Closed list: a vessel's `region` must be one of these IDs.
+- id: antarctica
+  name: Antarctica
+  countries: [AQ]
+- id: arctic
+  name: Arctic
+  countries: [SJ, GL, NO]
+- id: australia
+  name: Australia
+  countries: [AU]
+- id: bahamas
+  name: Bahamas
+  countries: [BS]
+- id: belize
+  name: Belize
+  countries: [BZ]
+- id: cayman-islands
+  name: Cayman Islands
+  countries: [KY]
+- id: costa-rica
+  name: Costa Rica
+  countries: [CR]
+- id: cuba
+  name: Cuba
+  countries: [CU]
+- id: djibouti
+  name: Djibouti
+  countries: [DJ]
+- id: dominican-republic
+  name: Dominican Republic
+  countries: [DO]
+- id: egypt
+  name: Egypt
+  countries: [EG]
+- id: fiji
+  name: Fiji
+  countries: [FJ]
 - id: galapagos
   name: Galápagos
   countries: [EC]
+- id: honduras
+  name: Honduras
+  countries: [HN]
+- id: indonesia
+  name: Indonesia
+  countries: [ID]
+- id: madagascar
+  name: Madagascar
+  countries: [MG]
+- id: maldives
+  name: Maldives
+  countries: [MV]
+- id: mexico
+  name: Mexico
+  countries: [MX]
+- id: micronesia
+  name: Micronesia
+  countries: [FM, PW, MH]
+- id: papua-new-guinea
+  name: Papua New Guinea
+  countries: [PG]
+- id: philippines
+  name: Philippines
+  countries: [PH]
+- id: polynesia
+  name: French Polynesia
+  countries: [PF]
+- id: portugal
+  name: Portugal
+  countries: [PT]
+- id: seychelles
+  name: Seychelles
+  countries: [SC]
+- id: solomon-islands
+  name: Solomon Islands
+  countries: [SB]
+- id: st-maarten
+  name: St. Maarten
+  countries: [SX, MF]
+- id: thailand
+  name: Thailand
+  countries: [TH]
+- id: turkey
+  name: Turkey
+  countries: [TR]
+- id: virgin-islands
+  name: Virgin Islands
+  countries: [VG, VI]

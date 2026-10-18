@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_jm78gn
+names:   # to: null = current
+  - { name: Capoeng, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2021, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 18.4
+beam_m: 3.2
+gt: null
+refit_year: 2025
+guests: 8
+cabins: 4
+bathrooms: 1
+max_speed_kn: 11
+cruising_speed_kn: 9
+engines: { count: null, make: mitsubishi, model: null, power_hp: 80 }   # power_hp is per engine
+tenders: null
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Black Tip
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: main
+    window: standard
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 12144 }
+  - name: White Tip
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: main
+    window: standard
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 12145 }
+  - name: Octopus
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: standard
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 12146 }
+  - name: Manta
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: top
+    window: standard
+    bathroom: shared
+    aircon: false
+    external_ids: { liveaboard_com: 12147 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [aircon_cabins, seaview_cabins, family_cabins, non_smoking_cabins, outside_showers, outdoor_dining, bar, sun_deck, observation_deck, charging_stations, camera_rinse, housekeeping, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, rinse_hoses, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, searchlight, epirb, flares, life_rafts, life_vests, fire_suppression, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, vegetarian, vegan, buffet, snacks, beer]
+languages: [en, id]   # ISO 639-1, e.g. en, es
+operator: op_92xb            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6523 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/capoeng
+notes: ""

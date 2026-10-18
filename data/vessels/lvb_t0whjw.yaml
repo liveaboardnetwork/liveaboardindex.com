@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_t0whjw
+names:   # to: null = current
+  - { name: Blue Lotus, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2025, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 32
+beam_m: 2.5
+gt: null
+refit_year: null
+guests: 13
+cabins: 5
+bathrooms: 6
+max_speed_kn: 7
+cruising_speed_kn: 6
+engines: null   # power_hp is per engine
+tenders: null
+fuel_l: 5000
+water_l: 5000
+watermaker_lpd: 1000   # liters per day
+cabin_types:
+  - name: Standard Double Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 1, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 3, max: 3 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11957 }
+  - name: Standard Twin Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 3, max: 3 }
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11958 }
+  - name: Master Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 6, max: 6 }
+    deck: upper
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 11959 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, family_cabins, non_smoking_cabins, balcony_cabins, hot_showers, outside_showers, aircon_saloon, outdoor_dining, sun_deck, leisure_deck, entertainment, internet, charging_stations, camera_rinse, housekeeping, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, sidemount, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, depth_sounder, epirb, life_rafts, life_vests, fire_suppression, oxygen, first_aid_kit]
+dining: [local_food, western_food, vegetarian, buffet, set_menu, snacks, beer]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_a6jg            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6511 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/blue-lotus
+notes: ""

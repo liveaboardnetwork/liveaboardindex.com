@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_gxm4rz
+names:   # to: null = current
+  - { name: Black Pearl, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2019, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: null
+beam_m: null
+gt: null
+refit_year: null
+guests: 24
+cabins: 12
+bathrooms: 12
+max_speed_kn: 14
+cruising_speed_kn: 12
+engines: null   # power_hp is per engine
+tenders: 2
+fuel_l: 23000
+water_l: 30000
+watermaker_lpd: null   # liters per day
+cabin_types: []
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, non_smoking_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, bar, sun_deck, observation_deck, leisure_deck, jacuzzi, spa, entertainment, internet, charging_stations, camera_station, camera_rinse, laundry, housekeeping, kayaks, paddleboards, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, searchlight, epirb, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, buffet, snacks, beer, wine]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_ex9y            # op_xxxx from data/operators
+region: micronesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5918 }
+sources:
+  - https://www.liveaboard.com/diving/micronesia/black-pearl
+notes: ""

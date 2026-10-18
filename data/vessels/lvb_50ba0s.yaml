@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_50ba0s
+names:   # to: null = current
+  - { name: Putri Naga, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2014, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 25
+beam_m: 3.8
+gt: null
+refit_year: 2025
+guests: 6
+cabins: 3
+bathrooms: 3
+max_speed_kn: 10
+cruising_speed_kn: 7
+engines: { count: 1, make: null, model: null, power_hp: null }   # power_hp is per engine
+tenders: 1
+fuel_l: 3000
+water_l: 2000
+watermaker_lpd: 8000   # liters per day
+cabin_types:
+  - name: Main Deck Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: { min: 14, max: 14 }
+    deck: main
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 12398 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, non_smoking_cabins, cabin_safe, hair_dryer, hot_showers, outdoor_dining, leisure_deck, internet, charging_stations, camera_rinse, housekeeping, paddleboards, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, searchlight, epirb, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, beer, wine]
+languages: [en, id]   # ISO 639-1, e.g. en, es
+operator: op_g7ha            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6578 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/putri-naga
+notes: ""

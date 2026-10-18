@@ -61,8 +61,13 @@ async function candidateUrls(): Promise<string[]> {
   return [...xml.matchAll(/<loc>(https:\/\/www\.liveaboard\.com\/diving\/[a-z0-9-]+\/[a-z0-9-]+)<\/loc>/g)].map((m) => m[1] ?? '')
 }
 
+// Sections that share the /diving/<x>/<slug> shape but never hold boat pages.
+const NOT_DESTINATIONS = new Set(['find', 'fleet', 'article', 'articles', 'season-calendar', 'scuba', 'marine-life', 'profile', 'equipment', 'underwater-photography'])
+
 const all = await candidateUrls()
-const urls = all.filter((u) => !args.region || u.startsWith(`${BASE}/diving/${args.region}/`)).filter((u) => !u.includes('/diving/fleet/'))
+const urls = all
+  .filter((u) => !args.region || u.startsWith(`${BASE}/diving/${args.region}/`))
+  .filter((u) => !NOT_DESTINATIONS.has(new URL(u).pathname.split('/')[2] ?? ''))
 console.log(`${urls.length} candidate pages${args.region ? ` in ${args.region}` : ''}`)
 
 const boats: LiveaboardBoat[] = []

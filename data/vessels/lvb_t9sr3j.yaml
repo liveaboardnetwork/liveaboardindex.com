@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_t9sr3j
+names:   # to: null = current
+  - { name: Ocean Divine, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2006, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 33.5
+beam_m: 9.1
+gt: null
+refit_year: 2021
+guests: 16
+cabins: 8
+bathrooms: 8
+max_speed_kn: 11
+cruising_speed_kn: 8
+engines: { count: null, make: cummins, model: null, power_hp: 480 }   # power_hp is per engine
+tenders: 2
+fuel_l: 5000
+water_l: 16000
+watermaker_lpd: 16000   # liters per day
+cabin_types:
+  - name: Ocean Suites
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: null
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 5978 }
+  - name: Standard Cabins
+    count: null
+    max_guests: 2
+    beds: { single: 1, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: null
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10121 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, family_cabins, non_smoking_cabins, tv_in_cabins, balcony_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, outdoor_dining, bar, sun_deck, observation_deck, leisure_deck, massage, library, entertainment, internet, charging_stations, camera_station, camera_rinse, laundry, housekeeping, kayaks, paddleboards, fishing, snorkeling_gear, naturalist_guide, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, sidemount, rebreathers, gear_rental]
+safety: [gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, searchlight, flares, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, buffet, set_menu, snacks, beach_bbq, beer, wine]
+languages: [en, fr, it]   # ISO 639-1, e.g. en, es
+operator: op_0tdj            # op_xxxx from data/operators
+region: maldives              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 4417 }
+sources:
+  - https://www.liveaboard.com/diving/maldives/ocean-divine
+notes: ""

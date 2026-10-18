@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_6vctsv
+names:   # to: null = current
+  - { name: Ikan Biru, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2001, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 17
+beam_m: null
+gt: null
+refit_year: 2021
+guests: 8
+cabins: 1
+bathrooms: 2
+max_speed_kn: null
+cruising_speed_kn: null
+engines: null   # power_hp is per engine
+tenders: 1
+fuel_l: null
+water_l: 5000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Top Deck Sleeping Quarter
+    count: null
+    max_guests: 8
+    beds: { single: 8, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: top
+    window: none
+    bathroom: shared
+    aircon: false
+    external_ids: { liveaboard_com: 10163 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [hot_showers, outdoor_dining, sun_deck, leisure_deck, charging_stations, camera_station, camera_rinse, non_diver_friendly, purpose_built_dive]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, din_adaptors, gear_rental]
+safety: [gps, vhf_dsc_ssb, life_rafts, life_vests, fire_suppression, engine_room_cctv, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, vegetarian, buffet, snacks, beer]
+languages: [en, fr]   # ISO 639-1, e.g. en, es
+operator: op_51pv            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6086 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/ikan-biru
+notes: ""

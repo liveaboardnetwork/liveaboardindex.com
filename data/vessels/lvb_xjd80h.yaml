@@ -1,0 +1,89 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_xjd80h
+names:   # to: null = current
+  - { name: DUNE Titan, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: null, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: null
+beam_m: null
+gt: null
+refit_year: null
+guests: 30
+cabins: 15
+bathrooms: 15
+max_speed_kn: null
+cruising_speed_kn: null
+engines: { count: 2, make: null, model: null, power_hp: null }   # power_hp is per engine
+tenders: null
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Deluxe Double/Twin Cabin - Upper Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: upper
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 9067 }
+  - name: Superior Twin Cabin - Main Deck
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10647 }
+  - name: Superior Suite Cabin - Main Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: panoramic
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10648 }
+  - name: Standard Twin Cabin - Lower Deck
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: none
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10649 }
+  - name: Deluxe Twin Cabin - Upper Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: upper
+    window: picture
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10668 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, hot_showers, indoor_saloon, aircon_saloon, sun_deck, entertainment, charging_stations, housekeeping, non_diver_friendly, purpose_built_dive]
+dive_facilities: [dive_deck, dive_tenders, rinse_hoses, nitrox, din_adaptors, tech_diving, gear_rental]
+safety: [gps, vhf_dsc_ssb, satellite_phone, fishfinder, searchlight, life_rafts, life_vests, fire_suppression, oxygen, first_aid_kit]
+dining: [local_food, western_food, vegetarian, buffet, snacks, beer]
+languages: [en, fr]   # ISO 639-1, e.g. en, es
+operator: op_xtk2            # op_xxxx from data/operators
+region: egypt              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5737 }
+sources:
+  - https://www.liveaboard.com/diving/egypt/dune-titan
+notes: ""

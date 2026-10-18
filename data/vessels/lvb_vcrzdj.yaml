@@ -1,0 +1,99 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_vcrzdj
+names:   # to: null = current
+  - { name: Plancius, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 1976, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 89
+beam_m: 14.5
+gt: null
+refit_year: 2009
+guests: 108
+cabins: 52
+bathrooms: null
+max_speed_kn: 12
+cruising_speed_kn: 10
+engines: { count: 3, make: null, model: null, power_hp: null }   # power_hp is per engine
+tenders: 10
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Quadruple Porthole
+    count: null
+    max_guests: 4
+    beds: { single: 0, double: 0, bunk: 2, convertible: false }
+    size_m2: { min: 12, max: 12 }
+    deck: null
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8853 }
+  - name: Triple Porthole
+    count: null
+    max_guests: 3
+    beds: { single: 1, double: 0, bunk: 1, convertible: false }
+    size_m2: { min: 15, max: 15 }
+    deck: null
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8854 }
+  - name: Twin Porthole
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 12, max: 12 }
+    deck: null
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8855 }
+  - name: Twin Window
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 12.5, max: 13.5 }
+    deck: null
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8856 }
+  - name: Twin Deluxe
+    count: null
+    max_guests: 2
+    beds: { single: 2, double: 0, bunk: 0, convertible: false }
+    size_m2: { min: 13.5, max: 13.5 }
+    deck: null
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8857 }
+  - name: Superior Cabin
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: { min: 21, max: 23 }
+    deck: across
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8858 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, non_smoking_cabins, bar, observation_deck, library, entertainment, internet, laundry, housekeeping, kayaks, naturalist_guide, non_diver_friendly]
+dive_facilities: []
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, life_rafts, life_vests, oxygen, first_aid_kit, crew_first_aid]
+dining: [western_food, vegetarian, vegan, buffet, set_menu, snacks, beer, wine]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_v0xg            # op_xxxx from data/operators
+region: antarctica              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5650 }
+sources:
+  - https://www.liveaboard.com/diving/antarctica/plancius
+notes: ""

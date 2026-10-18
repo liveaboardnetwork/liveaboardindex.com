@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_cqk2bc
+names:   # to: null = current
+  - { name: Adventure, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 1977, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 30.5
+beam_m: 6.7
+gt: null
+refit_year: 2011
+guests: 16
+cabins: 10
+bathrooms: 7
+max_speed_kn: 14
+cruising_speed_kn: 11
+engines: { count: 2, make: null, model: null, power_hp: null }   # power_hp is per engine
+tenders: 2
+fuel_l: 11000
+water_l: 8000
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Double Cabin Upper Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: upper
+    window: null
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 10562 }
+  - name: Double Cabin Inner Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 0, bunk: 1, convertible: false }
+    size_m2: null
+    deck: lower
+    window: null
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 10563 }
+  - name: Quad Cabins Inner Deck
+    count: null
+    max_guests: 4
+    beds: { single: 4, double: 0, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: null
+    bathroom: shared
+    aircon: true
+    external_ids: { liveaboard_com: 10564 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [aircon_cabins, seaview_cabins, non_smoking_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, sun_deck, observation_deck, leisure_deck, entertainment, internet, charging_stations, camera_rinse, housekeeping, non_diver_friendly, purpose_built_dive, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, depth_sounder, searchlight, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, engine_room_cctv, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, vegetarian, vegan, set_menu, snacks, beer, wine]
+languages: [en, es]   # ISO 639-1, e.g. en, es
+operator: op_f50y            # op_xxxx from data/operators
+region: mexico              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 6201 }
+sources:
+  - https://www.liveaboard.com/diving/mexico/adventure
+notes: ""

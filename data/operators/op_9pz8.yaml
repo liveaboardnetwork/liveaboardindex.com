@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=../../schema/json/operator.schema.json
+id: op_9pz8
+names:   # to: null = current
+  - { name: Phuket Dive Center, from: null, to: null }
+country: null             # ISO country code, e.g. EC
+website: null
+status: active            # active | defunct | merged
+merged_into: null
+external_ids: { liveaboard_com: 1472 }
+sources: []
+notes: ""

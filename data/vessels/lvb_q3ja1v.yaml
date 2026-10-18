@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_q3ja1v
+names:   # to: null = current
+  - { name: Emperor Bilikiki, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 1966, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: null
+beam_m: null
+gt: null
+refit_year: 2013
+guests: 20
+cabins: 10
+bathrooms: 10
+max_speed_kn: 11
+cruising_speed_kn: 9
+engines: { count: null, make: caterpillar, model: null, power_hp: 350 }   # power_hp is per engine
+tenders: 2
+fuel_l: null
+water_l: null
+watermaker_lpd: null   # liters per day
+cabin_types:
+  - name: Lower Deck Twins
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: { min: 9, max: 9 }
+    deck: lower
+    window: null
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 8230 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, non_smoking_cabins, hair_dryer, hot_showers, outside_showers, indoor_saloon, outdoor_dining, bar, sun_deck, observation_deck, leisure_deck, library, entertainment, charging_stations, camera_station, camera_rinse, laundry, housekeeping, kayaks, snorkeling_gear, non_diver_friendly, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, nitrox, din_adaptors, sidemount, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, fishfinder, searchlight, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, buffet, snacks, beer, wine]
+languages: [en]   # ISO 639-1, e.g. en, es
+operator: op_gybp            # op_xxxx from data/operators
+region: solomon-islands              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5436 }
+sources:
+  - https://www.liveaboard.com/diving/solomon-islands/bilikiki
+notes: ""

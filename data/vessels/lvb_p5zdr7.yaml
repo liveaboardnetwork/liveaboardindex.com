@@ -1,0 +1,109 @@
+# yaml-language-server: $schema=../../schema/json/vessel.schema.json
+id: lvb_p5zdr7
+names:   # to: null = current
+  - { name: Aliikai Voyage, from: null, to: null }
+hull: null                # <material>_<propulsion>, e.g. steel_motor
+built: { year: 2005, yard: null }
+imo: null
+mmsi: null
+call_sign: null
+flag: null                # ISO country code, e.g. EC
+loa_m: 40
+beam_m: 8.5
+gt: null
+refit_year: 2019
+guests: 15
+cabins: 7
+bathrooms: 8
+max_speed_kn: 10
+cruising_speed_kn: 7
+engines: { count: null, make: null, model: null, power_hp: 365 }   # power_hp is per engine
+tenders: 2
+fuel_l: 9600
+water_l: 8000
+watermaker_lpd: 8000   # liters per day
+cabin_types:
+  - name: Kei Cabin - Upper Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: upper
+    window: null
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10007 }
+  - name: Fam Cabin - Main Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: main
+    window: null
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10616 }
+  - name: Koon Cabin - Upper Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10617 }
+  - name: Savu Cabin - Upper Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: true }
+    size_m2: null
+    deck: upper
+    window: standard
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10729 }
+  - name: Abui Cabin - Lower Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10730 }
+  - name: Dayak Cabin - Lower Deck
+    count: null
+    max_guests: 2
+    beds: { single: 0, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10731 }
+  - name: Asmat Cabin - Lower Deck
+    count: null
+    max_guests: 2
+    beds: { single: 1, double: 1, bunk: 0, convertible: false }
+    size_m2: null
+    deck: lower
+    window: porthole
+    bathroom: ensuite
+    aircon: true
+    external_ids: { liveaboard_com: 10732 }
+# Lists below take keys from schema/vocab.ts; your editor autocompletes them.
+amenities: [ensuite_bathrooms, aircon_cabins, seaview_cabins, family_cabins, non_smoking_cabins, balcony_cabins, hot_showers, outside_showers, indoor_saloon, aircon_saloon, outdoor_dining, bar, sun_deck, observation_deck, leisure_deck, library, entertainment, internet, charging_stations, camera_station, camera_rinse, laundry, housekeeping, kayaks, paddleboards, fishing, water_ski, naturalist_guide, non_diver_friendly, private_charter]
+dive_facilities: [dive_deck, shaded_dive_area, dive_tenders, rinse_hoses, nitrox, din_adaptors, rebreathers, gear_rental]
+safety: [radar, gps, vhf_dsc_ssb, satellite_phone, depth_sounder, searchlight, flares, life_rafts, life_vests, fire_suppression, bilge_alarm, oxygen, first_aid_kit, crew_first_aid]
+dining: [local_food, western_food, vegetarian, vegan, set_menu, snacks, beach_bbq, beer, wine]
+languages: [en, fr, id]   # ISO 639-1, e.g. en, es
+operator: op_rnms            # op_xxxx from data/operators
+region: indonesia              # id from data/regions.yaml
+status: active            # active | retired | lost | merged
+merged_into: null
+external_ids: { liveaboard_com: 5710 }
+sources:
+  - https://www.liveaboard.com/diving/indonesia/aliikai-voyage
+notes: ""
